@@ -1,0 +1,190 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--bg-primary);
+    .container {
+        max-width: 1384px;
+    }
+    // .header__content
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+        padding: 34px 0px;
+    }
+
+    // .header__left
+
+    &__left {
+        display: flex;
+        align-items: center;
+        gap: 42px;
+    }
+
+    // .header__logo
+
+    &__logo {
+        flex: 0 0 150px;
+        width: 150px;
+        height: auto;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    // .header__right
+
+    &__right {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+    }
+}
+.container {
+}
+.menu {
+    display: flex;
+    // .menu__icon
+
+    &__icon {
+        display: none;
+    }
+
+    // .menu__body
+
+    &__body {
+        ul {
+            display: flex;
+            gap: 10px 30px;
+            li {
+                a {
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 150%;
+                    color: var(--typography-primary);
+                    transition: color 0.3s;
+                    &.active {
+                        pointer-events: none;
+                        color: var(--brand-primary-new);
+                    }
+                    &:hover {
+                        color: var(--brand-primary-new);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    // .contacts__phone
+
+    &__phone {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 156%;
+        transition: color 0.3s;
+        &:hover {
+            color: var(--brand-primary-new);
+        }
+    }
+
+    // .contacts__email
+
+    &__email {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: var(--typography-secondary);
+        transition: color 0.3s;
+        &:hover {
+            color: var(--brand-primary-new);
+        }
+    }
+}
+.header-lang {
+    position: relative;
+    // .header-lang__button
+
+    &__button {
+        background-color: var(--bg-secondary);
+        border-radius: 24px;
+        padding: 12px 16px;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        transition: background-color 0.3s;
+        &:hover {
+            background-color: #e8e7e2;
+        }
+        &:active {
+            background-color: var(--bg-secondary-pressed);
+        }
+    }
+
+    // .header-lang__title
+
+    &__title {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 150%;
+    }
+
+    // .header-lang__arrow
+
+    &__arrow {
+        width: 24px;
+        height: 24px;
+        flex: 0 0 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg {
+            stroke: var(--typography-primary);
+            fill: none;
+        }
+    }
+
+    // .header-lang__dropdown
+
+    &__dropdown {
+        position: absolute;
+        top: 100%;
+        right: -12px;
+        width: calc(100% - 6px);
+        margin: 6px 0px 0px 0px;
+        ul {
+            border: 1px solid var(--color-white--400);
+            border-radius: 30px;
+            padding: 8px 6px 8px 6px;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.05);
+            background: var(--color-white--700);
+            li {
+                a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 24px;
+                    width: 100%;
+                    min-height: 40px;
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 150%;
+                    text-align: center;
+                    &.active {
+                        background-color: rgba(171, 34, 40, 0.2);
+                    }
+                }
+            }
+        }
+    }
+}
