@@ -4,8 +4,12 @@
     left: 0;
     width: 100%;
     background: var(--bg-primary);
+    z-index: 100;
     .container {
         max-width: 1384px;
+        @media (max-width: 992px) {
+            padding: 0px 5px;
+        }
     }
     // .header__content
 
@@ -15,6 +19,13 @@
         align-items: center;
         gap: 30px;
         padding: 34px 0px;
+        @media (max-width: 992px) {
+            justify-content: flex-end;
+            padding: 32px 0px;
+        }
+        @media (max-width: 767px) {
+            padding: 16px 0px;
+        }
     }
 
     // .header__left
@@ -23,6 +34,12 @@
         display: flex;
         align-items: center;
         gap: 42px;
+        @media (max-width: 1384px) {
+            gap: 24px;
+        }
+        @media (max-width: 992px) {
+            display: none;
+        }
     }
 
     // .header__logo
@@ -31,6 +48,10 @@
         flex: 0 0 150px;
         width: 150px;
         height: auto;
+        @media (max-width: 1384px) {
+            flex: 0 0 120px;
+            width: 120px;
+        }
         img {
             width: 100%;
             height: auto;
@@ -43,74 +64,56 @@
         display: flex;
         align-items: center;
         gap: 24px;
+        @media (max-width: 1384px) {
+            gap: 16px;
+        }
+        .btn {
+            @media (max-width: 992px) {
+                display: none;
+            }
+        }
     }
 }
-.container {
-}
+
+/*меню*/
 .menu {
     display: flex;
-    // .menu__icon
-
-    &__icon {
-        display: none;
-    }
-
-    // .menu__body
-
-    &__body {
-        ul {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px 30px;
+        li {
             display: flex;
-            gap: 10px 30px;
-            li {
-                a {
-                    font-weight: 400;
-                    font-size: 16px;
-                    line-height: 150%;
-                    color: var(--typography-primary);
-                    transition: color 0.3s;
-                    &.active {
-                        pointer-events: none;
-                        color: var(--brand-primary-new);
-                    }
-                    &:hover {
-                        color: var(--brand-primary-new);
-                    }
+            a {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 150%;
+                color: var(--typography-primary);
+                transition: color 0.3s;
+                &.active {
+                    pointer-events: none;
+                    color: var(--brand-primary-new);
+                }
+                &:hover {
+                    color: var(--brand-primary-new);
                 }
             }
         }
     }
 }
 
-.contacts {
-    display: flex;
-    flex-direction: column;
-    // .contacts__phone
-
-    &__phone {
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 156%;
-        transition: color 0.3s;
-        &:hover {
-            color: var(--brand-primary-new);
-        }
-    }
-
-    // .contacts__email
-
-    &__email {
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 150%;
-        color: var(--typography-secondary);
-        transition: color 0.3s;
-        &:hover {
-            color: var(--brand-primary-new);
-        }
-    }
-}
+/*выбор языка*/
 .header-lang {
     position: relative;
+    &.active {
+        .header-lang__dropdown {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+    @media (max-width: 992px) {
+        display: none;
+    }
     // .header-lang__button
 
     &__button {
@@ -161,6 +164,9 @@
         right: -12px;
         width: calc(100% - 6px);
         margin: 6px 0px 0px 0px;
+        opacity: 0;
+        pointer-events: auto;
+        transition: opacity 0.3s;
         ul {
             border: 1px solid var(--color-white--400);
             border-radius: 30px;
@@ -180,8 +186,13 @@
                     font-size: 16px;
                     line-height: 150%;
                     text-align: center;
+                    transition: opacity 0.3s;
                     &.active {
+                        pointer-events: none;
                         background-color: rgba(171, 34, 40, 0.2);
+                    }
+                    &:hover {
+                        opacity: 0.7;
                     }
                 }
             }
