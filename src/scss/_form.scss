@@ -119,6 +119,14 @@
                     font-size: 10px;
                 }
             }
+            .input {
+                &.textarea {
+                    padding: 18px 16px;
+                    @media (max-width: 992px) {
+                        padding: 14px 16px;
+                    }
+                }
+            }
         }
         .form__error {
             position: absolute;
