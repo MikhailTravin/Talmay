@@ -220,6 +220,80 @@ document.querySelectorAll('.block-intro-right').forEach((block, index) => {
   }
 });
 
+//слайдер - используемые приборы
+document.querySelectorAll('.block-base-products').forEach((block, index) => {
+  const slider = block.querySelector('.block-base-products__slider');
+  const fractionEl = block.querySelector('.base-products-fraction');
+  const prevBtn = block.querySelector('.base-products-arrow-prev');
+  const nextBtn = block.querySelector('.base-products-arrow-next');
+
+  if (!slider) return;
+
+  const totalSlides = slider.querySelectorAll('.swiper-slide').length;
+
+  if (totalSlides <= 1 && fractionEl) {
+    fractionEl.style.display = 'none';
+  }
+
+  const uniquePrefix = `slider-${index}`;
+  const prevClass = `${uniquePrefix}-prev`;
+  const nextClass = `${uniquePrefix}-next`;
+
+  prevBtn.classList.add(prevClass);
+  nextBtn.classList.add(nextClass);
+
+  const swiper = new Swiper(slider, {
+    observer: true,
+    observeParents: true,
+    slidesPerView: 1,
+    spaceBetween: 0,
+    speed: 400,
+    navigation: {
+      prevEl: `.${prevClass}`,
+      nextEl: `.${nextClass}`,
+    },
+    on: {
+      init: function () {
+        updateFraction(this.activeIndex + 1, totalSlides, fractionEl);
+      },
+      slideChange: function () {
+        updateFraction(this.activeIndex + 1, totalSlides, fractionEl);
+      }
+    }
+  });
+
+  function updateFraction(current, total, element) {
+    if (element) {
+      element.textContent = `${current} из ${total}`;
+    }
+  }
+});
+
+//========================================================================================================================================================
+
+//фильтр
+document.addEventListener('DOMContentLoaded', function () {
+  const filterIcon = document.querySelector('.filter-icon');
+  const filterSpollers = document.querySelector('.filter-spollers');
+
+  if (filterIcon) {
+    filterIcon.addEventListener('click', function (e) {
+      e.stopPropagation();
+      document.documentElement.classList.add('filter-open');
+    });
+  }
+
+  document.addEventListener('click', function (e) {
+    const target = e.target;
+    const isFilterSpollers = target.closest('.filter-spollers');
+    const isFilterIcon = target.closest('.filter-icon');
+
+    if (!isFilterSpollers && !isFilterIcon) {
+      document.documentElement.classList.remove('filter-open');
+    }
+  });
+});
+
 //========================================================================================================================================================
 
 //Яндекс карта
@@ -250,6 +324,7 @@ if (map) {
 
 //========================================================================================================================================================
 
+//Форма валидация
 function formFieldsInit(options = { viewPass: true, autoHeight: false }) {
   document.body.addEventListener("focusin", function (e) {
     const targetElement = e.target;
@@ -470,6 +545,8 @@ let formValidate = {
     return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(formRequiredItem.value);
   }
 };
+
+//Форма отправка
 function formSubmit() {
   const forms = document.forms;
   if (forms.length) {
@@ -542,3 +619,183 @@ function formSubmit() {
   }
 }
 formSubmit();
+
+//========================================================================================================================================================
+
+//Спойлер
+function spollers() {
+  const spollersArray = document.querySelectorAll("[data-spollers]");
+  if (spollersArray.length > 0) {
+    const spollersRegular = Array.from(spollersArray).filter((function (item, index, self) {
+      return !item.dataset.spollers.split(",")[0];
+    }));
+    if (spollersRegular.length) initSpollers(spollersRegular);
+
+    spollersArray.forEach(spollersBlock => {
+      const mediaQuery = spollersBlock.dataset.spollers;
+      if (mediaQuery) {
+        const [maxWidth, type] = mediaQuery.split(",");
+        const width = parseInt(maxWidth);
+
+        if (type === "max" && window.innerWidth <= width) {
+          if (!spollersBlock.classList.contains("_spoller-init")) {
+            initSpollers([spollersBlock]);
+          }
+        } else if (type === "max" && window.innerWidth > width) {
+          if (spollersBlock.classList.contains("_spoller-init")) {
+            spollersBlock.classList.remove("_spoller-init");
+            initSpollerBody(spollersBlock, false);
+            spollersBlock.removeEventListener("click", setSpollerAction);
+          }
+        }
+      }
+    });
+
+    function initSpollers(spollersArray, matchMedia = false) {
+      spollersArray.forEach((spollersBlock => {
+        spollersBlock = matchMedia ? spollersBlock.item : spollersBlock;
+        if (matchMedia.matches || !matchMedia) {
+          spollersBlock.classList.add("_spoller-init");
+          initSpollerBody(spollersBlock);
+          spollersBlock.addEventListener("click", setSpollerAction);
+
+          initCloseButtons(spollersBlock);
+        } else {
+          spollersBlock.classList.remove("_spoller-init");
+          initSpollerBody(spollersBlock, false);
+          spollersBlock.removeEventListener("click", setSpollerAction);
+        }
+      }));
+    }
+
+    function initSpollerBody(spollersBlock, hideSpollerBody = true) {
+      let spollerTitles = spollersBlock.querySelectorAll("[data-spoller]");
+      if (spollerTitles.length) {
+        spollerTitles = Array.from(spollerTitles).filter((item => item.closest("[data-spollers]") === spollersBlock));
+        spollerTitles.forEach((spollerTitle => {
+          if (hideSpollerBody) {
+            spollerTitle.removeAttribute("tabindex");
+            if (!spollerTitle.classList.contains("_spoller-active")) {
+              if (spollerTitle.nextElementSibling) {
+                spollerTitle.nextElementSibling.hidden = true;
+              }
+            }
+          } else {
+            spollerTitle.setAttribute("tabindex", "-1");
+            if (spollerTitle.nextElementSibling) {
+              spollerTitle.nextElementSibling.hidden = false;
+            }
+          }
+        }));
+      }
+    }
+
+    function initCloseButtons(spollersBlock) {
+      const closeButtons = spollersBlock.querySelectorAll('.cabinet-orders-spollers__button');
+
+      closeButtons.forEach(button => {
+        button.removeEventListener('click', closeSpollerHandler);
+        button.addEventListener('click', closeSpollerHandler);
+      });
+    }
+
+    function closeSpollerHandler(e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const button = e.currentTarget;
+      const spollersBlock = button.closest('[data-spollers]');
+      const spollerItem = button.closest('.cabinet-orders-spollers__item');
+
+      if (spollersBlock && spollerItem) {
+        const spollerTitle = spollerItem.querySelector('[data-spoller]');
+
+        if (spollerTitle && spollerTitle.classList.contains('_spoller-active')) {
+          const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
+
+          spollerTitle.classList.remove('_spoller-active');
+          spollerItem.classList.remove('_spoller-active');
+
+          const contentBlock = spollerTitle.nextElementSibling;
+          _slideUp(contentBlock, spollerSpeed);
+        }
+      }
+    }
+
+    function setSpollerAction(e) {
+      const el = e.target;
+      const spollerTitle = el.closest("[data-spoller]");
+      if (!spollerTitle) return;
+
+      if (el.closest('a') && !spollerTitle.closest('a')) {
+        return;
+      }
+
+      const spollerItem = spollerTitle.closest(".spollers__item, .cabinet-orders-spollers__item, .menu-catalog__item");
+      const spollersBlock = spollerTitle.closest("[data-spollers]");
+
+      if (!spollersBlock) return;
+
+      const oneSpoller = spollersBlock.hasAttribute("data-one-spoller");
+      const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
+
+      if (!spollersBlock.querySelectorAll("._slide").length) {
+        if (oneSpoller && !spollerTitle.classList.contains("_spoller-active")) {
+          hideSpollersBody(spollersBlock);
+        }
+
+        spollerTitle.classList.toggle("_spoller-active");
+        if (spollerItem) spollerItem.classList.toggle("_spoller-active");
+
+        const contentBlock = spollerTitle.nextElementSibling;
+        if (contentBlock) {
+          _slideToggle(contentBlock, spollerSpeed);
+        }
+
+        e.preventDefault();
+      }
+    }
+
+    function hideSpollersBody(spollersBlock) {
+      const spollerActiveTitle = spollersBlock.querySelector("[data-spoller]._spoller-active");
+      const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
+      if (spollerActiveTitle && !spollersBlock.querySelectorAll("._slide").length) {
+        const spollerItem = spollerActiveTitle.closest(".spollers__item, .cabinet-orders-spollers__item, .menu-catalog__item");
+
+        spollerActiveTitle.classList.remove("_spoller-active");
+        if (spollerItem) spollerItem.classList.remove("_spoller-active");
+        _slideUp(spollerActiveTitle.nextElementSibling, spollerSpeed);
+      }
+    }
+
+    const spollersClose = document.querySelectorAll("[data-spoller-close]");
+    if (spollersClose.length) {
+      document.addEventListener("click", (function (e) {
+        const el = e.target;
+        if (!el.closest("[data-spollers]")) {
+          spollersClose.forEach((spollerClose => {
+            const spollersBlock = spollerClose.closest("[data-spollers]");
+            const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
+            spollerClose.classList.remove("_spoller-active");
+
+            const spollerItem = spollerClose.closest(".spollers__item, .cabinet-orders-spollers__item, .menu-catalog__item");
+            if (spollerItem) spollerItem.classList.remove("_spoller-active");
+
+            _slideUp(spollerClose.nextElementSibling, spollerSpeed);
+          }));
+        }
+      }));
+    }
+  }
+}
+spollers();
+window.addEventListener('resize', function () {
+  spollers();
+});
+
+//========================================================================================================================================================
+
+//Галерея
+Fancybox.bind("[data-fancybox]", {
+  // ваши опции
+});
