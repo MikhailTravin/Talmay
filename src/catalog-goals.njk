@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Каталог приборов / Задача</title>
+    {% include 'blocks/head.njk' %}
+</head>
+
+<body class="preload mp">
+    <div class="main-wrapper-outer">
+        {% include 'blocks/header.njk' %}
+        <main class="main">
+
+            <!--Хлебные крошки-->
+            <div class="breadcrumbs">
+                <div class="container">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div class="home-icon">
+                                    <svg aria-hidden="true" width="18" height="19">
+                                        <use xlink:href="img/sprite.svg#home"></use>
+                                    </svg>
+                                </div>
+                                <span>Главная</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Приборы
+                            </a>
+                        </li>
+                        <li><span>Топливо / дизель / бензин</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--Каталог приборов / Задача-->
+            <div class="block-main-catalog block3">
+                <div class="container">
+                    <div class="block-title">
+                        <div class="block-title__left">
+                            <h1 class="title1">
+                                Каталог приборов
+                            </h1>
+                        </div>
+                        <div class="block-title__filter">
+                            <button type="button" class="filter-icon">
+                                <svg aria-hidden="true" width="18" height="19">
+                                    <use xlink:href="img/sprite.svg#oil"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="block-main-catalog__content">
+                        <div data-da=".block-title__filter, 992, last" data-spollers data-one-spoller
+                            class="filter-spollers">
+                            <div class="filter-spollers__item">
+                                <button type="button" data-spoller class="filter-spollers__button">
+                                    <span class="filter-spollers__title">
+                                        Производители
+                                    </span>
+                                    <span class="filter-spollers__arrow">
+                                        <svg aria-hidden="true" width="10" height="6">
+                                            <use xlink:href="img/sprite.svg#arrow1"></use>
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div class="filter-spollers__body">
+                                    <ul>
+                                        <li>
+                                            <a href="./">PAMAS</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">Biolab</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">DITEE</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">Sheli</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">Yateks</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="filter-spollers__item">
+                                <button type="button" data-spoller class="filter-spollers__button">
+                                    <span class="filter-spollers__title">
+                                        Показатели
+                                    </span>
+                                    <span class="filter-spollers__arrow">
+                                        <svg aria-hidden="true" width="10" height="6">
+                                            <use xlink:href="img/sprite.svg#arrow1"></use>
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div class="filter-spollers__body">
+                                    <ul>
+                                        <li>
+                                            <a href="./">Элементный состав</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">Кинематическая вязкость</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">Ферромагнитный износ</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">Класс чистоты</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="filter-spollers__item">
+                                <button type="button" data-spoller class="filter-spollers__button _spoller-active">
+                                    <span class="filter-spollers__title">
+                                        Задача
+                                    </span>
+                                    <span class="filter-spollers__arrow">
+                                        <svg aria-hidden="true" width="10" height="6">
+                                            <use xlink:href="img/sprite.svg#arrow1"></use>
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div class="filter-spollers__body">
+                                    <ul>
+                                        <li>
+                                            <a href="./">Масло / смазочные материалы</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">Нефть / нефтепродукты</a>
+                                        </li>
+                                        <li>
+                                            <a href="./" class="active">Топливо / дизель / бензин</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">Авиа / Авиакеросин</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">Пластмассы и полимеры</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">Битум</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="filter-spollers__item">
+                                <button type="button" data-spoller class="filter-spollers__button">
+                                    <span class="filter-spollers__title">
+                                        Стандарты
+                                    </span>
+                                    <span class="filter-spollers__arrow">
+                                        <svg aria-hidden="true" width="10" height="6">
+                                            <use xlink:href="img/sprite.svg#arrow1"></use>
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div class="filter-spollers__body">
+                                    <ul>
+                                        <li>
+                                            <a href="./">ГОСТ</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">ASTM D</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">ISO</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">IP</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">IEC</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">SAE</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">NAS</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">GJB</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">EN</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">USP</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">TAPPI</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">NAVAIR</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">CHARN</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">DEF STAN</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">Ph. Eur</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">BP</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">KP</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">JP</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-main-catalog__body">
+                            <div class="block-descr">
+                                <h2 class="title2">
+                                    Топливо / дизель / бензин
+                                    <div class="number">3</div>
+                                </h2>
+                                <div class="block-descr__text">
+                                    <p>
+                                        Анализ топлива позволяет выявить загрязнения, отклонения в составе и
+                                        несоответствие стандартам. Качество топлива напрямую влияет на работу
+                                        двигателей. Регулярный контроль помогает предотвратить износ и повысить
+                                        надежность техники. Контроль чистоты и свойств топлива осуществляется с помощью
+                                        специализированных счетчиков частиц в жидкости серии PAMAS S40, а также
+                                        универсального вискозиметра Viscol 10J.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="block-main-catalog__cards">
+                                <div class="card-product2">
+                                    <div class="card-product2__pic1">
+                                        <img src="img/products/image15.webp" alt="">
+                                    </div>
+                                    <div class="card-product2__item">
+                                        <div class="card-product2__top">
+                                            <div class="card-product2__title">
+                                                PAMAS S40 AVTUR
+                                            </div>
+                                            <p>
+                                                Это портативный счетчик частиц для анализа турбинных топлив, бензина и
+                                                дизельного топлива
+                                            </p>
+                                        </div>
+                                        <a href="./" target="_blank" class="link link2">
+                                            <span>Подробнее</span>
+                                            <svg aria-hidden="true" width="20" height="12">
+                                                <use xlink:href="img/sprite.svg#arrow3"></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="card-product2">
+                                    <div class="card-product2__pic1">
+                                        <img src="img/products/image16.webp" alt="">
+                                    </div>
+                                    <div class="card-product2__item">
+                                        <div class="card-product2__top">
+                                            <div class="card-product2__title">
+                                                PAMAS S50 Fuel
+                                            </div>
+                                            <p>
+                                                Мобильный спектрометр OA800M разработан для быстрого и точного анализа
+                                                рабочих жидкостей прямо на месте эксплуатации
+                                            </p>
+                                        </div>
+                                        <a href="./" target="_blank" class="link link2">
+                                            <span>Подробнее</span>
+                                            <svg aria-hidden="true" width="20" height="12">
+                                                <use xlink:href="img/sprite.svg#arrow3"></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="card-product2">
+                                    <div class="card-product2__pic1">
+                                        <img src="img/products/image17.webp" alt="">
+                                    </div>
+                                    <div class="card-product2__item">
+                                        <div class="card-product2__top">
+                                            <div class="card-product2__title">
+                                                Viscol-10J
+                                            </div>
+                                            <p>
+                                                Спектрометр OA800H анализирует эксплуатационные жидкости на содержание
+                                                продуктов износа, присадок и загрязнений
+                                            </p>
+                                        </div>
+                                        <a href="./" target="_blank" class="link link2">
+                                            <span>Подробнее</span>
+                                            <svg aria-hidden="true" width="20" height="12">
+                                                <use xlink:href="img/sprite.svg#arrow3"></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        {% include 'blocks/footer.njk' %}
+    </div>
+    {% include 'blocks/scripts.njk' %}
+</body>
+
+</html>
