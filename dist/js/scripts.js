@@ -269,6 +269,38 @@ document.querySelectorAll('.block-base-products').forEach((block, index) => {
   }
 });
 
+//слайдер - карточка прибора
+if (document.querySelector('.images-product')) {
+  const thumbsSwiper = new Swiper('.images-product__thumb', {
+    observer: true,
+    observeParents: true,
+    slidesPerView: 4,
+    spaceBetween: 12,
+    speed: 400,
+    preloadImages: true,
+    breakpoints: {
+      768: {
+        slidesPerView: 4, spaceBetween: 12,
+      },
+    },
+  });
+
+  const mainThumbsSwiper = new Swiper('.images-product__slider', {
+    thumbs: {
+      swiper: thumbsSwiper
+    },
+    observer: true,
+    observeParents: true,
+    slidesPerView: 1,
+    spaceBetween: 16,
+    speed: 400,
+    preloadImages: true,
+    767: {
+      spaceBetween: 32,
+    },
+  });
+}
+
 //========================================================================================================================================================
 
 //фильтр
@@ -503,43 +535,49 @@ let formValidate = {
     formRequiredItem.parentElement.classList.remove('_form-success');
   },
   formClean(form) {
-    form.reset();
-    setTimeout(() => {
-      let inputs = form.querySelectorAll('input,textarea');
-      for (let index = 0; index < inputs.length; index++) {
-        const el = inputs[index];
-        el.parentElement.classList.remove('_form-focus');
-        el.classList.remove('_form-focus');
-        el.classList.remove('_form-success');
-        el.parentElement.classList.remove('_form-success');
-        el.parentElement.classList.remove('filled');
-        el.classList.remove('filled');
-        formValidate.removeError(el);
-        if (el.classList.contains('telephone') && el.clearFilled) {
-          el.clearFilled();
+    const inputs = form.querySelectorAll('input, textarea');
+    inputs.forEach(input => {
+      if (input.type !== 'checkbox' && input.type !== 'radio' && input.type !== 'submit' && input.type !== 'button') {
+        input.value = '';
+      }
+      input.classList.remove('_form-focus', '_form-success', '_form-error', 'filled');
+      input.parentElement?.classList.remove('_form-focus', '_form-success', '_form-error', 'filled');
+      if (input.classList.contains('telephone') && input.clearFilled) {
+        input.clearFilled();
+      }
+    });
+
+    const checkboxes = form.querySelectorAll('.checkbox__input');
+    checkboxes.forEach(checkbox => {
+      checkbox.checked = false;
+      checkbox.classList.remove('_form-success', '_form-error', 'filled');
+      checkbox.closest('.checkbox')?.classList.remove('_form-success', '_form-error', 'filled');
+    });
+
+    const radios = form.querySelectorAll('input[type="radio"]');
+    radios.forEach(radio => {
+      radio.checked = false;
+      radio.classList.remove('_form-success', '_form-error', 'filled');
+      radio.parentElement?.classList.remove('_form-success', '_form-error', 'filled');
+    });
+
+    const selects = form.querySelectorAll('select');
+    selects.forEach(select => {
+      select.selectedIndex = 0;
+      select.classList.remove('_form-success', '_form-error', 'filled');
+    });
+
+    form.querySelectorAll('.form__error').forEach(el => el.remove());
+
+    if (modules_flsModules.select) {
+      let selectsDiv = form.querySelectorAll('div.select');
+      if (selectsDiv.length) {
+        for (let index = 0; index < selectsDiv.length; index++) {
+          const select = selectsDiv[index].querySelector('select');
+          modules_flsModules.select.selectBuild(select);
         }
       }
-      let checkboxes = form.querySelectorAll('.checkbox__input');
-      if (checkboxes.length > 0) {
-        for (let index = 0; index < checkboxes.length; index++) {
-          const checkbox = checkboxes[index];
-          checkbox.checked = false;
-          checkbox.classList.remove('_form-success');
-          checkbox.classList.remove('filled');
-          checkbox.closest('.checkbox')?.classList.remove('_form-success');
-          checkbox.closest('.checkbox')?.classList.remove('filled');
-        }
-      }
-      if (modules_flsModules.select) {
-        let selects = form.querySelectorAll('div.select');
-        if (selects.length) {
-          for (let index = 0; index < selects.length; index++) {
-            const select = selects[index].querySelector('select');
-            modules_flsModules.select.selectBuild(select);
-          }
-        }
-      }
-    }, 0);
+    }
   },
   emailTest(formRequiredItem) {
     return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(formRequiredItem.value);
@@ -561,6 +599,18 @@ function formSubmit() {
       });
     }
   }
+
+  document.addEventListener('click', function (e) {
+    const clearButton = e.target.closest('.btn-clear');
+    if (clearButton) {
+      e.preventDefault();
+      const form = clearButton.closest('form');
+      if (form) {
+        formValidate.formClean(form);
+      }
+    }
+  });
+
   async function formSubmitAction(form, e) {
     const error = !form.hasAttribute('data-no-validate') ? formValidate.getErrors(form) : 0;
     if (error === 0) {
@@ -595,6 +645,7 @@ function formSubmit() {
       }
     }
   }
+
   function formSent(form, responseResult = ``) {
     document.dispatchEvent(new CustomEvent("formSent", {
       detail: {
@@ -799,3 +850,179 @@ window.addEventListener('resize', function () {
 Fancybox.bind("[data-fancybox]", {
   // ваши опции
 });
+
+//========================================================================================================================================================
+
+//Фильтр сортировка
+function initFilter() {
+  const filterButtons = document.querySelectorAll('.filter-sorting__title');
+  if (!filterButtons.length) return;
+
+  const cardsContainer = document.querySelector('.filter-cards');
+  if (!cardsContainer) return;
+
+  const cards = cardsContainer.querySelectorAll('.filter-card');
+  if (!cards.length) return;
+
+  function filterCards(filterValue) {
+    cards.forEach(card => {
+      const cardFilter = card.getAttribute('data-filter');
+      if (filterValue === 'all' || cardFilter === filterValue) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function () {
+      const filterValue = this.getAttribute('data-filter');
+
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+
+      filterCards(filterValue);
+    });
+  });
+
+  const allButton = document.querySelector('.filter-sorting__title[data-filter="all"]');
+  if (allButton && !allButton.classList.contains('active')) {
+    filterButtons.forEach(btn => btn.classList.remove('active'));
+    allButton.classList.add('active');
+    filterCards('all');
+  }
+}
+initFilter();
+
+//========================================================================================================================================================
+
+//Табы
+function tabs() {
+  const tabs = document.querySelectorAll('[data-tabs]');
+  let tabsActiveHash = [];
+
+  if (tabs.length > 0) {
+    const hash = getHash();
+    if (hash && hash.startsWith('tab-')) {
+      tabsActiveHash = hash.replace('tab-', '').split('-');
+    }
+    tabs.forEach((tabsBlock, index) => {
+      tabsBlock.classList.add('_tab-init');
+      tabsBlock.setAttribute('data-tabs-index', index);
+      tabsBlock.addEventListener("click", setTabsAction);
+      initTabs(tabsBlock);
+    });
+
+    let mdQueriesArray = dataMediaQueries(tabs, "tabs");
+    if (mdQueriesArray && mdQueriesArray.length) {
+      mdQueriesArray.forEach(mdQueriesItem => {
+        mdQueriesItem.matchMedia.addEventListener("change", function () {
+          setTitlePosition(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
+        });
+        setTitlePosition(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
+      });
+    }
+  }
+
+  function setTitlePosition(tabsMediaArray, matchMedia) {
+    tabsMediaArray.forEach(tabsMediaItem => {
+      tabsMediaItem = tabsMediaItem.item;
+      let tabsTitles = tabsMediaItem.querySelector('[data-tabs-titles]');
+      let tabsTitleItems = tabsMediaItem.querySelectorAll('[data-tabs-title]');
+      let tabsContent = tabsMediaItem.querySelector('[data-tabs-body]');
+      let tabsContentItems = tabsMediaItem.querySelectorAll('[data-tabs-item]');
+      tabsTitleItems = Array.from(tabsTitleItems).filter(item => item.closest('[data-tabs]') === tabsMediaItem);
+      tabsContentItems = Array.from(tabsContentItems).filter(item => item.closest('[data-tabs]') === tabsMediaItem);
+      tabsContentItems.forEach((tabsContentItem, index) => {
+        if (matchMedia.matches) {
+          tabsContent.append(tabsTitleItems[index]);
+          tabsContent.append(tabsContentItem);
+          tabsMediaItem.classList.add('_tab-spoller');
+        } else {
+          tabsTitles.append(tabsTitleItems[index]);
+          tabsMediaItem.classList.remove('_tab-spoller');
+        }
+      });
+    });
+  }
+
+  function initTabs(tabsBlock) {
+    let tabsTitles = tabsBlock.querySelectorAll('[data-tabs-titles]>*');
+    let tabsContent = tabsBlock.querySelectorAll('[data-tabs-body]>*');
+    const tabsBlockIndex = tabsBlock.dataset.tabsIndex;
+    const tabsActiveHashBlock = tabsActiveHash[0] == tabsBlockIndex;
+
+    if (tabsActiveHashBlock) {
+      const tabsActiveTitle = tabsBlock.querySelector('[data-tabs-titles]>._tab-active');
+      tabsActiveTitle ? tabsActiveTitle.classList.remove('_tab-active') : null;
+    }
+    if (tabsContent.length) {
+      tabsContent.forEach((tabsContentItem, index) => {
+        tabsTitles[index].setAttribute('data-tabs-title', '');
+        tabsContentItem.setAttribute('data-tabs-item', '');
+
+        if (tabsActiveHashBlock && index == tabsActiveHash[1]) {
+          tabsTitles[index].classList.add('_tab-active');
+        }
+        tabsContentItem.hidden = !tabsTitles[index].classList.contains('_tab-active');
+      });
+    }
+    setTabsStatus(tabsBlock);
+  }
+
+  function setTabsStatus(tabsBlock) {
+    let tabsTitles = tabsBlock.querySelectorAll('[data-tabs-title]');
+    let tabsContent = tabsBlock.querySelectorAll('[data-tabs-item]');
+    const tabsBlockIndex = tabsBlock.dataset.tabsIndex;
+
+    function isTabsAnimate(tabsBlock) {
+      if (tabsBlock.hasAttribute('data-tabs-animate')) {
+        return tabsBlock.dataset.tabsAnimate > 0 ? Number(tabsBlock.dataset.tabsAnimate) : 500;
+      }
+      return false;
+    }
+    const tabsBlockAnimate = isTabsAnimate(tabsBlock);
+
+    if (tabsContent.length > 0) {
+      const isHash = tabsBlock.hasAttribute('data-tabs-hash');
+      tabsContent = Array.from(tabsContent).filter(item => item.closest('[data-tabs]') === tabsBlock);
+      tabsTitles = Array.from(tabsTitles).filter(item => item.closest('[data-tabs]') === tabsBlock);
+      tabsContent.forEach((tabsContentItem, index) => {
+        if (tabsTitles[index].classList.contains('_tab-active')) {
+          if (tabsBlockAnimate) {
+            _slideDown(tabsContentItem, tabsBlockAnimate);
+          } else {
+            tabsContentItem.hidden = false;
+          }
+          if (isHash && !tabsContentItem.closest('.popup')) {
+            setHash(`tab-${tabsBlockIndex}-${index}`);
+          }
+        } else {
+          if (tabsBlockAnimate) {
+            _slideUp(tabsContentItem, tabsBlockAnimate);
+          } else {
+            tabsContentItem.hidden = true;
+          }
+        }
+      });
+    }
+  }
+
+  function setTabsAction(e) {
+    const el = e.target;
+    if (el.closest('[data-tabs-title]')) {
+      const tabTitle = el.closest('[data-tabs-title]');
+      const tabsBlock = tabTitle.closest('[data-tabs]');
+      if (!tabTitle.classList.contains('_tab-active') && !tabsBlock.querySelector('._slide')) {
+        let tabActiveTitle = tabsBlock.querySelectorAll('[data-tabs-title]._tab-active');
+        tabActiveTitle = Array.from(tabActiveTitle).filter(item => item.closest('[data-tabs]') === tabsBlock);
+        if (tabActiveTitle.length) tabActiveTitle[0].classList.remove('_tab-active');
+        tabTitle.classList.add('_tab-active');
+        setTabsStatus(tabsBlock);
+      }
+      e.preventDefault();
+    }
+  }
+}
+tabs();
