@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Новости</title>
+    {% include 'blocks/head.njk' %}
+</head>
+
+<body class="preload mp">
+    <div class="main-wrapper-outer">
+        {% include 'blocks/header.njk' %}
+        <main class="main">
+
+            <!--Хлебные крошки-->
+            <div class="breadcrumbs">
+                <div class="container">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div class="home-icon">
+                                    <svg aria-hidden="true" width="18" height="19">
+                                        <use xlink:href="img/sprite.svg#home"></use>
+                                    </svg>
+                                </div>
+                                <span>Главная</span>
+                            </a>
+                        </li>
+                        <li><span>Новости</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--Новости-->
+            <div class="block-news block3">
+                <div class="container">
+                    <div class="block-title">
+                        <div class="block-title__col">
+                            <h1 class="title1">
+                                Новости компании
+                            </h1>
+                            <p>
+                                Следите за обновлениями и событиями Talmay
+                            </p>
+                        </div>
+                    </div>
+                    <div class="block-news__content">
+                        <div class="filter-sorting filter-sorting-news">
+                            <button type="button" data-filter="all" class="filter-sorting__title active">
+                                Все
+                            </button>
+                            <button type="button" data-filter="news" class="filter-sorting__title">
+                                Новости
+                            </button>
+                            <button type="button" data-filter="article" class="filter-sorting__title">
+                                Статьи
+                            </button>
+                            <button type="button" data-filter="press-releases" class="filter-sorting__title">
+                                Пресс-релизы
+                            </button>
+                        </div>
+                        <div class="block-news__body">
+                            <div class="block-news__cards filter-cards">
+                                <div data-filter="news" class="card-news filter-card">
+                                    <div class="card-news__pic1">
+                                        <img loading="lazy" src="img/news/image1.webp" alt="">
+                                    </div>
+                                    <div class="card-news__item">
+                                        <div class="card-news__top">
+                                            <div class="card-news__badges">
+                                                <div class="card-news__badge">
+                                                    Новости
+                                                </div>
+                                                <div class="card-news__date">
+                                                    12 апреля 2026
+                                                </div>
+                                            </div>
+                                            <div class="card-news__title">
+                                                Talmay открывает новый испытательный стенд для гидравлических масел
+                                            </div>
+                                            <p>
+                                                Расширение лабораторной базы позволит сократить срок выдачи результатов
+                                                до 24 часов.
+                                            </p>
+                                        </div>
+                                        <a href="./" target="_blank" class="link link2">
+                                            <span>Читать далее</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div data-filter="article" class="card-news filter-card">
+                                    <div class="card-news__pic1">
+                                        <img loading="lazy" src="img/news/image2.webp" alt="">
+                                    </div>
+                                    <div class="card-news__item">
+                                        <div class="card-news__top">
+                                            <div class="card-news__badges">
+                                                <div class="card-news__badge">
+                                                    Статьи
+                                                </div>
+                                                <div class="card-news__date">
+                                                    28 марта 2026
+                                                </div>
+                                            </div>
+                                            <div class="card-news__title">
+                                                Как правильно отобрать пробу масла: инструкция для технического
+                                                персонала
+                                            </div>
+                                            <p>
+                                                Качество анализа напрямую зависит от правильного отбора пробы. Разбираем
+                                                ключевые ошибки.
+                                            </p>
+                                        </div>
+                                        <a href="./" target="_blank" class="link link2">
+                                            <span>Читать далее</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div data-filter="news" class="card-news filter-card">
+                                    <div class="card-news__pic1">
+                                        <img loading="lazy" src="img/news/image3.webp" alt="">
+                                    </div>
+                                    <div class="card-news__item">
+                                        <div class="card-news__top">
+                                            <div class="card-news__badges">
+                                                <div class="card-news__badge">
+                                                    Новости
+                                                </div>
+                                                <div class="card-news__date">
+                                                    15 марта 2026
+                                                </div>
+                                            </div>
+                                            <div class="card-news__title">
+                                                Сертификация специалистов Talmay по стандарту ASTM International
+                                            </div>
+                                            <p>
+                                                Три сотрудника лаборатории успешно прошли международную аттестацию в
+                                                области анализа масел.
+                                            </p>
+                                        </div>
+                                        <a href="./" target="_blank" class="link link2">
+                                            <span>Читать далее</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div data-filter="press-releases" class="card-news filter-card">
+                                    <div class="card-news__pic1">
+                                        <img loading="lazy" src="img/news/image4.webp" alt="">
+                                    </div>
+                                    <div class="card-news__item">
+                                        <div class="card-news__top">
+                                            <div class="card-news__badges">
+                                                <div class="card-news__badge">
+                                                    Пресс-релизы
+                                                </div>
+                                                <div class="card-news__date">
+                                                    02 марта 2026
+                                                </div>
+                                            </div>
+                                            <div class="card-news__title">
+                                                Спектральный анализ масла: что показывают металлы в результате
+                                            </div>
+                                            <p>
+                                                Железо, медь, алюминий в смазочном материале — маркеры износа конкретных
+                                                узлов агрегата.
+                                            </p>
+                                        </div>
+                                        <a href="./" target="_blank" class="link link2">
+                                            <span>Читать далее</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div data-filter="news" class="card-news filter-card">
+                                    <div class="card-news__pic1">
+                                        <img loading="lazy" src="img/news/image5.webp" alt="">
+                                    </div>
+                                    <div class="card-news__item">
+                                        <div class="card-news__top">
+                                            <div class="card-news__badges">
+                                                <div class="card-news__badge">
+                                                    Новости
+                                                </div>
+                                                <div class="card-news__date">
+                                                    18 февраля 2026
+                                                </div>
+                                            </div>
+                                            <div class="card-news__title">
+                                                Talmay становится официальным дистрибьютором DITEE в Казахстане
+                                            </div>
+                                            <p>
+                                                Новое партнёрство расширяет ассортимент спектрометрического оборудования
+                                                для наших клиентов.
+                                            </p>
+                                        </div>
+                                        <a href="./" target="_blank" class="link link2">
+                                            <span>Читать далее</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div data-filter="article" class="card-news filter-card">
+                                    <div class="card-news__pic1">
+                                        <img loading="lazy" src="img/news/image6.webp" alt="">
+                                    </div>
+                                    <div class="card-news__item">
+                                        <div class="card-news__top">
+                                            <div class="card-news__badges">
+                                                <div class="card-news__badge">
+                                                    Статьи
+                                                </div>
+                                                <div class="card-news__date">
+                                                    05 февраля 2026
+                                                </div>
+                                            </div>
+                                            <div class="card-news__title">
+                                                Вязкость масла: почему это критически важный параметр
+                                            </div>
+                                            <p>
+                                                Отклонение вязкости от нормы на 25–30% — сигнал о необходимости срочной
+                                                замены или доливки.
+                                            </p>
+                                        </div>
+                                        <a href="./" target="_blank" class="link link2">
+                                            <span>Читать далее</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% include 'blocks/pagging.njk' %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        {% include 'blocks/footer.njk' %}
+    </div>
+    {% include 'blocks/scripts.njk' %}
+</body>
+
+</html>

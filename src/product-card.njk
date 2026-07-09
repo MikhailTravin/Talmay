@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Страница прибора</title>
+    {% include 'blocks/head.njk' %}
+</head>
+
+<body class="preload mp">
+    <div class="main-wrapper-outer">
+        {% include 'blocks/header.njk' %}
+        <main class="main">
+
+            <!--Хлебные крошки-->
+            <div class="breadcrumbs">
+                <div class="container">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div class="home-icon">
+                                    <svg aria-hidden="true" width="18" height="19">
+                                        <use xlink:href="img/sprite.svg#home"></use>
+                                    </svg>
+                                </div>
+                                <span>Главная</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Приборы
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Спектрометры DITEE
+                            </a>
+                        </li>
+                        <li><span>DITEE 0A800P</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="block-product-card block3">
+                <div class="container">
+                    <div class="block-title">
+                        <div class="block-title__left">
+                            <a href="./" class="back">
+                                <svg aria-hidden="true" width="16" height="14">
+                                    <use xlink:href="img/sprite.svg#arrow2"></use>
+                                </svg>
+                            </a>
+                            <h1 class="title1">
+                                Приборы по производителям
+                            </h1>
+                        </div>
+                        <div class="block-title__filter">
+                            <button type="button" class="filter-icon">
+                                <svg aria-hidden="true" width="18" height="19">
+                                    <use xlink:href="img/sprite.svg#oil"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="block-product-card__content">
+                        <div data-da=".block-title__filter, 992, last" data-spollers data-one-spoller
+                            class="filter-spollers">
+                            <div class="filter-spollers__item">
+                                <button type="button" data-spoller class="filter-spollers__button">
+                                    <span class="filter-spollers__title">
+                                        PAMAS
+                                    </span>
+                                    <span class="filter-spollers__arrow">
+                                        <svg aria-hidden="true" width="10" height="6">
+                                            <use xlink:href="img/sprite.svg#arrow1"></use>
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div class="filter-spollers__body">
+                                    <ul>
+                                        <li>
+                                            <a href="./">PAMAS</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">Biolab</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">DITEE</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">Sheli</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">Yateks</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="filter-spollers__item">
+                                <button type="button" data-spoller class="filter-spollers__button">
+                                    <span class="filter-spollers__title">
+                                        Biolab
+                                    </span>
+                                    <span class="filter-spollers__arrow">
+                                        <svg aria-hidden="true" width="10" height="6">
+                                            <use xlink:href="img/sprite.svg#arrow1"></use>
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div class="filter-spollers__body">
+                                    <ul>
+                                        <li>
+                                            <a href="./">Элементный состав</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">Кинематическая вязкость</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">Ферромагнитный износ</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">Класс чистоты</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="filter-spollers__item">
+                                <button type="button" data-spoller class="filter-spollers__button _spoller-active">
+                                    <span class="filter-spollers__title">
+                                        DITEE
+                                    </span>
+                                    <span class="filter-spollers__arrow">
+                                        <svg aria-hidden="true" width="10" height="6">
+                                            <use xlink:href="img/sprite.svg#arrow1"></use>
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div class="filter-spollers__body">
+                                    <ul>
+                                        <li>
+                                            <a href="./" class="active">DITEE 0A800P</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">DITEE 0A800M</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">DITEE 0A800H</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="filter-spollers__item">
+                                <button type="button" data-spoller class="filter-spollers__button">
+                                    <span class="filter-spollers__title">
+                                        Sheli
+                                    </span>
+                                    <span class="filter-spollers__arrow">
+                                        <svg aria-hidden="true" width="10" height="6">
+                                            <use xlink:href="img/sprite.svg#arrow1"></use>
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div class="filter-spollers__body">
+                                    <ul>
+                                        <li>
+                                            <a href="./">ГОСТ</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">ASTM D</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">ISO</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">IP</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">IEC</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">SAE</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">NAS</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">GJB</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">EN</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">USP</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">TAPPI</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">NAVAIR</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">CHARN</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">DEF STAN</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">Ph. Eur</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">BP</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">KP</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">JP</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="filter-spollers__item">
+                                <button type="button" data-spoller class="filter-spollers__button">
+                                    <span class="filter-spollers__title">
+                                        Yateks
+                                    </span>
+                                    <span class="filter-spollers__arrow">
+                                        <svg aria-hidden="true" width="10" height="6">
+                                            <use xlink:href="img/sprite.svg#arrow1"></use>
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div class="filter-spollers__body">
+                                    <ul>
+                                        <li>
+                                            <a href="./">ГОСТ</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">ASTM D</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">ISO</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">IP</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">IEC</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">SAE</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">NAS</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">GJB</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">EN</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">USP</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">TAPPI</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">NAVAIR</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">CHARN</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">DEF STAN</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">Ph. Eur</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">BP</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">KP</a>
+                                        </li>
+                                        <li>
+                                            <a href="./">JP</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-product-card__body">
+                            <div class="product-card-descr1">
+                                <div class="images-product">
+                                    <div class="images-product__swiper">
+                                        <div class="images-product__slider swiper">
+                                            <div class="images-product__wrapper swiper-wrapper">
+                                                <a href="img/products/image13.webp" data-fancybox="slider-gallery1"
+                                                    class="images-product__slide swiper-slide">
+                                                    <img src="img/products/image13.webp" alt="">
+                                                </a>
+                                                <a href="img/products/image13.webp" data-fancybox="slider-gallery1"
+                                                    class="images-product__slide swiper-slide">
+                                                    <img src="img/products/image13.webp" alt="">
+                                                </a>
+                                                <a href="img/products/image13.webp" data-fancybox="slider-gallery1"
+                                                    class="images-product__slide swiper-slide">
+                                                    <img src="img/products/image13.webp" alt="">
+                                                </a>
+                                                <a href="img/products/image13.webp" data-fancybox="slider-gallery1"
+                                                    class="images-product__slide swiper-slide">
+                                                    <img src="img/products/image13.webp" alt="">
+                                                </a>
+                                                <a href="img/products/image13.webp" data-fancybox="slider-gallery1"
+                                                    class="images-product__slide swiper-slide">
+                                                    <img src="img/products/image13.webp" alt="">
+                                                </a>
+                                                <a href="img/products/image13.webp" data-fancybox="slider-gallery1"
+                                                    class="images-product__slide swiper-slide">
+                                                    <img src="img/products/image13.webp" alt="">
+                                                </a>
+                                                <a href="img/products/image13.webp" data-fancybox="slider-gallery1"
+                                                    class="images-product__slide swiper-slide">
+                                                    <img src="img/products/image13.webp" alt="">
+                                                </a>
+                                                <a href="img/products/image13.webp" data-fancybox="slider-gallery1"
+                                                    class="images-product__slide swiper-slide">
+                                                    <img src="img/products/image13.webp" alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="images-product__thumbs">
+                                        <div class="images-product__thumb swiper">
+                                            <div class="images-product__wrapper swiper-wrapper">
+                                                <div class="images-product__slide swiper-slide">
+                                                    <img src="img/products/image13.webp" alt="">
+                                                </div>
+                                                <div class="images-product__slide swiper-slide">
+                                                    <img src="img/products/image13.webp" alt="">
+                                                </div>
+                                                <div class="images-product__slide swiper-slide">
+                                                    <img src="img/products/image13.webp" alt="">
+                                                </div>
+                                                <a href="img/products/image13.webp"
+                                                    class="images-product__slide swiper-slide"
+                                                    data-fancybox="slider-gallery1">
+                                                    <img src="img/products/image13.webp" alt="">
+                                                    <div class="images-product__number">
+                                                        +5
+                                                    </div>
+                                                </a>
+                                                <div class="images-product__slide swiper-slide">
+                                                    <img src="img/products/image13.webp" alt="">
+                                                </div>
+                                                <div class="images-product__slide swiper-slide">
+                                                    <img src="img/products/image13.webp" alt="">
+                                                </div>
+                                                <div class="images-product__slide swiper-slide">
+                                                    <img src="img/products/image13.webp" alt="">
+                                                </div>
+                                                <div class="images-product__slide swiper-slide">
+                                                    <img src="img/products/image13.webp" alt="">
+                                                </div>
+                                                <div class="images-product__slide swiper-slide">
+                                                    <img src="img/products/image13.webp" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-card-descr1__body">
+                                    <div class="product-card-descr1__title">
+                                        Спектрометр DITEE OA800P
+                                    </div>
+                                    <div class="product-card-descr1__badge badge-stock">
+                                        <span>Демо-прибор есть в нашей лаборатории</span>
+                                    </div>
+                                    <div class="product-card-descr1__text">
+                                        <p>
+                                            Прибор позволяет определять металлы износа, присадки и загрязняющие
+                                            вещества. Подходит для лабораторий, где требуется высокая точность при
+                                            работе с низкими концентрациями, например в авиационной отрасли.
+                                            Благодаря прямой связи с производителем мы можем добавлять специальные
+                                            калибровки для разных элементов нестандартной концентрации, а также
+                                            обеспечить максимально оперативную доставку запчастей и расходников.
+                                        </p>
+                                    </div>
+                                    <div class="product-card-descr1__buttons">
+                                        <a href="./" class="btn btn-red btn-small">
+                                            <span>Запросить стоимость</span>
+                                        </a>
+                                        <a href="./" class="btn btn-grey btn-small">
+                                            <span class="btn__arrow">
+                                                <svg aria-hidden="true" width="16" height="17">
+                                                    <use xlink:href="img/sprite.svg#play"></use>
+                                                </svg>
+                                            </span>
+                                            <span>Видеообзор</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-card-benefits">
+                                <ul>
+                                    <li>
+                                        <div class="product-card-benefits__icon">
+                                            <svg aria-hidden="true" width="20" height="22">
+                                                <use xlink:href="img/sprite.svg#exploitation"></use>
+                                            </svg>
+                                        </div>
+                                        <p>
+                                            Поставляются с первичной поверкой
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <div class="product-card-benefits__icon">
+                                            <svg aria-hidden="true" width="20" height="20">
+                                                <use xlink:href="img/sprite.svg#russification"></use>
+                                            </svg>
+                                        </div>
+                                        <p>
+                                            Без специальной квалификации персонала
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <div class="product-card-benefits__icon">
+                                            <svg aria-hidden="true" width="24" height="24">
+                                                <use xlink:href="img/sprite.svg#sertificate"></use>
+                                            </svg>
+                                        </div>
+                                        <p>
+                                            Анализ за 40 сек
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <div class="product-card-benefits__icon">
+                                            <svg aria-hidden="true" width="16" height="20">
+                                                <use xlink:href="img/sprite.svg#reestr"></use>
+                                            </svg>
+                                        </div>
+                                        <p>
+                                            Сертификат метрологической аттестации
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div data-tabs class="product-card-tabs">
+                                <nav data-tabs-titles class="product-card-tabs__navigation">
+                                    <button type="button" class="product-card-tabs__title _tab-active">
+                                        <span>Описание</span>
+                                    </button>
+                                    <button type="button" class="product-card-tabs__title">
+                                        <span>Характеристики продукта</span>
+                                    </button>
+                                    <button type="button" class="product-card-tabs__title">
+                                        <span>Стандарты и методы</span>
+                                    </button>
+                                </nav>
+                                <div data-tabs-body class="product-card-tabs__content">
+                                    <div class="product-card-tabs__body">
+                                        <div class="product-card-tabs__items">
+                                            <div class="product-card-tabs__column">
+                                                <div class="product-card-tabs__text">
+                                                    <p>
+                                                        DITEE серии OA800P точно определяет содержание продуктов износа,
+                                                        присадок и загрязняющих веществ, обеспечивая эффективный
+                                                        контроль
+                                                        состояния оборудования. Широко применяется в железнодорожной и
+                                                        авиационной сферах, а также в коммерческих лабораториях. Оснащён
+                                                        современным CMOS-детектором, который обеспечивает сверхнизкие
+                                                        пороги
+                                                        обнаружения и позволяет решать даже самые сложные аналитические
+                                                        задачи.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="product-card-tabs__column">
+                                                <h4 class="title4">Отличия DITEE 0A800P от DITEE 0A800M</h4>
+                                                <div class="product-card-table">
+                                                    <div class="product-card-table__item item-main">
+                                                        <div class="product-card-table__title title-main">
+                                                            Функция
+                                                        </div>
+                                                        <div class="product-card-table__title title-main">
+                                                            DITEE 0A800P
+                                                        </div>
+                                                        <div class="product-card-table__title title-main">
+                                                            DITEE 0A800M
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-card-table__item">
+                                                        <div class="product-card-table__title">
+                                                            Мобильное исполнение
+                                                        </div>
+                                                        <div class="product-card-table__title">
+                                                            <div class="product-card-table__line"></div>
+                                                        </div>
+                                                        <div class="product-card-table__title">
+                                                            <div class="product-card-table__circle"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-card-table__item">
+                                                        <div class="product-card-table__title">
+                                                            Лабораторное исполнение
+                                                        </div>
+                                                        <div class="product-card-table__title">
+                                                            <div class="product-card-table__circle"></div>
+                                                        </div>
+                                                        <div class="product-card-table__title">
+                                                            <div class="product-card-table__line"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-card-table__item">
+                                                        <div class="product-card-table__title">
+                                                            Встроенный компьютер и сенсорный экран
+                                                        </div>
+                                                        <div class="product-card-table__title">
+                                                            <div class="product-card-table__line"></div>
+                                                        </div>
+                                                        <div class="product-card-table__title">
+                                                            <div class="product-card-table__circle"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-card-table__item">
+                                                        <div class="product-card-table__title">
+                                                            Повышенная точность и низкие пределы обнаружения
+                                                        </div>
+                                                        <div class="product-card-table__title">
+                                                            <div class="product-card-table__circle"></div>
+                                                        </div>
+                                                        <div class="product-card-table__title">
+                                                            <div class="product-card-table__line"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-card-tabs__column">
+                                                <h4 class="title4">Дополнительно</h4>
+                                                <div class="product-card-tabs__text">
+                                                    <p>
+                                                        Рабочая кривая для анализа построена компанией Guangdong DITEE
+                                                        Scientific & Technical Co., Ltd. с использованием международного
+                                                        стандартного эталонного масла (линейный диапазон детектора
+                                                        охватывает указанный рабочий диапазон кривой). Для специальных
+                                                        требований, пользователи могут указать соответствующие образцы
+                                                        масла, которые включают специальные элементы и диапазон
+                                                        обнаружения, после чего DITEE может предоставить бесплатные
+                                                        услуги по расширению списка определяемых элементов.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card-tabs__body">
+                                        Содержимое второго таба
+                                    </div>
+                                    <div class="product-card-tabs__body">
+                                        Содержимое третьего таба
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="block-interesting">
+                                <div class="heading-complex">
+                                    <h2 class="title4">Может быть интересно</h2>
+                                    <a href="./" class="link">Все →</a>
+                                </div>
+                                <div class="block-interesting__cards">
+                                    <div class="card-product2">
+                                        <div class="card-product2__pic1">
+                                            <img src="img/products/image18.webp" alt="">
+                                        </div>
+                                        <div class="card-product2__item">
+                                            <div class="card-product2__top">
+                                                <div class="card-product2__title">
+                                                    PAMAS SVSS
+                                                </div>
+                                                <p>
+                                                    Прецизионный спектрометр OA800P предназначен для высокоточного
+                                                    анализа эксплуатационных жидкостей
+                                                </p>
+                                            </div>
+                                            <a href="./" target="_blank" class="link link2">
+                                                <span>Подробнее</span>
+                                                <svg aria-hidden="true" width="20" height="12">
+                                                    <use xlink:href="img/sprite.svg#arrow3"></use>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="card-product2">
+                                        <div class="card-product2__pic1">
+                                            <img src="img/products/image19.webp" alt="">
+                                        </div>
+                                        <div class="card-product2__item">
+                                            <div class="card-product2__top">
+                                                <div class="card-product2__title">
+                                                    Viscol-20AS
+                                                </div>
+                                                <p>
+                                                    Полностью автоматизированный кинематический вискозиметр
+                                                </p>
+                                            </div>
+                                            <a href="./" target="_blank" class="link link2">
+                                                <span>Подробнее</span>
+                                                <svg aria-hidden="true" width="20" height="12">
+                                                    <use xlink:href="img/sprite.svg#arrow3"></use>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="card-product2">
+                                        <div class="card-product2__pic1">
+                                            <img src="img/products/image17.webp" alt="">
+                                        </div>
+                                        <div class="card-product2__item">
+                                            <div class="card-product2__top">
+                                                <div class="card-product2__title">
+                                                    Viscol-10AS
+                                                </div>
+                                                <p>
+                                                    Спектрометр OA800H анализирует эксплуатационные жидкости на
+                                                    содержание продуктов износа, присадок и загрязнений
+                                                </p>
+                                            </div>
+                                            <a href="./" target="_blank" class="link link2">
+                                                <span>Подробнее</span>
+                                                <svg aria-hidden="true" width="20" height="12">
+                                                    <use xlink:href="img/sprite.svg#arrow3"></use>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        {% include 'blocks/footer.njk' %}
+    </div>
+    {% include 'blocks/scripts.njk' %}
+</body>
+
+</html>
