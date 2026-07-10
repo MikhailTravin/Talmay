@@ -193,6 +193,9 @@ a {
     gap: 12px;
     padding: 5px 16px 5px 16px;
   }
+  span {
+    margin-top: -1px;
+  }
 
   // .btn__arrow
 
@@ -424,6 +427,10 @@ a {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    .title2 {
+      text-align: left;
+      margin-bottom: 8px;
+    }
     p {
       font-weight: 400;
       font-size: 18px;
@@ -447,6 +454,35 @@ a {
 
   &__filter {
     position: relative;
+  }
+}
+.block-title-policy {
+  background: var(--bg-tetriary);
+  margin-bottom: 0px;
+  @media (max-width: 992px) {
+    padding: 53px 0px;
+  }
+  .block-title__col {
+    gap: 24px;
+    .title1 {
+      @media (max-width: 992px) {
+        font-size: 40px;
+        line-height: 120%;
+      }
+    }
+    p {
+      @media (max-width: 992px) {
+        font-size: 16px;
+        line-height: 150%;
+      }
+    }
+  }
+
+  .container {
+    max-width: 1191px;
+    @media (max-width: 992px) {
+      max-width: 100%;
+    }
   }
 }
 
