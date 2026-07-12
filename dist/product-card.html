@@ -6,7 +6,6 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<link rel="stylesheet" href="css/fancybox.min.css" />
 		<link rel="stylesheet" href="css/swiper.min.css" />
 		<link rel="stylesheet" href="css/styles.css" />
 
@@ -83,7 +82,7 @@
 									<use xlink:href="img/sprite.svg#menu"></use>
 								</svg>
 							</button>
-							<a href="./" class="btn btn-red btn-small">
+							<a href="./" data-popup="#contact-us" class="btn btn-red btn-small">
 								<span>Получить консультацию</span>
 							</a>
 						</div>
@@ -375,28 +374,28 @@
 										<div class="images-product__swiper">
 											<div class="images-product__slider swiper">
 												<div class="images-product__wrapper swiper-wrapper">
-													<a href="img/products/image13.webp" data-fancybox="slider-gallery1" class="images-product__slide swiper-slide">
+													<a href="./" data-popup="#slider-gallery" class="images-product__slide swiper-slide">
 														<img src="img/products/image13.webp" alt="">
 													</a>
-													<a href="img/products/image13.webp" data-fancybox="slider-gallery1" class="images-product__slide swiper-slide">
+													<a href="./" data-popup="#slider-gallery" class="images-product__slide swiper-slide">
 														<img src="img/products/image13.webp" alt="">
 													</a>
-													<a href="img/products/image13.webp" data-fancybox="slider-gallery1" class="images-product__slide swiper-slide">
+													<a href="./" data-popup="#slider-gallery" class="images-product__slide swiper-slide">
 														<img src="img/products/image13.webp" alt="">
 													</a>
-													<a href="img/products/image13.webp" data-fancybox="slider-gallery1" class="images-product__slide swiper-slide">
+													<a href="./" data-popup="#slider-gallery" class="images-product__slide swiper-slide">
 														<img src="img/products/image13.webp" alt="">
 													</a>
-													<a href="img/products/image13.webp" data-fancybox="slider-gallery1" class="images-product__slide swiper-slide">
+													<a href="./" data-popup="#slider-gallery" class="images-product__slide swiper-slide">
 														<img src="img/products/image13.webp" alt="">
 													</a>
-													<a href="img/products/image13.webp" data-fancybox="slider-gallery1" class="images-product__slide swiper-slide">
+													<a href="./" data-popup="#slider-gallery" class="images-product__slide swiper-slide">
 														<img src="img/products/image13.webp" alt="">
 													</a>
-													<a href="img/products/image13.webp" data-fancybox="slider-gallery1" class="images-product__slide swiper-slide">
+													<a href="./" data-popup="#slider-gallery" class="images-product__slide swiper-slide">
 														<img src="img/products/image13.webp" alt="">
 													</a>
-													<a href="img/products/image13.webp" data-fancybox="slider-gallery1" class="images-product__slide swiper-slide">
+													<a href="./" data-popup="#slider-gallery" class="images-product__slide swiper-slide">
 														<img src="img/products/image13.webp" alt="">
 													</a>
 												</div>
@@ -414,7 +413,7 @@
 													<div class="images-product__slide swiper-slide">
 														<img src="img/products/image13.webp" alt="">
 													</div>
-													<a href="img/products/image13.webp" class="images-product__slide swiper-slide" data-fancybox="slider-gallery1">
+													<a href="./" class="images-product__slide swiper-slide" data-popup="#slider-gallery">
 														<img src="img/products/image13.webp" alt="">
 														<div class="images-product__number">
 															+5
@@ -861,9 +860,135 @@
 				</div>
 			</footer>
 		</div>
+		<!--Галерея Карточка товара-->
+		<div id="slider-gallery" aria-hidden="true" class="popup popup-image popup-image-slider">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<div data-close class="popup__close">
+						<svg aria-hidden="true" width="14" height="14">
+							<use xlink:href="img/sprite.svg#close"></use>
+						</svg>
+					</div>
+					<div class="popup-image__body">
+						<div class="images-product">
+							<div class="images-product__swiper">
+								<div class="images-product__slider swiper">
+									<div class="images-product__wrapper swiper-wrapper">
+										<div class="images-product__slide swiper-slide">
+											<img src="img/products/image13.webp" alt="">
+										</div>
+										<div class="images-product__slide swiper-slide">
+											<img src="img/products/image13.webp" alt="">
+										</div>
+										<div class="images-product__slide swiper-slide">
+											<img src="img/products/image13.webp" alt="">
+										</div>
+										<div class="images-product__slide swiper-slide">
+											<img src="img/products/image13.webp" alt="">
+										</div>
+										<div class="images-product__slide swiper-slide">
+											<img src="img/products/image13.webp" alt="">
+										</div>
+										<div class="images-product__slide swiper-slide">
+											<img src="img/products/image13.webp" alt="">
+										</div>
+										<div class="images-product__slide swiper-slide">
+											<img src="img/products/image13.webp" alt="">
+										</div>
+										<div class="images-product__slide swiper-slide">
+											<img src="img/products/image13.webp" alt="">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="images-product__thumbs">
+								<div class="images-product__thumb swiper">
+									<div class="images-product__wrapper swiper-wrapper">
+										<div class="images-product__slide swiper-slide">
+											<img src="img/products/image13.webp" alt="">
+										</div>
+										<div class="images-product__slide swiper-slide">
+											<img src="img/products/image13.webp" alt="">
+										</div>
+										<div class="images-product__slide swiper-slide">
+											<img src="img/products/image13.webp" alt="">
+										</div>
+										<div class="images-product__slide swiper-slide">
+											<img src="img/products/image13.webp" alt="">
+										</div>
+										<div class="images-product__slide swiper-slide">
+											<img src="img/products/image13.webp" alt="">
+										</div>
+										<div class="images-product__slide swiper-slide">
+											<img src="img/products/image13.webp" alt="">
+										</div>
+										<div class="images-product__slide swiper-slide">
+											<img src="img/products/image13.webp" alt="">
+										</div>
+										<div class="images-product__slide swiper-slide">
+											<img src="img/products/image13.webp" alt="">
+										</div>
+										<div class="images-product__slide swiper-slide">
+											<img src="img/products/image13.webp" alt="">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Оставить заявку-->
+		<div id="contact-us" aria-hidden="true" class="popup popup-forms">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<div class="popup-forms__body">
+						<div class="popup-forms__top">
+							<div class="popup-forms__titles">
+								<div class="popup-forms__title">
+									Связаться с нами
+								</div>
+								<p>
+									Подберём программу под вашу команду и задачи предприятия
+								</p>
+							</div>
+							<div data-close class="popup__close">
+								<svg aria-hidden="true" width="14" height="14">
+									<use xlink:href="img/sprite.svg#close"></use>
+								</svg>
+							</div>
+						</div>
+						<form action="#" class="form">
+							<div class="form__inputs">
+								<div class="form__input">
+									<div class="form__placeholder">Имя</div>
+									<input data-required autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Имя" class="input">
+								</div>
+								<div class="form__input">
+									<div class="form__placeholder">Телефон / E-mail</div>
+									<input data-required autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Телефон / E-mail" class="input">
+								</div>
+								<div class="form__input">
+									<div class="form__placeholder">Сообщение</div>
+									<textarea data-required placeholder="Сообщение" data-error="Ошибка" class="input textarea"></textarea>
+								</div>
+							</div>
+							<div class="form__bottom">
+								<div class="form__text">
+									Отправляя форму, вы соглашаетесь с политикой обработки персональных данных
+								</div>
+								<button type="submit" class="btn btn-red btn-small">
+									<span>Отправить заявку</span>
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
 		<script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&amp;lang=ru_RU&amp;_v=20240623012845"></script>
 		<script src="js/swiper-10.2.0.min.js"></script>
-		<script src="js/fancybox.umd.js"></script>
 		<script src="js/dynamic_adapt.js"></script>
 		<script src="js/scripts.js"></script>
 	</body>
