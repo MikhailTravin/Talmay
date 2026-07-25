@@ -109,6 +109,23 @@ a {
       background-color: var(--brand-primary-disabled);
     }
   }
+  &.btn-blue {
+    color: var(--typography-inverse);
+    background-color: var(--noria-primary);
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: var(--noria-secondary);
+      }
+    }
+    @media (any-hover: none) {
+      &:active {
+        background-color: var(--noria-tetriary);
+      }
+    }
+    &:disabled {
+      background-color: var(--brand-primary-disabled);
+    }
+  }
   &.btn-large {
     border-radius: 28px;
     font-size: 18px;
@@ -302,6 +319,9 @@ a {
 }
 .block3 {
   padding: 40px 0px 80px 0px;
+  @media (max-width: 992px) {
+    padding: 40px 0px;
+  }
 }
 
 /*Заголовок 1*/
@@ -380,19 +400,29 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #cac9c6;
     border-radius: 50%;
     width: 40px;
     height: 40px;
     background-color: var(--bg-secondary);
     transition: border 0.3s;
+    border: 1px solid var(--border);
     span {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 24px;
-      height: 24px;
-      border: 1px solid var(--border);
+      &.in {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 16px;
+        height: 16px;
+        background-color: var(--icon-secondary);
+        transition: background-color 0.3s;
+        border-radius: 3px;
+        svg {
+          fill: var(--color-white-solid);
+        }
+      }
     }
     svg {
       fill: var(--icon-secondary);
@@ -402,6 +432,14 @@ a {
       border: 1px solid var(--brand-primary-new);
       svg {
         fill: var(--brand-primary-new);
+      }
+      span {
+        &.in {
+          background-color: var(--brand-primary-new);
+          svg {
+            fill: var(--color-white-solid);
+          }
+        }
       }
     }
   }
@@ -488,8 +526,12 @@ a {
     padding: 24px;
     background: var(--bg-primary);
     @media (max-width: 992px) {
-      max-width: 226px;
       flex: 0 1 auto;
+    }
+    &.img-noria {
+      img {
+        max-height: 70px;
+      }
     }
     img {
       max-height: 60px;
@@ -501,8 +543,9 @@ a {
 .block-title-other {
   background: var(--bg-tetriary);
   margin-bottom: 0px;
-  @media (max-width: 992px) {
-    padding: 53px 0px;
+  .block-title__row {
+    flex-direction: row;
+    gap: 40px;
   }
   .block-title__col {
     gap: 24px;
@@ -513,9 +556,10 @@ a {
       }
     }
     p {
-      @media (max-width: 992px) {
-        font-size: 16px;
-        line-height: 150%;
+      @media (max-width: 1100px) {
+        br {
+          display: none;
+        }
       }
     }
   }

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Обучение</title>
+    {% include 'blocks/head.njk' %}
+</head>
+
+<body class="preload mp">
+    <div class="main-wrapper-outer">
+        {% include 'blocks/header.njk' %}
+        <main class="main">
+
+            <!--Хлебные крошки-->
+            <div class="breadcrumbs">
+                <div class="container">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div class="home-icon">
+                                    <svg aria-hidden="true" width="18" height="19">
+                                        <use xlink:href="img/sprite.svg#home"></use>
+                                    </svg>
+                                </div>
+                                <span>Главная</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Решения
+                            </a>
+                        </li>
+                        <li><span>Обучение по международным стандартам</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--Обучение-->
+            <div class="block-laboratory block-main-education">
+                <div class="container">
+                    <div class="block-laboratory__content">
+                        <div class="block-laboratory__left">
+                            <div class="block-laboratory__image">
+                                <img loading="lazy" src="img/image23.png" alt="">
+                            </div>
+                            <div class="block-laboratory__item">
+                                <h2 class="title1">
+                                    Обучение по международным стандартам
+                                </h2>
+                                <p>
+                                    Надёжность оборудования начинается с людей, принимающих правильные решения каждый
+                                    день
+                                </p>
+                                <a href="./" class="btn btn-blue btn-small">
+                                    <span>Оставить заявку</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="block-laboratory__right">
+                            <div class="block-laboratory__image">
+                                <img loading="lazy" src="img/image7.png" alt="">
+                                <img loading="lazy" src="img/image24.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        {% include 'blocks/footer.njk' %}
+    </div>
+    {% include 'blocks/popups.njk' %}
+    {% include 'blocks/scripts.njk' %}
+</body>
+
+</html>

@@ -191,17 +191,20 @@
     @media (max-width: 992px) {
         gap: 24px;
     }
-    .map1 {
+
+    // .footer-center-map__pic1
+
+    &__pic1 {
         width: 100%;
-        border: 1px solid #cfcecb;
+        border: 1px solid var(--border);
         border-radius: 8px;
-        height: 208px;
+        height: auto;
         overflow: hidden;
         @media (max-width: 992px) {
-            height: 204px;
             border-radius: 20px;
         }
     }
+
     // .footer-center-map__item
 
     &__item {
