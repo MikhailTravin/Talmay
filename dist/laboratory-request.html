@@ -645,8 +645,10 @@
 								</ul>
 								<div class="socials">
 									<a href="./">
-										<span>
-											<img loading="lazy" src="img/icons/in.svg" alt="">
+										<span class="in">
+											<svg aria-hidden="true" width="10" height="10">
+												<use xlink:href="img/sprite.svg#in"></use>
+											</svg>
 										</span>
 									</a>
 									<a href="./">
@@ -691,7 +693,7 @@
 										</div>
 									</div>
 									<div class="footer-center-map">
-										<div id="map1" class="map1"></div>
+										<img loading="lazy" src="img/map.png" alt="" class="footer-center-map__pic1">
 										<div class="footer-center-map__item">
 											<div class="footer-center-map__title">Мы на карте:</div>
 											<ul>
@@ -821,7 +823,6 @@
 				</div>
 			</div>
 		</div>
-		<script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&amp;lang=ru_RU&amp;_v=20240623012845"></script>
 		<script src="js/swiper-10.2.0.min.js"></script>
 		<script src="js/dynamic_adapt.js"></script>
 		<script src="js/scripts.js"></script>

@@ -337,37 +337,12 @@ document.addEventListener('DOMContentLoaded', function () {
 //========================================================================================================================================================
 
 //Яндекс карта
-const map = document.querySelector('#map1');
-if (map) {
+const map1 = document.querySelector('#map1');
+if (map1) {
   ymaps.ready(init);
 
   function init() {
     var myMap = new ymaps.Map('map1', {
-      center: [43.181311, 76.810044],
-      zoom: 15,
-      controls: ['zoomControl'],
-      behaviors: ['drag']
-    }, {
-      searchControlProvider: 'yandex#search'
-    });
-
-    myMap.geoObjects
-      .add(new ymaps.Placemark([43.181311, 76.810044], {
-        /*
-        iconColor: '#0c8ce9',
-        iconImageSize: [105, 140],
-        iconImageOffset: [-57, -137],*/
-      }))
-
-  };
-}
-
-const map2 = document.querySelector('#map2');
-if (map2) {
-  ymaps.ready(init);
-
-  function init() {
-    var myMap = new ymaps.Map('map2', {
       center: [43.181311, 76.810044],
       zoom: 15,
       controls: ['zoomControl'],
@@ -1330,4 +1305,38 @@ function menuOpen() {
 function menuClose() {
   bodyUnlock();
   document.documentElement.classList.remove("menu-open");
+}
+
+//========================================================================================================================================================
+
+//Карточка товара - читать полностью
+const readMoreLink = document.querySelector('.product-card-descr1__more');
+const targetContent = document.querySelector('#tabs-descr-more');
+const header = document.querySelector('.header');
+
+if (readMoreLink && targetContent) {
+  readMoreLink.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    const tabsBlock = targetContent.closest('[data-tabs]');
+    if (!tabsBlock) return;
+
+    const tabTitles = tabsBlock.querySelectorAll('[data-tabs-title]');
+    const tabItems = tabsBlock.querySelectorAll('[data-tabs-item]');
+
+    const targetIndex = Array.from(tabItems).findIndex(item => item.id === 'tabs-descr-more');
+    if (targetIndex === -1) return;
+
+    if (!tabTitles[targetIndex].classList.contains('_tab-active')) {
+      tabTitles[targetIndex].click(); 
+    }
+      const headerHeight = header ? header.offsetHeight : 0;
+      const targetPosition = targetContent.getBoundingClientRect().top + window.pageYOffset;
+      const scrollTo = targetPosition - headerHeight - 20;
+
+      window.scrollTo({
+        top: scrollTo,
+        behavior: 'smooth'
+      });
+  });
 }
