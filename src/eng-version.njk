@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>На английском</title>
+    {% include 'blocks/head.njk' %}
+</head>
+
+<body class="preload mp">
+    <div class="main-wrapper-outer">
+        <header class="header">
+            <div class="container">
+                <div class="header__content">
+                    <div class="header__left">
+                        <a href="./" class="header__logo">
+                            <img src="img/icons/logo1.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="header__right">
+                        <!--контакты-->
+                        <div class="contacts">
+                            <a href="tel:77273902077" class="contacts__phone">
+                                +7 (727) 390-20-77
+                            </a>
+                            <a href="mailto:mail@talmay.kz" class="contacts__email">
+                                mail@talmay.kz
+                            </a>
+                        </div>
+                        <!--выбор языка-->
+                        <div class="header-lang">
+                            <button type="button" class="header-lang__button">
+                                <span class="header-lang__title">Eng</span>
+                                <span class="header-lang__arrow">
+                                    <svg aria-hidden="true" width="10" height="6">
+                                        <use xlink:href="img/sprite.svg#arrow1"></use>
+                                    </svg>
+                                </span>
+                            </button>
+                            <div class="header-lang__dropdown">
+                                <ul>
+                                    <li>
+                                        <a href="./">Rus</a>
+                                    </li>
+                                    <li>
+                                        <a href="./">Kzt</a>
+                                    </li>
+                                    <li>
+                                        <a href="./" class="active">Eng</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <button type="button" class="header__burger">
+                            <svg aria-hidden="true" width="16" height="16">
+                                <use xlink:href="img/sprite.svg#menu"></use>
+                            </svg>
+                        </button>
+                        <a href="./" data-popup="#contact-us" class="btn btn-red btn-small">
+                            <span>Get consultation</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+
+            <!--Главная англ версии-->
+            <div class="block-intro-eng">
+                <div class="container">
+                    <div class="block-intro-eng__content">
+                        <img src="img/image29.png" alt="" class="block-intro-eng__bg1">
+                        <div class="block-intro-eng__body">
+                            <div class="block-intro-eng__item">
+                                <h1 class="title1">
+                                    Engineering and reliability for industrial oil analysis
+                                </h1>
+                                <p>
+                                    Talmay specializes in oil analysis, lubrication optimization, and asset reliability
+                                    solutions. We help companies move from reactive maintenance to structured,
+                                    data-driven
+                                    reliability practices.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Главная текст англ версии-->
+            <div class="block-intro-text">
+                <div class="container2">
+                    <p>
+                        We combine laboratory expertise, international standards, and proven methodologies to deliver
+                        measurable results: fewer breakdowns, lower operational risk, and more predictable maintenance.
+                    </p>
+                </div>
+            </div>
+
+            <!--Каталог англ версии-->
+            <div class="block-eng-catalog block2">
+                <div class="container2">
+                    <div class="block-eng-catalog__body">
+                        <div class="block-eng-catalog__column">
+                            <div class="block-eng-catalog__image">
+                                <img loading="lazy" src="img/image30.png" alt="">
+                            </div>
+                            <div class="block-eng-catalog__item">
+                                <h2 class="title2">
+                                    Oil Analysis Laboratory
+                                </h2>
+                                <p>
+                                    Talmay operates its own oil analysis laboratory in Almaty, providing diagnostic
+                                    testing of oil, grease, coolant, and other technical fluids. We interpret results,
+                                    identify root causes of wear and contamination, and support informed maintenance
+                                    decisions.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="block-eng-catalog__column">
+                            <div class="block-eng-catalog__image">
+                                <img loading="lazy" src="img/image31.png" alt="">
+                            </div>
+                            <div class="block-eng-catalog__item">
+                                <h2 class="title2">
+                                    Equipment Supply
+                                </h2>
+                                <p>
+                                    We supply professional laboratory and field equipment from leading manufacturers:
+                                    PAMAS, Biolab, DITEE, Sheli. All equipment complies with ISO and ASTM standards and
+                                    is supported with implementation and technical guidance.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="block-eng-catalog__column">
+                            <div class="block-eng-catalog__image">
+                                <img loading="lazy" src="img/image32.png" alt="">
+                            </div>
+                            <div class="block-eng-catalog__item">
+                                <h2 class="title2">
+                                    Training & Certification
+                                </h2>
+                                <p>
+                                    Talmay delivers professional training programs developed by Noria Corporation (USA).
+                                    Courses align with ICML competency standards and are available for individual
+                                    specialists and corporate teams.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="block-eng-catalog__column">
+                            <div class="block-eng-catalog__image">
+                                <img loading="lazy" src="img/image33.png" alt="">
+                            </div>
+                            <div class="block-eng-catalog__item">
+                                <h2 class="title2">
+                                    Lubrication Program Development
+                                </h2>
+                                <p>
+                                    Comprehensive LPD solutions based on Noria's global methodology: assessments,
+                                    procedure development, engineering improvements, digital lubrication management, and
+                                    full-scale deployment support.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Рассылка-->
+            <div class="block-forms block-forms-eng">
+                <div class="container">
+                    <div class="block-forms__content">
+                        <form data-dev data-thanks="#thanks" action="#" class="form">
+                            <div class="form__top">
+                                <div class="form__title">
+                                    Want to learn more about our services?
+                                </div>
+                                <p>
+                                    Contact us and our team will discuss how Talmay can support your reliability goals.
+                                </p>
+                            </div>
+                            <div class="form__body">
+                                <div class="form__inputs">
+                                    <div class="form__input">
+                                        <div class="form__placeholder">E-mail</div>
+                                        <input data-required autocomplete="off" type="text" name="form[]"
+                                            data-error="Ошибка" placeholder="E-mail" class="input">
+                                    </div>
+                                    <button type="submit" class="btn btn-grey btn-small">
+                                        <span>Send</span>
+                                    </button>
+                                </div>
+                                <div class="form__bottom">
+                                    <div class="form__text">
+                                        Sending this form You agree with personal data politics
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="thanks" class="block-forms-thanks">
+                <div class="block-forms-thanks__icon">
+                    <svg aria-hidden="true" width="15" height="11">
+                        <use xlink:href="img/sprite.svg#check1"></use>
+                    </svg>
+                </div>
+                <p>
+                    Вы успешно подписались на наши обновления
+                </p>
+            </div>
+
+        </main>
+        {% include 'blocks/footer.njk' %}
+    </div>
+    {% include 'blocks/popups.njk' %}
+    {% include 'blocks/scripts.njk' %}
+</body>
+
+</html>

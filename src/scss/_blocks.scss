@@ -1591,8 +1591,6 @@
 
 //========================================================================================================================================================
 
-//========================================================================================================================================================
-
 /*Базовый комплекс*/
 .block-base {
     // .block-base__content
@@ -2906,6 +2904,9 @@
     @media (max-width: 992px) {
         padding: 40px 0px;
     }
+    .container {
+        max-width: 1384px;
+    }
     // .block-forms__content
 
     &__content {
@@ -2923,7 +2924,7 @@
             }
         }
         .form__top {
-            flex: 0 1 530px;
+            flex: 0 1 570px;
             @media (max-width: 1100px) {
                 flex: 0 1 auto;
                 width: 100%;
@@ -3183,9 +3184,6 @@
         padding: 24px;
         background: var(--bg-tetriary);
         min-height: 228px;
-        @media (max-width: 992px) {
-            padding: 32px;
-        }
     }
 
     // .block-results__icon
@@ -3214,9 +3212,6 @@
         flex-direction: column;
         gap: 16px;
         padding: 8px;
-        @media (max-width: 992px) {
-            padding: 0px 0px 0px 0px;
-        }
         p {
             font-weight: 400;
             font-size: 16px;
@@ -3695,13 +3690,25 @@
         min-height: 336px;
         display: flex;
         flex-direction: column;
-        gap: 24px;
-        justify-content: space-between;
         @media (max-width: 992px) {
             min-height: 256px;
         }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 60px;
+            width: 168px;
+            z-index: 5;
+            background: var(--color-white-solid);
+            background-image: url("../img/icons/bg2.svg");
+            @media (max-width: 992px) {
+                width: 218px;
+            }
+        }
         p {
-            padding: 32px;
+            margin-top: auto;
             font-weight: 400;
             font-size: 18px;
             line-height: 178%;
@@ -3711,36 +3718,23 @@
         }
     }
 
-    // .block-programs__bg1
+    // .block-programs__item
 
-    &__bg1 {
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: 63px;
-        width: auto;
-        @media (max-width: 992px) {
-            height: 61px;
-        }
-        &.desc {
-            @media (max-width: 992px) {
-                display: none;
-            }
-        }
-        &.mob {
-            display: none;
-            @media (max-width: 992px) {
-                display: block;
-            }
-        }
+    &__item {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        justify-content: space-between;
+        padding: 90px 32px 32px 32px;
     }
 
     // .block-programs__icon
 
     &__icon {
-        margin-top: -44px;
-        margin-left: auto;
-        margin-right: 24px;
+        position: absolute;
+        top: -44px;
+        right: 24px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -3749,11 +3743,10 @@
         border-radius: 50%;
         box-shadow: 0 8px 24px 0 rgba(39, 36, 37, 0.1);
         background: var(--brand-primary-new);
-        position: relative;
-        z-index: 5;
+        z-index: 7;
         @media (max-width: 992px) {
-            margin-top: -37px;
-            margin-right: 66px;
+            top: -37px;
+            right: 66px;
         }
         svg {
             stroke: var(--icon-inverse);
@@ -3934,12 +3927,6 @@
 /*Политика конфиденциальности*/
 .block-policy {
     padding: 48px 0px;
-    .container {
-        max-width: 958px;
-        @media (max-width: 992px) {
-            max-width: 100%;
-        }
-    }
     // .block-policy__content
 
     &__content {
@@ -3992,12 +3979,6 @@
 
 /*Сертификаты и лицензии*/
 .block-sertificates {
-    .container {
-        max-width: 1191px;
-        @media (max-width: 992px) {
-            max-width: 100%;
-        }
-    }
     // .block-sertificates__body
 
     &__body {
@@ -4089,12 +4070,6 @@
 
 /*Клиенты*/
 .block-clients {
-    .container {
-        max-width: 1191px;
-        @media (max-width: 992px) {
-            max-width: 100%;
-        }
-    }
     // .block-clients__body
 
     &__body {
@@ -4127,12 +4102,6 @@
 
 /*Seo текст*/
 .block-seo-text {
-    .container {
-        max-width: 958px;
-        @media (max-width: 992px) {
-            max-width: 100%;
-        }
-    }
     // .block-seo-text__body
 
     &__body {
@@ -4162,12 +4131,6 @@
     padding: 64px 0px;
     @media (max-width: 992px) {
         padding: 40px 0px;
-    }
-    .container {
-        max-width: 958px;
-        @media (max-width: 992px) {
-            max-width: 100%;
-        }
     }
     // .block-contact-us__content
 
@@ -4208,12 +4171,6 @@
 .block-contact-us2 {
     padding: 80px 0px;
     background: var(--bg-tetriary);
-    .container {
-        max-width: 1191px;
-        @media (max-width: 992px) {
-            max-width: 100%;
-        }
-    }
     .block-contact-us__content {
         padding: 0px 0px 0px 0px;
         align-items: start;
@@ -4224,10 +4181,11 @@
 //========================================================================================================================================================
 
 .block-tools {
-    .container {
-        max-width: 1191px;
-        @media (max-width: 992px) {
-            max-width: 100%;
+    &.block-tools-lpd {
+        .block-tools__column {
+            &:nth-child(even) {
+                background: transparent;
+            }
         }
     }
     // .block-tools__column
@@ -4331,6 +4289,32 @@
         gap: 32px;
         @media (max-width: 992px) {
             flex: 0 1 calc(50% - 16px);
+        }
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            li {
+                display: flex;
+                gap: 10px;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 150%;
+                &::before {
+                    content: "";
+                    display: block;
+                    margin-top: 9px;
+                    width: 6px;
+                    height: 6px;
+                    flex: 0 0 6px;
+                    background: var(--brand-primary-new);
+                    border-radius: 50%;
+                }
+                p {
+                    display: flex;
+                    align-items: center;
+                }
+            }
         }
     }
 
@@ -4440,12 +4424,6 @@
 
 /*О разработке программы смазывания*/
 .block-lpd-about {
-    .container {
-        max-width: 1191px;
-        @media (max-width: 992px) {
-            max-width: 100%;
-        }
-    }
     // .block-lpd-about__content
 
     &__content {
@@ -4489,7 +4467,7 @@
             width: 119px;
             z-index: 5;
             background: #fff;
-            background-image: url("../img/icons/bg4.svg");
+            background-image: url("../img/icons/bg1.svg");
             background-size: 100% 100%;
             @media (max-width: 1200px) {
                 width: 100px;
@@ -4562,12 +4540,6 @@
 /*Оценка модели*/
 .block-model-evaluation {
     background: var(--bg-secondary);
-    .container {
-        max-width: 1191px;
-        @media (max-width: 992px) {
-            max-width: 100%;
-        }
-    }
     .block-title__col {
         gap: 12px;
         .title2 {
@@ -4642,12 +4614,24 @@
     .block-laboratory__item {
         gap: 8px;
         padding: 30px 0px 20px 0px;
+        @media (max-width: 992px) {
+            padding: 19px 0px 20px 0px;
+        }
         .btn {
             margin-top: 32px;
+        }
+        .title1 {
+            @media (max-width: 992px) {
+                font-size: 40px;
+                line-height: 120%;
+            }
         }
     }
     .block-laboratory__left .block-laboratory__image {
         width: 332px;
+        @media (max-width: 992px) {
+            flex: 0 0 calc(46% - 10px);
+        }
     }
     .block-laboratory__left {
         gap: 56px;
@@ -4660,5 +4644,548 @@
         @media (max-width: 992px) {
             gap: 80px;
         }
+    }
+}
+
+//========================================================================================================================================================
+
+/*Оборудование лаборатории*/
+.block-laboratory-equipment {
+    .title2 {
+        margin-bottom: 24px;
+        text-align: left;
+    }
+    // .block-laboratory-equipment__cards
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px 26px;
+        @media (max-width: 992px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+//========================================================================================================================================================
+
+/*Программное обеспечение*/
+.block-sofware {
+    // .block-sofware__content
+
+    &__content {
+        display: flex;
+        align-items: start;
+        gap: 40px;
+        @media (max-width: 992px) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    // .block-sofware__body
+
+    &__body {
+        flex: 0 1 344px;
+        display: flex;
+        flex-direction: column;
+        gap: 39px;
+        @media (max-width: 992px) {
+            flex: 0 1 auto;
+            width: 100%;
+        }
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            li {
+                display: flex;
+                align-items: start;
+                gap: 10px;
+                border-radius: 16px;
+                padding: 24px;
+                background: var(--bg-tetriary);
+                &::before {
+                    content: "";
+                    display: flex;
+                    width: 6px;
+                    border-radius: 50%;
+                    flex: 0 0 6px;
+                    height: 6px;
+                    background: var(--brand-primary-new);
+                    margin-top: 9px;
+                }
+                p {
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 150%;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+    }
+
+    // .block-sofware__image
+
+    &__image {
+        flex: 0 1 744px;
+        border-radius: 24px;
+        overflow: hidden;
+        @media (max-width: 992px) {
+            flex: 0 1 auto;
+            width: 100%;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+//========================================================================================================================================================
+
+/*Главная англ версии*/
+.block-intro-eng {
+    .container {
+        max-width: 1384px;
+        @media (max-width: 1384px) {
+            padding: 0px 0px 0px 0px;
+        }
+    }
+    // .block-intro-eng__content
+
+    &__content {
+        position: relative;
+        border-radius: 32px;
+        overflow: hidden;
+        @media (max-width: 1384px) {
+            border-radius: 0px;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            background: linear-gradient(180deg, rgba(34, 37, 32, 0) 0%, rgba(34, 37, 32, 0.8) 100%);
+            backdrop-filter: blur(30px);
+            mask-image: linear-gradient(to right, white 0%, white 38%, transparent 58%);
+            -webkit-mask-image: linear-gradient(to right, white 0%, white 38%, transparent 58%);
+            @media (max-width: 1384px) {
+                mask-image: linear-gradient(to right, white 0%, white 48%, transparent 68%);
+                -webkit-mask-image: linear-gradient(to right, white 0%, white 48%, transparent 68%);
+            }
+        }
+    }
+
+    // .block-intro-eng__bg1
+
+    &__bg1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    // .block-intro-eng__body
+
+    &__body {
+        position: relative;
+        z-index: 10;
+        padding: 100px 94px 120px 94px;
+        @media (max-width: 1384px) {
+            padding: 40px 32px;
+        }
+    }
+
+    // .block-intro-eng__item
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        max-width: 400px;
+        width: 100%;
+        @media (max-width: 1384px) {
+            gap: 40px;
+        }
+        .title1 {
+            font-size: 40px;
+        }
+        p {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 156%;
+            color: var(--typography-inverse);
+        }
+    }
+}
+
+//========================================================================================================================================================
+
+/*Главная текст англ версии*/
+.block-intro-text {
+    padding: 48px 0px;
+    p {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 156%;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+}
+
+//========================================================================================================================================================
+
+/*Каталог англ версии*/
+.block-eng-catalog {
+    // .block-eng-catalog__body
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+    }
+
+    // .block-eng-catalog__column
+
+    &__column {
+        display: flex;
+        gap: 24px;
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+            .block-eng-catalog__item {
+                padding: 0px 96px 0px 0px;
+            }
+        }
+    }
+
+    // .block-eng-catalog__image
+
+    &__image {
+        display: flex;
+        flex: 0 1 calc(50% - 12px);
+        border-radius: 16px;
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    // .block-eng-catalog__item
+
+    &__item {
+        flex: 0 1 calc(50% - 12px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 12px;
+        padding: 0px 0px 0px 96px;
+        @media (max-width: 992px) {
+            justify-content: start;
+        }
+        .title2 {
+            text-align: left;
+            margin-bottom: 0px;
+        }
+        p {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+            color: var(--typography-secondary);
+        }
+    }
+}
+
+//========================================================================================================================================================
+
+/*Форматы обучения*/
+.block-format-ed {
+    .block-title__col {
+        .title2 {
+            margin-bottom: 0px;
+        }
+    }
+    .block-results__column {
+        min-height: fit-content;
+        @media (max-width: 992px) {
+            flex-direction: row-reverse;
+            align-items: start;
+        }
+    }
+    .block-results__item {
+        gap: 20px;
+        margin-top: -20px;
+        @media (max-width: 992px) {
+            flex: 1 1 auto;
+            margin-top: 0px;
+            gap: 16px;
+        }
+    }
+    .block-results__title {
+        font-size: 18px;
+        line-height: 156%;
+    }
+}
+
+//========================================================================================================================================================
+
+/*Баннер*/
+.block-banner {
+    // .block-banner__content
+
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: var(--noria-primary);
+        border-radius: 24px;
+        overflow: hidden;
+        gap: 40px;
+        padding: 64px 96px;
+        @media (max-width: 992px) {
+            padding: 40px;
+            flex-direction: column;
+            align-items: start;
+            justify-content: start;
+        }
+        .btn {
+            flex: 0 0 auto;
+            @media (max-width: 992px) {
+                flex: 0 1 auto;
+            }
+        }
+    }
+
+    // .block-banner__titles
+
+    &__titles {
+        flex: 0 1 448px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        @media (max-width: 992px) {
+            flex: 0 1 auto;
+            max-width: 448px;
+            width: 100%;
+        }
+        .title2 {
+            text-align: left;
+            font-size: 32px;
+            margin-bottom: 0px;
+            color: var(--typography-inverse);
+        }
+        p {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+            color: var(--typography-inverse);
+        }
+    }
+}
+
+//========================================================================================================================================================
+
+/*Основа образовательных программ*/
+.block-base-education {
+    // .block-base-education__body
+
+    &__body {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    // .block-base-education__column
+
+    &__column {
+        position: relative;
+        border-radius: 30px;
+        background: var(--bg-tetriary);
+        min-height: 310px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        margin-top: 50px;
+        @media (max-width: 992px) {
+            margin-top: 70px;
+            min-height: fit-content;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 60px;
+            width: 279px;
+            z-index: 5;
+            background: #fff;
+            background-image: url("../img/icons/bg2.svg");
+            @media (max-width: 992px) {
+                width: 172px;
+            }
+        }
+    }
+
+    // .block-base-education__item
+
+    &__item {
+        position: relative;
+        z-index: 10;
+        padding: 90px 32px 32px 32px;
+    }
+
+    // .block-base-education__logo
+
+    &__logo {
+        position: absolute;
+        z-index: 6;
+        height: 58px;
+        width: auto;
+        top: -18px;
+        right: 32px;
+        @media (max-width: 992px) {
+            right: 0;
+            top: -24px;
+            height: 43px;
+        }
+    }
+
+    // .block-base-education__titles
+
+    &__titles {
+        max-width: 430px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        p {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+            color: var(--typography-secondary);
+        }
+    }
+
+    // .block-base-education__title
+
+    &__title {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 133%;
+    }
+}
+
+//========================================================================================================================================================
+
+/*Что даёт обучение*/
+.block-training-offers {
+    background: var(--bg-tetriary);
+    .title2 {
+        text-align: left;
+    }
+    // .block-training-offers__body
+
+    &__body {
+        display: grid;
+        gap: 36px 24px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    // .block-training-offers__column
+
+    &__column {
+        position: relative;
+        border-radius: 30px;
+        background: var(--bg-primary);
+        margin-top: 44px;
+        display: flex;
+        min-height: 240px;
+        flex-direction: column;
+        @media (max-width: 992px) {
+            min-height: 280px;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 60px;
+            width: 158px;
+            z-index: 5;
+            background: var(--bg-tetriary);
+            background-image: url("../img/icons/bg3.svg");
+        }
+    }
+
+    // .block-training-offers__icon
+
+    &__icon {
+        top: -44px;
+        position: absolute;
+        right: 24px;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        box-shadow: 0 8px 24px 0 rgba(39, 36, 37, 0.1);
+        background: var(--noria-primary);
+        display: flex;
+        justify-content: center;
+        z-index: 7;
+        align-items: center;
+        svg {
+            stroke: var(--icon-inverse);
+            fill: none;
+            color: var(--icon-inverse);
+        }
+    }
+
+    // .block-training-offers__item
+
+    &__item {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 52px;
+        padding: 32px;
+    }
+
+    // .block-training-offers__number
+
+    &__number {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 156%;
+        color: var(--noria-primary);
+    }
+
+    // .block-training-offers__titles
+
+    &__titles {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        max-width: 400px;
+        p {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+            color: var(--typography-secondary);
+        }
+    }
+
+    // .block-training-offers__title
+
+    &__title {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 133%;
     }
 }
