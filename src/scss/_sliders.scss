@@ -57,10 +57,6 @@
     backdrop-filter: blur(16px);
     box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.05);
     background: var(--color-white--700);
-    @media (max-width: 767px) {
-        width: 30px;
-        height: 30px;
-    }
     svg {
         position: relative;
         z-index: 15;
