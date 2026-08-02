@@ -309,6 +309,39 @@ document.querySelectorAll('.images-product').forEach((productBlock) => {
   });
 });
 
+//слайдер - главная каталог приборов
+if (document.querySelector('.block-catalog__slider')) {
+  let directionsSwiper = null;
+
+  function initSlider() {
+    if (window.innerWidth <= 767 && !directionsSwiper) {
+      directionsSwiper = new Swiper('.block-catalog__slider', {
+        observer: true,
+        observeParents: true,
+        slidesPerView: 1,
+        spaceBetween: 32,
+        speed: 400,
+        navigation: {
+          prevEl: '.catalog-arrow-prev',
+          nextEl: '.catalog-arrow-next',
+        },
+        breakpoints: {
+          550: {
+            slidesPerView: 2,
+            spaceBetween: 16,
+          },
+        },
+      });
+    } else if (window.innerWidth > 767 && directionsSwiper) {
+      directionsSwiper.destroy(true, true);
+      directionsSwiper = null;
+    }
+  }
+  initSlider();
+
+  window.addEventListener('resize', initSlider);
+}
+
 //========================================================================================================================================================
 
 //фильтр
@@ -1328,15 +1361,15 @@ if (readMoreLink && targetContent) {
     if (targetIndex === -1) return;
 
     if (!tabTitles[targetIndex].classList.contains('_tab-active')) {
-      tabTitles[targetIndex].click(); 
+      tabTitles[targetIndex].click();
     }
-      const headerHeight = header ? header.offsetHeight : 0;
-      const targetPosition = targetContent.getBoundingClientRect().top + window.pageYOffset;
-      const scrollTo = targetPosition - headerHeight - 20;
+    const headerHeight = header ? header.offsetHeight : 0;
+    const targetPosition = targetContent.getBoundingClientRect().top + window.pageYOffset;
+    const scrollTo = targetPosition - headerHeight - 20;
 
-      window.scrollTo({
-        top: scrollTo,
-        behavior: 'smooth'
-      });
+    window.scrollTo({
+      top: scrollTo,
+      behavior: 'smooth'
+    });
   });
 }
