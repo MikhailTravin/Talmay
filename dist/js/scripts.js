@@ -152,19 +152,83 @@ function uniqArray(array) {
 
 //========================================================================================================================================================
 
-//выбор языка
-const langButton = document.querySelector('.header-lang__button');
-const langContainer = document.querySelector('.header-lang');
+// выбор языка
+const langButtons = document.querySelectorAll('.header-lang__button');
 
-if (langButton && langContainer) {
-  langButton.addEventListener('click', function (e) {
-    e.stopPropagation();
-    langContainer.classList.toggle('active');
+langButtons.forEach(button => {
+  const langContainer = button.closest('.header-lang');
+
+  if (langContainer) {
+    button.addEventListener('click', function (e) {
+      e.stopPropagation();
+      langContainer.classList.toggle('active');
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!langContainer.contains(e.target)) {
+        langContainer.classList.remove('active');
+      }
+    });
+  }
+});
+
+//========================================================================================================================================================
+
+//меню
+const iconMenu = document.querySelectorAll('.header__burger');
+const headerBody = document.querySelector('.menu');
+
+if (iconMenu.length) {
+  iconMenu.forEach(burger => {
+    burger.addEventListener("click", function (e) {
+      e.stopPropagation();
+      document.documentElement.classList.toggle("menu-open");
+    });
+  });
+}
+
+document.addEventListener("click", function (e) {
+  const isClickInsideMenu = headerBody && headerBody.contains(e.target);
+  const isClickOnBurger = Array.from(iconMenu).some(burger => burger.contains(e.target));
+
+  if (!isClickInsideMenu && !isClickOnBurger) {
+    document.documentElement.classList.remove("menu-open");
+  }
+});
+
+const menuItems = document.querySelectorAll('.menu__item');
+if (menuItems) {
+  const breakpoint = 1330;
+
+  function handleMenuToggle(e) {
+    if (window.innerWidth > breakpoint) return;
+
+    const button = e.currentTarget;
+    const menuItem = button.closest('.menu__item');
+    const link = button.querySelector('a');
+
+    const isLinkClick = e.target.closest('a') !== null;
+
+    if (isLinkClick) {
+      return;
+    }
+
+    e.preventDefault();
+    menuItem.classList.toggle('active');
+  }
+
+  menuItems.forEach(item => {
+    const buttons = item.querySelectorAll('.menu__button');
+    buttons.forEach(button => {
+      button.addEventListener('click', handleMenuToggle);
+    });
   });
 
-  document.addEventListener('click', function (e) {
-    if (!langContainer.contains(e.target)) {
-      langContainer.classList.remove('active');
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > breakpoint) {
+      menuItems.forEach(item => {
+        item.classList.remove('active');
+      });
     }
   });
 }
@@ -327,6 +391,72 @@ if (document.querySelector('.block-catalog__slider')) {
         },
         breakpoints: {
           550: {
+            slidesPerView: 2,
+            spaceBetween: 16,
+          },
+        },
+      });
+    } else if (window.innerWidth > 767 && directionsSwiper) {
+      directionsSwiper.destroy(true, true);
+      directionsSwiper = null;
+    }
+  }
+  initSlider();
+
+  window.addEventListener('resize', initSlider);
+}
+
+//слайдер - комплексы анализа масел
+if (document.querySelector('.block-complexes__slider')) {
+  let directionsSwiper = null;
+
+  function initSlider() {
+    if (window.innerWidth <= 767 && !directionsSwiper) {
+      directionsSwiper = new Swiper('.block-complexes__slider', {
+        observer: true,
+        observeParents: true,
+        slidesPerView: 1,
+        spaceBetween: 32,
+        speed: 400,
+        navigation: {
+          prevEl: '.complexes-arrow-prev',
+          nextEl: '.complexes-arrow-next',
+        },
+        breakpoints: {
+          550: {
+            slidesPerView: 2,
+            spaceBetween: 16,
+          },
+        },
+      });
+    } else if (window.innerWidth > 767 && directionsSwiper) {
+      directionsSwiper.destroy(true, true);
+      directionsSwiper = null;
+    }
+  }
+  initSlider();
+
+  window.addEventListener('resize', initSlider);
+}
+
+//слайдер - курсы
+if (document.querySelector('.block-courses__slider')) {
+  let directionsSwiper = null;
+
+  function initSlider() {
+    if (window.innerWidth <= 767 && !directionsSwiper) {
+      directionsSwiper = new Swiper('.block-courses__slider', {
+        observer: true,
+        observeParents: true,
+        slidesPerView: 1,
+        spaceBetween: 32,
+        speed: 400,
+        navigation: {
+          prevEl: '.courses-arrow-prev',
+          nextEl: '.courses-arrow-next',
+        },
+        breakpoints: {
+          650: {
             slidesPerView: 2,
             spaceBetween: 16,
           },

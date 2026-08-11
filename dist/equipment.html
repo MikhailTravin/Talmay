@@ -24,12 +24,60 @@
 							</a>
 							<!--меню-->
 							<nav class="menu">
-								<ul>
+								<div class="menu__title">
+									<span>Меню</span>
+									<button type="button" class="header__burger">
+										<svg aria-hidden="true" width="14" height="14">
+											<use xlink:href="img/sprite.svg#close"></use>
+										</svg>
+									</button>
+								</div>
+								<ul class="menu__body">
 									<li>
 										<a href="./" class="active">Главная</a>
 									</li>
 									<li>
-										<a href="./">Решения</a>
+										<div class="menu__item">
+											<button type="button" class="menu__button">
+												<a href="./">Решения</a>
+												<span class="menu__icon">
+													<svg aria-hidden="true" width="10" height="6">
+														<use xlink:href="img/sprite.svg#arrow1"></use>
+													</svg>
+												</span>
+											</button>
+											<div class="menu__dropdown">
+												<div class="menu__content">
+													<button type="button" class="menu__button">
+														<span class="menu__icon">
+															<svg aria-hidden="true" width="10" height="6">
+																<use xlink:href="img/sprite.svg#arrow1"></use>
+															</svg>
+														</span>
+														<span>Решения</span>
+													</button>
+													<div class="menu__list">
+														<ul>
+															<li>
+																<a href="./">Комплексная лаборатория</a>
+															</li>
+															<li>
+																<a href="./">Обучение по международным стандартам</a>
+															</li>
+															<li>
+																<a href="./">Оборудование для смазывания</a>
+															</li>
+															<li>
+																<a href="./">Программное обеспечение</a>
+															</li>
+															<li>
+																<a href="./">Разработка программы смазывания</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
 									</li>
 									<li>
 										<a href="./">Лаборатория</a>
@@ -41,6 +89,43 @@
 										<a href="./">О компании</a>
 									</li>
 								</ul>
+								<div class="menu__bottom">
+									<div class="header__right">
+										<!--контакты-->
+										<div class="contacts">
+											<a href="tel:77273902077" class="contacts__phone">
+												+7 (727) 390-20-77
+											</a>
+											<a href="mailto:mail@talmay.kz" class="contacts__email">
+												mail@talmay.kz
+											</a>
+										</div>
+										<!--выбор языка-->
+										<div class="header-lang">
+											<button type="button" class="header-lang__button">
+												<span class="header-lang__title">Rus</span>
+												<span class="header-lang__arrow">
+													<svg aria-hidden="true" width="10" height="6">
+														<use xlink:href="img/sprite.svg#arrow1"></use>
+													</svg>
+												</span>
+											</button>
+											<div class="header-lang__dropdown">
+												<ul>
+													<li>
+														<a href="./" class="active">Rus</a>
+													</li>
+													<li>
+														<a href="./">Kzt</a>
+													</li>
+													<li>
+														<a href="./">Eng</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
 							</nav>
 						</div>
 						<div class="header__right">
@@ -82,7 +167,7 @@
 									<use xlink:href="img/sprite.svg#menu"></use>
 								</svg>
 							</button>
-							<a href="./" data-popup="#contact-us" class="btn btn-red btn-small">
+							<a href="./" data-da=".menu__bottom, 1300, last" data-popup="#contact-us" class="btn btn-red btn-small">
 								<span>Получить консультацию</span>
 							</a>
 						</div>
