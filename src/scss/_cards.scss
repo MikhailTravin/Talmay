@@ -69,10 +69,12 @@
     flex-direction: column;
     gap: 20px;
     height: 100%;
-    &:hover {
-        .card-product2__pic1 {
-            img {
-                transform: scale(1.03);
+    @media (any-hover: hover) {
+        &:hover {
+            .card-product2__pic1 {
+                img {
+                    transform: scale(1.03);
+                }
             }
         }
     }
@@ -147,10 +149,12 @@
     flex-direction: column;
     gap: 20px;
     height: 100%;
-    &:hover {
-        .card-news__pic1 {
-            img {
-                transform: scale(1.03);
+    @media (any-hover: hover) {
+        &:hover {
+            .card-news__pic1 {
+                img {
+                    transform: scale(1.03);
+                }
             }
         }
     }
@@ -254,10 +258,12 @@
     background: var(--bg-primary);
     overflow: hidden;
     min-height: 400px;
-    &:hover {
-        .card-device__image {
-            img {
-                transform: scale(1.03);
+    @media (any-hover: hover) {
+        &:hover {
+            .card-device__image {
+                img {
+                    transform: scale(1.03);
+                }
             }
         }
     }

@@ -14,30 +14,8 @@ body {
   .popup-show & {
     overflow: hidden;
   }
-  &::before {
-    content: "";
-    cursor: pointer;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 97;
-    background: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s;
-  }
   .menu-open & {
     overflow: hidden;
-    &::before {
-      content: "";
-      opacity: 1;
-      pointer-events: auto;
-      @media (max-width: 500px) {
-        display: none;
-      }
-    }
   }
   .filter-open & {
     overflow: hidden;
@@ -140,7 +118,9 @@ a {
     min-height: 48px;
     font-size: 16px;
     border-radius: 24px;
-    @media (max-width: 550px) {
+    @media (max-width: 767px) {
+      font-size: 14px;
+      line-height: 143%;
       min-height: 40px;
     }
   }
@@ -279,8 +259,10 @@ a {
     font-size: 18px;
     line-height: 156%;
     transition: opacity 0.3s;
-    &:hover {
-      opacity: 0.7;
+    @media (any-hover: hover) {
+      &:hover {
+        opacity: 0.7;
+      }
     }
   }
 
@@ -293,8 +275,10 @@ a {
     line-height: 150%;
     color: var(--typography-secondary);
     transition: opacity 0.3s;
-    &:hover {
-      opacity: 0.7;
+    @media (any-hover: hover) {
+      &:hover {
+        opacity: 0.7;
+      }
     }
   }
 }
@@ -306,10 +290,8 @@ a {
   line-height: 120%;
   color: var(--typography-inverse);
   @media (max-width: 767px) {
-    font-size: 30px;
-  }
-  @media (max-width: 550px) {
-    font-size: 24px;
+    font-size: 22px;
+    line-height: 127%;
   }
 }
 .title2 {
@@ -342,6 +324,9 @@ a {
   @media (max-width: 992px) {
     padding: 40px 0px;
   }
+  @media (max-width: 767px) {
+    padding: 24px 0px;
+  }
 }
 .block2 {
   padding: 40px 0px;
@@ -350,6 +335,9 @@ a {
   padding: 40px 0px 80px 0px;
   @media (max-width: 992px) {
     padding: 40px 0px;
+  }
+  @media (max-width: 767px) {
+    padding: 24px 0px;
   }
 }
 
@@ -374,16 +362,18 @@ a {
     @media (max-width: 992px) {
       min-height: 56px;
     }
-    @media (max-width: 767px) {
-      justify-content: center;
-      flex: 0 0 58px;
-      width: 58px;
-      min-height: 40px;
-      padding: 0px 0px 0px 0px;
-      span {
-        display: none;
-        &.btn__arrow {
-          display: flex;
+    &.btn-mob-arrow {
+      @media (max-width: 767px) {
+        justify-content: center;
+        flex: 0 0 58px;
+        width: 58px;
+        min-height: 40px;
+        padding: 0px 0px 0px 0px;
+        span {
+          display: none;
+          &.btn__arrow {
+            display: flex;
+          }
         }
       }
     }
@@ -400,18 +390,9 @@ a {
   width: 32px;
   height: 32px;
   flex: 0 0 32px;
-  @media (max-width: 767px) {
-    width: 25px;
-    height: 25px;
-    flex: 0 0 25px;
-  }
   svg {
     fill: none;
     stroke: var(--icon-secondary);
-    @media (max-width: 767px) {
-      width: 10px;
-      height: auto;
-    }
   }
   &.check-white {
     background: var(--bg-primary);
@@ -426,9 +407,6 @@ a {
 .socials {
   display: flex;
   gap: 10px 20px;
-  @media (max-width: 767px) {
-    gap: 10px;
-  }
   a {
     display: flex;
     justify-content: center;
@@ -461,16 +439,18 @@ a {
       fill: var(--icon-secondary);
       transition: fill 0.3s;
     }
-    &:hover {
-      border: 1px solid var(--brand-primary-new);
-      svg {
-        fill: var(--brand-primary-new);
-      }
-      span {
-        &.in {
-          background-color: var(--brand-primary-new);
-          svg {
-            fill: var(--color-white-solid);
+    @media (any-hover: hover) {
+      &:hover {
+        border: 1px solid var(--brand-primary-new);
+        svg {
+          fill: var(--brand-primary-new);
+        }
+        span {
+          &.in {
+            background-color: var(--brand-primary-new);
+            svg {
+              fill: var(--color-white-solid);
+            }
           }
         }
       }
@@ -485,6 +465,9 @@ a {
   align-items: start;
   justify-content: space-between;
   gap: 20px;
+  @media (max-width: 767px) {
+    margin-bottom: 24px;
+  }
   .title1 {
     color: var(--typography-primary);
     @media (max-width: 992px) {
@@ -507,6 +490,10 @@ a {
       font-size: 18px;
       line-height: 156%;
       color: var(--typography-secondary);
+      @media (max-width: 767px) {
+        font-size: 16px;
+        line-height: 150%;
+      }
       span {
         color: #bd1a21;
         font-weight: 700;
@@ -615,11 +602,18 @@ a {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  @media (max-width: 767px) {
+    gap: 24px;
+  }
   .title1 {
     color: var(--typography-primary);
     @media (max-width: 992px) {
       font-size: 32px;
       line-height: 125%;
+    }
+    @media (max-width: 767px) {
+      font-size: 22px;
+      line-height: 127%;
     }
   }
   .title2 {
@@ -644,6 +638,10 @@ a {
       font-size: 18px;
       line-height: 156%;
       color: var(--color-grey-15);
+      @media (max-width: 767px) {
+        font-size: 16px;
+        line-height: 150%;
+      }
     }
   }
 }
@@ -666,8 +664,10 @@ a {
       color: var(--icon-primary);
       fill: none;
     }
-    &:hover {
-      opacity: 0.7;
+    @media (any-hover: hover) {
+      &:hover {
+        opacity: 0.7;
+      }
     }
   }
 }
@@ -780,8 +780,10 @@ a {
           transition:
             background-color 0.3s,
             color 0.3s;
-          &:hover {
-            color: var(--brand-primary-new);
+          @media (any-hover: hover) {
+            &:hover {
+              color: var(--brand-primary-new);
+            }
           }
           &.active {
             pointer-events: none;
@@ -829,8 +831,10 @@ a {
     transition:
       background-color 0.3s,
       color 0.3s;
-    &:hover {
-      color: var(--brand-primary-new);
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--brand-primary-new);
+      }
     }
     &.active {
       color: var(--typography-inverse);
@@ -852,8 +856,10 @@ a {
   svg {
     fill: var(--brand-primary-new);
   }
-  &:hover {
-    opacity: 0.7;
+  @media (any-hover: hover) {
+    &:hover {
+      opacity: 0.7;
+    }
   }
   &.link2 {
     font-size: 16px;
@@ -883,8 +889,10 @@ a {
     transform: rotate(-180deg);
     fill: var(--icon-primary);
   }
-  &:hover {
-    opacity: 0.7;
+  @media (any-hover: hover) {
+    &:hover {
+      opacity: 0.7;
+    }
   }
 }
 
@@ -911,8 +919,10 @@ a {
     justify-content: center;
     align-items: center;
     background-color: var(--bg-secondary);
-    &:hover {
-      color: var(--brand-primary-new);
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--brand-primary-new);
+      }
     }
     // .pagging__item_nav
 
@@ -924,8 +934,10 @@ a {
       width: 20px;
       flex: 0 0 20px;
       height: 20px;
-      &:hover {
-        opacity: 0.7;
+      @media (any-hover: hover) {
+        &:hover {
+          opacity: 0.7;
+        }
       }
     }
 
