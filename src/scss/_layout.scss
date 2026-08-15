@@ -38,17 +38,22 @@
       pointer-events: auto;
     }
   }
+  .filter-open & {
+    &::before {
+      content: "";
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 101;
+    }
+  }
 }
 
 .main {
   flex-grow: 1;
   flex-shrink: 1;
   margin: 116px 0px 0px 0px;
-  @media (max-width: 992px) {
-    margin: 116px 0px 0px 0px;
-  }
   @media (max-width: 767px) {
-    margin: 84px 0px 0px 0px;
+    margin: 72px 0px 0px 0px;
   }
 }
 

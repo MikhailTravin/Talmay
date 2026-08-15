@@ -19,12 +19,6 @@ body {
   }
   .filter-open & {
     overflow: hidden;
-    &::before {
-      content: "";
-      opacity: 1;
-      pointer-events: auto;
-      z-index: 101;
-    }
   }
 }
 
@@ -302,7 +296,7 @@ a {
   margin-bottom: 40px;
   @media (max-width: 767px) {
     font-size: 22px;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
   }
 }
 .title3 {
@@ -323,9 +317,6 @@ a {
   padding: 80px 0px;
   @media (max-width: 992px) {
     padding: 40px 0px;
-  }
-  @media (max-width: 767px) {
-    padding: 24px 0px;
   }
 }
 .block2 {
@@ -361,6 +352,11 @@ a {
     padding: 0px 17px 0px 15px;
     @media (max-width: 992px) {
       min-height: 56px;
+    }
+    @media (max-width: 767px) {
+      min-height: 48px;
+      padding: 0px 16px;
+      gap: 12px;
     }
     &.btn-mob-arrow {
       @media (max-width: 767px) {
@@ -466,13 +462,17 @@ a {
   justify-content: space-between;
   gap: 20px;
   @media (max-width: 767px) {
-    margin-bottom: 24px;
+    margin-bottom: 40px;
   }
   .title1 {
     color: var(--typography-primary);
     @media (max-width: 992px) {
       font-size: 32px;
       line-height: 125%;
+    }
+    @media (max-width: 767px) {
+      font-size: 22px;
+      line-height: 127%;
     }
   }
   // .block-title__col
@@ -603,7 +603,7 @@ a {
   flex-direction: column;
   gap: 20px;
   @media (max-width: 767px) {
-    gap: 24px;
+    gap: 20px;
   }
   .title1 {
     color: var(--typography-primary);
@@ -622,6 +622,10 @@ a {
     @media (max-width: 992px) {
       font-size: 24px;
       line-height: 133%;
+    }
+    @media (max-width: 767px) {
+      font-size: 18px;
+      line-height: 156%;
     }
   }
   .btn {
@@ -670,6 +674,9 @@ a {
       }
     }
   }
+  @media (max-width: 767px) {
+    height: 40px;
+  }
 }
 .filter-spollers {
   flex: 0 0 320px;
@@ -697,6 +704,9 @@ a {
       opacity: 1;
       pointer-events: auto;
     }
+  }
+  @media (max-width: 400px) {
+    width: 290px;
   }
   // .filter-spollers__item
 

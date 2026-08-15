@@ -90,11 +90,13 @@
     border-bottom: 1px solid rgba(104, 102, 102, 0.3);
     @media (max-width: 992px) {
         grid-template-columns: 1fr;
-        padding: 32px 0px;
+        padding: 32px 0px 39px 0px;
         gap: 20px;
     }
     @media (max-width: 767px) {
         gap: 24px;
+        border-bottom: none;
+        padding: 32px 0px 10px 0px;
     }
     // .footer-center__left
 
@@ -206,6 +208,7 @@
         overflow: hidden;
         @media (max-width: 992px) {
             border-radius: 20px;
+            height: 204px;
         }
         @media (max-width: 550px) {
             height: 197px;
@@ -272,7 +275,10 @@
     @media (max-width: 992px) {
         display: flex;
         flex-direction: column-reverse;
-        padding: 32px 0px 40px 0px;
+        padding: 28px 0px 40px 0px;
+    }
+    @media (max-width: 767px) {
+        padding: 24px 0px 40px 0px;
     }
     @media (max-width: 650px) {
         grid-template-columns: 1fr;
@@ -292,6 +298,7 @@
             grid-template-columns: repeat(2, 1fr);
         }
         @media (max-width: 767px) {
+            display: none;
             width: 100%;
             grid-template-columns: 1fr;
         }

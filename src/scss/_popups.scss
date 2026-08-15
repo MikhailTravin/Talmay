@@ -34,6 +34,11 @@
     display: flex;
     justify-content: start;
     align-items: flex-end;
+    @media (max-width: 992px) {
+        min-height: 100%;
+        align-items: center;
+        justify-content: flex-end;
+    }
 }
 .popup__content {
     position: relative;
@@ -45,10 +50,16 @@
     display: flex;
     flex-direction: column;
     flex: 1 1 auto;
+    @media (max-width: 992px) {
+        width: 100%;
+        flex: 0 1 auto;
+        height: auto;
+    }
 }
 
 .popup__close {
     cursor: pointer;
+    flex: 0 0 48px;
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -56,6 +67,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (max-width: 767px) {
+        flex: 0 0 40px;
+        width: 40px;
+        height: 40px;
+    }
     svg {
         stroke: var(--icon-primary);
         color: var(--icon-primary);
@@ -65,6 +81,12 @@
 
 /*Форма*/
 .popup-forms {
+    @media (max-width: 992px) {
+        padding: 20px 80px 0px 80px;
+    }
+    @media (max-width: 767px) {
+        padding: 20px 0px 0px 0px;
+    }
     &.popup_show {
         .popup__content {
             right: 0 !important;
@@ -75,6 +97,12 @@
         opacity: 1;
         pointer-events: auto;
         transition: right 0.4s;
+        @media (max-width: 992px) {
+            right: auto;
+            top: auto;
+            bottom: -100%;
+            transition: bottom 0.4s;
+        }
     }
     // .popup-forms__body
 
@@ -87,16 +115,60 @@
         flex-direction: column;
         gap: 56px;
         width: 584px;
+        @media (max-width: 992px) {
+            width: 100%;
+            border-radius: 32px 32px 0 0;
+            padding: 32px;
+        }
+        @media (max-width: 767px) {
+            border-radius: 16px 16px 0 0;
+            padding: 16px;
+            gap: 24px;
+        }
+        .form {
+            @media (max-width: 767px) {
+                gap: 20px;
+            }
+        }
         .form__text {
             width: fit-content;
             font-size: 12px;
             line-height: 133%;
+            @media (max-width: 767px) {
+                font-size: 10px;
+                line-height: 120%;
+            }
         }
         .form__bottom {
             align-items: center;
+            @media (max-width: 767px) {
+                flex-direction: column-reverse;
+                align-items: start;
+            }
             .btn {
                 flex: 0 0 auto;
                 border-radius: 50px;
+            }
+        }
+        .form__inputs {
+            gap: 24px;
+            @media (max-width: 767px) {
+                gap: 20px;
+            }
+            &:first-child {
+                flex: 0 1 auto;
+            }
+        }
+        .form__input {
+            .input {
+                &.textarea {
+                    min-height: fit-content;
+                    height: 168px;
+                    @media (max-width: 767px) {
+                        min-height: fit-content;
+                        height: 48px;
+                    }
+                }
             }
         }
     }
@@ -105,7 +177,6 @@
 
     &__top {
         display: flex;
-        align-items: start;
         gap: 40px;
         justify-content: space-between;
     }
@@ -116,11 +187,18 @@
         display: flex;
         flex-direction: column;
         gap: 12px;
+        @media (max-width: 767px) {
+            justify-content: center;
+        }
         p {
             font-weight: 400;
             font-size: 16px;
             line-height: 150%;
             color: var(--typography-secondary);
+            @media (max-width: 767px) {
+                font-size: 14px;
+                line-height: 143%;
+            }
         }
     }
 
@@ -130,6 +208,10 @@
         font-weight: 600;
         font-size: 32px;
         line-height: 125%;
+        @media (max-width: 767px) {
+            font-size: 22px;
+            line-height: 127%;
+        }
     }
 }
 
