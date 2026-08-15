@@ -198,7 +198,7 @@ document.addEventListener("click", function (e) {
 
 const menuItems = document.querySelectorAll('.menu__item');
 if (menuItems) {
-  const breakpoint = 1330;
+  const breakpoint = 1300;
 
   function handleMenuToggle(e) {
     if (window.innerWidth > breakpoint) return;
