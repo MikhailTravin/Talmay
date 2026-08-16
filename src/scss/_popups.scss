@@ -217,7 +217,13 @@
 
 /*Галерея*/
 .popup-image {
-    padding: 20px 0px;
+    padding: 50px 94px;
+    @media (max-width: 992px) {
+        padding: 112px 94px;
+    }
+    @media (max-width: 767px) {
+        padding: 82px 8px;
+    }
     .popup__wrapper {
         align-items: center;
         height: fit-content;
@@ -228,13 +234,17 @@
         background: transparent;
         justify-content: center;
         max-width: fit-content;
-        padding: 0px 72px;
+        max-width: 580px;
     }
     .popup__close {
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 32px;
+        right: 32px;
         border: 1px solid var(--border);
+        @media (max-width: 767px) {
+            top: 16px;
+            right: 16px;
+        }
         svg {
             stroke: var(--icon-inverse);
             color: var(--icon-inverse);
@@ -252,10 +262,17 @@
         border-radius: 32px;
         padding: 24px;
         background: var(--bg-tetriary);
+        @media (max-width: 767px) {
+            border-radius: 19px;
+            padding: 14px;
+        }
         img {
             border-radius: 8px;
             width: 100%;
             height: auto;
+            @media (max-width: 767px) {
+                border-radius: 5px;
+            }
         }
     }
 }

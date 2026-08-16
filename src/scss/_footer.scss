@@ -209,10 +209,10 @@
         @media (max-width: 992px) {
             border-radius: 20px;
             height: 204px;
+            object-fit: cover;
         }
         @media (max-width: 550px) {
             height: 197px;
-            object-fit: cover;
         }
     }
 

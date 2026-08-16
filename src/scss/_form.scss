@@ -240,7 +240,8 @@
         color: var(--typography-secondary);
         transition:
             top 0.3s,
-            opacity 0.3s;
+            opacity 0.3s,
+            transform 0.3s;
         @media (max-width: 767px) {
             top: 14px;
             font-size: 14px;
@@ -331,5 +332,9 @@
         font-weight: 400;
         font-size: 14px;
         line-height: 143%;
+        @media (max-width: 650px) {
+            font-size: 12px;
+            line-height: 150%;
+        }
     }
 }
