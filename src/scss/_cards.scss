@@ -316,6 +316,9 @@
     background: var(--bg-primary);
     overflow: hidden;
     min-height: 400px;
+    @media (max-width: 767px) {
+        min-height: 360px;
+    }
     @media (any-hover: hover) {
         &:hover {
             .card-device__image {
@@ -334,6 +337,9 @@
         overflow: hidden;
         @media (max-width: 992px) {
             height: 190px;
+        }
+        @media (max-width: 767px) {
+            height: 184px;
         }
         img {
             width: 100%;
@@ -355,6 +361,10 @@
             font-size: 16px;
             line-height: 150%;
             color: var(--typography-secondary);
+            @media (max-width: 767px) {
+                font-size: 14px;
+                line-height: 143%;
+            }
         }
     }
 
@@ -369,6 +379,10 @@
         line-height: 133%;
         width: fit-content;
         color: var(--brand-primary-new);
+        @media (max-width: 767px) {
+            font-size: 10px;
+            line-height: 120%;
+        }
     }
 
     // .card-device__title
@@ -377,6 +391,10 @@
         font-weight: 600;
         font-size: 18px;
         line-height: 156%;
+        @media (max-width: 767px) {
+            font-size: 16px;
+            line-height: 150%;
+        }
     }
 
     // .card-device__text
@@ -386,5 +404,9 @@
         font-size: 14px;
         line-height: 143%;
         color: var(--brand-primary-new);
+        @media (max-width: 767px) {
+            font-size: 12px;
+            line-height: 150%;
+        }
     }
 }

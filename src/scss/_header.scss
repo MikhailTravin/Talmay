@@ -132,6 +132,9 @@
         padding: 16px;
         width: 304px;
     }
+    @media (max-width: 359px) {
+        width: 280px;
+    }
     ul {
         li {
             display: flex;
