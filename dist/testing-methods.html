@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+	<head>
+		<title>Методы тестирования</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="css/swiper.min.css" />
+		<link rel="stylesheet" href="css/styles.css" />
+
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+	</head>
+
+	<body class="preload mp">
+		<div class="main-wrapper-outer">
+			<header class="header">
+				<div class="container">
+					<div class="header__content">
+						<div class="header__left">
+							<a href="./" class="header__logo">
+								<img src="img/icons/logo1.svg" alt="">
+							</a>
+							<!--меню-->
+							<nav class="menu">
+								<div class="menu__title">
+									<span>Меню</span>
+									<button type="button" class="header__burger">
+										<svg aria-hidden="true" width="14" height="14">
+											<use xlink:href="img/sprite.svg#close"></use>
+										</svg>
+									</button>
+								</div>
+								<ul class="menu__body">
+									<li>
+										<a href="./" class="active">Главная</a>
+									</li>
+									<li>
+										<div class="menu__item">
+											<button type="button" class="menu__button">
+												<a href="./">Решения</a>
+												<span class="menu__icon">
+													<svg aria-hidden="true" width="10" height="6">
+														<use xlink:href="img/sprite.svg#arrow1"></use>
+													</svg>
+												</span>
+											</button>
+											<div class="menu__dropdown">
+												<div class="menu__content">
+													<button type="button" class="menu__button">
+														<span class="menu__icon">
+															<svg aria-hidden="true" width="10" height="6">
+																<use xlink:href="img/sprite.svg#arrow1"></use>
+															</svg>
+														</span>
+														<span>Решения</span>
+													</button>
+													<div class="menu__list">
+														<ul>
+															<li>
+																<a href="./">Комплексная лаборатория</a>
+															</li>
+															<li>
+																<a href="./">Обучение по международным стандартам</a>
+															</li>
+															<li>
+																<a href="./">Оборудование для смазывания</a>
+															</li>
+															<li>
+																<a href="./">Программное обеспечение</a>
+															</li>
+															<li>
+																<a href="./">Разработка программы смазывания</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="menu__item">
+											<button type="button" class="menu__button">
+												<a href="./">Лаборатория</a>
+												<span class="menu__icon">
+													<svg aria-hidden="true" width="10" height="6">
+														<use xlink:href="img/sprite.svg#arrow1"></use>
+													</svg>
+												</span>
+											</button>
+											<div class="menu__dropdown">
+												<div class="menu__content">
+													<button type="button" class="menu__button">
+														<span class="menu__icon">
+															<svg aria-hidden="true" width="10" height="6">
+																<use xlink:href="img/sprite.svg#arrow1"></use>
+															</svg>
+														</span>
+														<span>Лаборатория</span>
+													</button>
+													<div class="menu__list">
+														<ul>
+															<li>
+																<a href="./">Анализ масел</a>
+															</li>
+															<li>
+																<a href="./">Методы тестирования</a>
+															</li>
+															<li>
+																<a href="./">Оборудование лаборатории</a>
+															</li>
+															<li>
+																<a href="./">Пробоотборное оборудование</a>
+															</li>
+															<li>
+																<a href="./">Форма заявки</a>
+															</li>
+															<li>
+																<a href="./">Личный кабинет</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="menu__item">
+											<button type="button" class="menu__button">
+												<a href="./">Приборы</a>
+												<span class="menu__icon">
+													<svg aria-hidden="true" width="10" height="6">
+														<use xlink:href="img/sprite.svg#arrow1"></use>
+													</svg>
+												</span>
+											</button>
+											<div class="menu__dropdown">
+												<div class="menu__content">
+													<button type="button" class="menu__button">
+														<span class="menu__icon">
+															<svg aria-hidden="true" width="10" height="6">
+																<use xlink:href="img/sprite.svg#arrow1"></use>
+															</svg>
+														</span>
+														<span>Приборы</span>
+													</button>
+													<div class="menu__lists">
+														<div class="menu__list">
+															<a href="./" class="menu__list-title">Производители</a>
+															<ul>
+																<li>
+																	<a href="./">О компании</a>
+																</li>
+																<li>
+																	<a href="./">Сертификаты и лицензии</a>
+																</li>
+																<li>
+																	<a href="./">Наши клиенты</a>
+																</li>
+																<li>
+																	<a href="./">Новости</a>
+																</li>
+																<li>
+																	<a href="./">Статьи</a>
+																</li>
+															</ul>
+														</div>
+														<div class="menu__list">
+															<a href="./" class="menu__list-title">Показатели</a>
+															<ul>
+																<li>
+																	<a href="./">Элементный состав</a>
+																</li>
+																<li>
+																	<a href="./">Кинематическая вязкость</a>
+																</li>
+																<li>
+																	<a href="./">Ферромагнитный износ</a>
+																</li>
+																<li>
+																	<a href="./">Класс чистоты</a>
+																</li>
+															</ul>
+														</div>
+														<div class="menu__list">
+															<a href="./" class="menu__list-title">Задача</a>
+															<ul>
+																<li>
+																	<a href="./">Масло / смазочные материалы</a>
+																</li>
+																<li>
+																	<a href="./">Нефть / нефтепродукты</a>
+																</li>
+																<li>
+																	<a href="./">Топливо / дизель / бензин</a>
+																</li>
+																<li>
+																	<a href="./">Авиа / Авиакеросин</a>
+																</li>
+																<li>
+																	<a href="./">Пластмассы и полимеры</a>
+																</li>
+																<li>
+																	<a href="./">Битум</a>
+																</li>
+															</ul>
+														</div>
+														<div class="menu__list">
+															<a href="./" class="menu__list-title">Стандарты</a>
+															<ul>
+																<li>
+																	<a href="./">ГОСТ</a>
+																</li>
+																<li>
+																	<a href="./">ASTM D</a>
+																</li>
+																<li>
+																	<a href="./">ISO</a>
+																</li>
+																<li>
+																	<a href="./">IP</a>
+																</li>
+																<li>
+																	<a href="./">IEC</a>
+																</li>
+																<li>
+																	<a href="./">Другие</a>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="menu__item">
+											<button type="button" class="menu__button">
+												<a href="./">О компании</a>
+												<span class="menu__icon">
+													<svg aria-hidden="true" width="10" height="6">
+														<use xlink:href="img/sprite.svg#arrow1"></use>
+													</svg>
+												</span>
+											</button>
+											<div class="menu__dropdown">
+												<div class="menu__content">
+													<button type="button" class="menu__button">
+														<span class="menu__icon">
+															<svg aria-hidden="true" width="10" height="6">
+																<use xlink:href="img/sprite.svg#arrow1"></use>
+															</svg>
+														</span>
+														<span>О компании</span>
+													</button>
+													<div class="menu__list">
+														<ul>
+															<li>
+																<a href="./">О компании</a>
+															</li>
+															<li>
+																<a href="./">Сертификаты и лицензии</a>
+															</li>
+															<li>
+																<a href="./">Наши клиенты</a>
+															</li>
+															<li>
+																<a href="./">Новости</a>
+															</li>
+															<li>
+																<a href="./">Статьи</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+								<div class="menu__bottom">
+									<div class="header__right">
+										<!--контакты-->
+										<div class="contacts">
+											<a href="tel:77273902077" class="contacts__phone">
+												+7 (727) 390-20-77
+											</a>
+											<a href="mailto:mail@talmay.kz" class="contacts__email">
+												mail@talmay.kz
+											</a>
+										</div>
+										<!--выбор языка-->
+										<div class="header-lang">
+											<button type="button" class="header-lang__button">
+												<span class="header-lang__title">Rus</span>
+												<span class="header-lang__arrow">
+													<svg aria-hidden="true" width="10" height="6">
+														<use xlink:href="img/sprite.svg#arrow1"></use>
+													</svg>
+												</span>
+											</button>
+											<div class="header-lang__dropdown">
+												<ul>
+													<li>
+														<a href="./" class="active">Rus</a>
+													</li>
+													<li>
+														<a href="./">Kzt</a>
+													</li>
+													<li>
+														<a href="./">Eng</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</nav>
+						</div>
+						<div class="header__right">
+							<!--контакты-->
+							<div class="contacts">
+								<a href="tel:77273902077" class="contacts__phone">
+									+7 (727) 390-20-77
+								</a>
+								<a href="mailto:mail@talmay.kz" class="contacts__email">
+									mail@talmay.kz
+								</a>
+							</div>
+							<!--выбор языка-->
+							<div class="header-lang">
+								<button type="button" class="header-lang__button">
+									<span class="header-lang__title">Rus</span>
+									<span class="header-lang__arrow">
+										<svg aria-hidden="true" width="10" height="6">
+											<use xlink:href="img/sprite.svg#arrow1"></use>
+										</svg>
+									</span>
+								</button>
+								<div class="header-lang__dropdown">
+									<ul>
+										<li>
+											<a href="./" class="active">Rus</a>
+										</li>
+										<li>
+											<a href="./">Kzt</a>
+										</li>
+										<li>
+											<a href="./">Eng</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<button type="button" class="header__burger">
+								<svg aria-hidden="true" width="16" height="16">
+									<use xlink:href="img/sprite.svg#menu"></use>
+								</svg>
+							</button>
+							<a href="./" data-da=".menu__bottom, 1300, last" data-popup="#contact-us" class="btn btn-red btn-small">
+								<span>Получить консультацию</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</header>
+			<main class="main">
+
+				<!--Хлебные крошки-->
+				<div class="breadcrumbs">
+					<div class="container">
+						<ul>
+							<li>
+								<a href="#">
+									<div class="home-icon">
+										<svg aria-hidden="true" width="18" height="19">
+											<use xlink:href="img/sprite.svg#home"></use>
+										</svg>
+									</div>
+									<span>Главная</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Лаборатория
+								</a>
+							</li>
+							<li><span>Методы тестирования</span></li>
+						</ul>
+					</div>
+				</div>
+
+				<!--Заголовок Методы тестирования-->
+				<div class="block-title block-title-other2 block2">
+					<div class="container">
+						<div class="block-title__col">
+							<h1 class="title1">
+								Методы тестирования
+							</h1>
+							<p>
+								Лаборатория «Талмай» – современный центр исследований смазочных материалов и рабочих
+								жидкостей.<br> Передовое оборудование, адаптированное под любые виды проб – от жидких до
+								пастообразных.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!--Используемые методы тестирования-->
+				<div class="block-testing-methods block3">
+					<div class="container">
+						<div class="block-descr">
+							<div class="title2">Используемые методы тестирования</div>
+							<div class="block-descr__text">
+								<p>
+									19 методов · нажмите на карточку, чтобы увидеть приборы, использующие метод
+								</p>
+							</div>
+						</div>
+						<div class="block-testing-methods__body">
+							<div class="block-testing-methods__column">
+								<div class="block-testing-methods__top">
+									<div class="block-testing-methods__titles">
+										<div class="block-testing-methods__title">
+											Элементный анализ
+										</div>
+										<p>
+											24 элемента износа и загрязнений
+										</p>
+									</div>
+									<ul>
+										<li>
+											<div class="block-testing-methods__name">Прибор</div>
+											<div class="block-testing-methods__value">DITEE ОА800М</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Стандарт</div>
+											<div class="block-testing-methods__value">ASTM D6595</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Ед. изм.</div>
+											<div class="block-testing-methods__value">ppm (мг/кг)</div>
+										</li>
+									</ul>
+								</div>
+								<a href="./" data-popup="#testing-methods" class="link link2">
+									<span>Подробнее</span>
+								</a>
+							</div>
+							<div class="block-testing-methods__column">
+								<div class="block-testing-methods__top">
+									<div class="block-testing-methods__titles">
+										<div class="block-testing-methods__title">
+											Кинематическая вязкость
+										</div>
+										<p>
+											Вязкость при 100°С и 40°С, индекс вязкости
+										</p>
+									</div>
+									<ul>
+										<li>
+											<div class="block-testing-methods__name">Прибор</div>
+											<div class="block-testing-methods__value">
+												Biolab Viscol-10AS, SHELI SL-SV4A
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Стандарт</div>
+											<div class="block-testing-methods__value">
+												ASTM D445, ГОСТ 33
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Ед. изм.</div>
+											<div class="block-testing-methods__value">мм²/с; сСт</div>
+										</li>
+									</ul>
+								</div>
+								<a href="./" data-popup="#testing-methods" class="link link2">
+									<span>Подробнее</span>
+								</a>
+							</div>
+							<div class="block-testing-methods__column">
+								<div class="block-testing-methods__top">
+									<div class="block-testing-methods__titles">
+										<div class="block-testing-methods__title">
+											Потенциометрическое титрование
+										</div>
+										<p>
+											TBN, TAN, pH
+										</p>
+									</div>
+									<ul>
+										<li>
+											<div class="block-testing-methods__name">Прибор</div>
+											<div class="block-testing-methods__value">
+												Titrino Metrohm
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Стандарт</div>
+											<div class="block-testing-methods__value">
+												ASTM D2896, D664
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Ед. изм.</div>
+											<div class="block-testing-methods__value">мг КОН/г</div>
+										</li>
+									</ul>
+								</div>
+								<a href="./" data-popup="#testing-methods" class="link link2">
+									<span>Подробнее</span>
+								</a>
+							</div>
+							<div class="block-testing-methods__column">
+								<div class="block-testing-methods__top">
+									<div class="block-testing-methods__titles">
+										<div class="block-testing-methods__title">
+											FTIR-спектроскопия
+										</div>
+										<p>
+											Окисление, нитрование, сажа, вода, топливо
+										</p>
+									</div>
+									<ul>
+										<li>
+											<div class="block-testing-methods__name">Прибор</div>
+											<div class="block-testing-methods__value">
+												ИнфраЛЮМ ФТ-08
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Стандарт</div>
+											<div class="block-testing-methods__value">
+												ASTM E2412
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Ед. изм.</div>
+											<div class="block-testing-methods__value">Абс/см, %</div>
+										</li>
+									</ul>
+								</div>
+								<a href="./" data-popup="#testing-methods" class="link link2">
+									<span>Подробнее</span>
+								</a>
+							</div>
+							<div class="block-testing-methods__column">
+								<div class="block-testing-methods__top">
+									<div class="block-testing-methods__titles">
+										<div class="block-testing-methods__title">
+											Титрование по К. Фишеру
+										</div>
+										<p>
+											Содержание воды
+										</p>
+									</div>
+									<ul>
+										<li>
+											<div class="block-testing-methods__name">Прибор</div>
+											<div class="block-testing-methods__value">
+												Titrino Metrohm 756 KF
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Стандарт</div>
+											<div class="block-testing-methods__value">
+												ASTM D6304
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Ед. изм.</div>
+											<div class="block-testing-methods__value">ppm (мг/кг)</div>
+										</li>
+									</ul>
+								</div>
+								<a href="./" data-popup="#testing-methods" class="link link2">
+									<span>Подробнее</span>
+								</a>
+							</div>
+							<div class="block-testing-methods__column">
+								<div class="block-testing-methods__top">
+									<div class="block-testing-methods__titles">
+										<div class="block-testing-methods__title">
+											Лазерное определение частиц
+										</div>
+										<p>
+											Класс чистоты, количество частиц
+										</p>
+									</div>
+									<ul>
+										<li>
+											<div class="block-testing-methods__name">Прибор</div>
+											<div class="block-testing-methods__value">
+												PAMAS SBSS
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Стандарт</div>
+											<div class="block-testing-methods__value">
+												ISO 4406, NAS 1638
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Ед. изм.</div>
+											<div class="block-testing-methods__value">класс чистоты</div>
+										</li>
+									</ul>
+								</div>
+								<a href="./" data-popup="#testing-methods" class="link link2">
+									<span>Подробнее</span>
+								</a>
+							</div>
+							<div class="block-testing-methods__column">
+								<div class="block-testing-methods__top">
+									<div class="block-testing-methods__titles">
+										<div class="block-testing-methods__title">
+											Анализ загрязнённости
+										</div>
+										<p>
+											Наличие механических примесей
+										</p>
+									</div>
+									<ul>
+										<li>
+											<div class="block-testing-methods__name">Прибор</div>
+											<div class="block-testing-methods__value">
+												Фильтр. установка С300
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Стандарт</div>
+											<div class="block-testing-methods__value">
+												ГОСТ 6370
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Ед. изм.</div>
+											<div class="block-testing-methods__value">%</div>
+										</li>
+									</ul>
+								</div>
+								<a href="./" data-popup="#testing-methods" class="link link2">
+									<span>Подробнее</span>
+								</a>
+							</div>
+							<div class="block-testing-methods__column">
+								<div class="block-testing-methods__top">
+									<div class="block-testing-methods__titles">
+										<div class="block-testing-methods__title">
+											Мембранная колориметрия
+										</div>
+										<p>
+											Лакообразование
+										</p>
+									</div>
+									<ul>
+										<li>
+											<div class="block-testing-methods__name">Прибор</div>
+											<div class="block-testing-methods__value">
+												MPC-Color
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Стандарт</div>
+											<div class="block-testing-methods__value">
+												ASTM D7843
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Ед. изм.</div>
+											<div class="block-testing-methods__value">индекс</div>
+										</li>
+									</ul>
+								</div>
+								<a href="./" data-popup="#testing-methods" class="link link2">
+									<span>Подробнее</span>
+								</a>
+							</div>
+							<div class="block-testing-methods__column">
+								<div class="block-testing-methods__top">
+									<div class="block-testing-methods__titles">
+										<div class="block-testing-methods__title">
+											Линейная вольтамперометрия
+										</div>
+										<p>
+											Содержание антиоксидантов
+										</p>
+									</div>
+									<ul>
+										<li>
+											<div class="block-testing-methods__name">Прибор</div>
+											<div class="block-testing-methods__value">
+												Fluitec Ruler CE520
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Стандарт</div>
+											<div class="block-testing-methods__value">
+												ASTM D6971
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Ед. изм.</div>
+											<div class="block-testing-methods__value">%</div>
+										</li>
+									</ul>
+								</div>
+								<a href="./" data-popup="#testing-methods" class="link link2">
+									<span>Подробнее</span>
+								</a>
+							</div>
+							<div class="block-testing-methods__column">
+								<div class="block-testing-methods__top">
+									<div class="block-testing-methods__titles">
+										<div class="block-testing-methods__title">
+											Характеристики вспенивания
+										</div>
+										<p>
+											Вспениваемость масел
+										</p>
+									</div>
+									<ul>
+										<li>
+											<div class="block-testing-methods__name">Прибор</div>
+											<div class="block-testing-methods__value">
+												JF12579A
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Стандарт</div>
+											<div class="block-testing-methods__value">
+												ASTM D892, ГОСТ 32334
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Ед. изм.</div>
+											<div class="block-testing-methods__value">мин</div>
+										</li>
+									</ul>
+								</div>
+								<a href="./" data-popup="#testing-methods" class="link link2">
+									<span>Подробнее</span>
+								</a>
+							</div>
+							<div class="block-testing-methods__column">
+								<div class="block-testing-methods__top">
+									<div class="block-testing-methods__titles">
+										<div class="block-testing-methods__title">
+											Деаэрационные свойства
+										</div>
+										<p>
+											Воздухоотделение
+										</p>
+									</div>
+									<ul>
+										<li>
+											<div class="block-testing-methods__name">Прибор</div>
+											<div class="block-testing-methods__value">
+												JF0308A
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Стандарт</div>
+											<div class="block-testing-methods__value">
+												ASTM D342, IP 313
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Ед. изм.</div>
+											<div class="block-testing-methods__value">мин</div>
+										</li>
+									</ul>
+								</div>
+								<a href="./" data-popup="#testing-methods" class="link link2">
+									<span>Подробнее</span>
+								</a>
+							</div>
+							<div class="block-testing-methods__column">
+								<div class="block-testing-methods__top">
+									<div class="block-testing-methods__titles">
+										<div class="block-testing-methods__title">
+											Антикоррозионные свойства
+										</div>
+										<p>
+											Антикоррозионная способность
+										</p>
+									</div>
+									<ul>
+										<li>
+											<div class="block-testing-methods__name">Прибор</div>
+											<div class="block-testing-methods__value">
+												JF11143A
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Стандарт</div>
+											<div class="block-testing-methods__value">
+												ASTM D665, ГОСТ ISO 7120
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Ед. изм.</div>
+											<div class="block-testing-methods__value">—</div>
+										</li>
+									</ul>
+								</div>
+								<a href="./" data-popup="#testing-methods" class="link link2">
+									<span>Подробнее</span>
+								</a>
+							</div>
+							<div class="block-testing-methods__column">
+								<div class="block-testing-methods__top">
+									<div class="block-testing-methods__titles">
+										<div class="block-testing-methods__title">
+											Тест водоотделения
+										</div>
+										<p>
+											Деэмульгирующая способность
+										</p>
+									</div>
+									<ul>
+										<li>
+											<div class="block-testing-methods__name">Прибор</div>
+											<div class="block-testing-methods__value">
+												JF7305
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Стандарт</div>
+											<div class="block-testing-methods__value">
+												ASTM D1401, ГОСТ ISO 6614
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Ед. изм.</div>
+											<div class="block-testing-methods__value">—</div>
+										</li>
+									</ul>
+								</div>
+								<a href="./" data-popup="#video-methods" class="link link2">
+									<svg aria-hidden="true" width="24" height="24">
+										<use xlink:href="img/sprite.svg#play2"></use>
+									</svg>
+									<span>Смотреть видео метода</span>
+								</a>
+							</div>
+							<div class="block-testing-methods__column">
+								<div class="block-testing-methods__top">
+									<div class="block-testing-methods__titles">
+										<div class="block-testing-methods__title">
+											RPVOT
+										</div>
+										<p>
+											Окислительная стабильность
+										</p>
+									</div>
+									<ul>
+										<li>
+											<div class="block-testing-methods__name">Прибор</div>
+											<div class="block-testing-methods__value">
+												Biolab Pasol 10
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Стандарт</div>
+											<div class="block-testing-methods__value">
+												ASTM D2272
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Ед. изм.</div>
+											<div class="block-testing-methods__value">мин</div>
+										</li>
+									</ul>
+								</div>
+								<a href="./" data-popup="#testing-methods" class="link link2">
+									<span>Подробнее</span>
+								</a>
+							</div>
+							<div class="block-testing-methods__column">
+								<div class="block-testing-methods__top">
+									<div class="block-testing-methods__titles">
+										<div class="block-testing-methods__title">
+											Crackle-тест
+										</div>
+										<p>
+											Содержание воды
+										</p>
+									</div>
+									<ul>
+										<li>
+											<div class="block-testing-methods__name">Прибор</div>
+											<div class="block-testing-methods__value">
+												Плитка ZNCLBS1180
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Стандарт</div>
+											<div class="block-testing-methods__value">
+												—
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Ед. изм.</div>
+											<div class="block-testing-methods__value">—</div>
+										</li>
+									</ul>
+								</div>
+								<a href="./" data-popup="#testing-methods" class="link link2">
+									<span>Подробнее</span>
+								</a>
+							</div>
+							<div class="block-testing-methods__column">
+								<div class="block-testing-methods__top">
+									<div class="block-testing-methods__titles">
+										<div class="block-testing-methods__title">
+											Температура вспышки
+										</div>
+										<p>
+											Температура вспышки
+										</p>
+									</div>
+									<ul>
+										<li>
+											<div class="block-testing-methods__name">Прибор</div>
+											<div class="block-testing-methods__value">
+												Анализатор закр. тигля
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Стандарт</div>
+											<div class="block-testing-methods__value">
+												ГОСТ 6356, ISO 2719
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Ед. изм.</div>
+											<div class="block-testing-methods__value">°C</div>
+										</li>
+									</ul>
+								</div>
+								<a href="./" data-popup="#testing-methods" class="link link2">
+									<span>Подробнее</span>
+								</a>
+							</div>
+							<div class="block-testing-methods__column">
+								<div class="block-testing-methods__top">
+									<div class="block-testing-methods__titles">
+										<div class="block-testing-methods__title">
+											Определение цвета масла
+										</div>
+										<p>
+											Цветность масла
+										</p>
+									</div>
+									<ul>
+										<li>
+											<div class="block-testing-methods__name">Прибор</div>
+											<div class="block-testing-methods__value">
+												—
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Стандарт</div>
+											<div class="block-testing-methods__value">
+												—
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Ед. изм.</div>
+											<div class="block-testing-methods__value">—</div>
+										</li>
+									</ul>
+								</div>
+								<a href="./" data-popup="#testing-methods" class="link link2">
+									<span>Подробнее</span>
+								</a>
+							</div>
+							<div class="block-testing-methods__column">
+								<div class="block-testing-methods__top">
+									<div class="block-testing-methods__titles">
+										<div class="block-testing-methods__title">
+											Плотность масла
+										</div>
+										<p>
+											Плотность
+										</p>
+									</div>
+									<ul>
+										<li>
+											<div class="block-testing-methods__name">Прибор</div>
+											<div class="block-testing-methods__value">
+												—
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Стандарт</div>
+											<div class="block-testing-methods__value">
+												—
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Ед. изм.</div>
+											<div class="block-testing-methods__value">кг/м³</div>
+										</li>
+									</ul>
+								</div>
+								<a href="./" data-popup="#testing-methods" class="link link2">
+									<span>Подробнее</span>
+								</a>
+							</div>
+							<div class="block-testing-methods__column">
+								<div class="block-testing-methods__top">
+									<div class="block-testing-methods__titles">
+										<div class="block-testing-methods__title">
+											Вода по Фишеру (волюметрия)
+										</div>
+										<p>
+											Содержание воды
+										</p>
+									</div>
+									<ul>
+										<li>
+											<div class="block-testing-methods__name">Прибор</div>
+											<div class="block-testing-methods__value">
+												—
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Стандарт</div>
+											<div class="block-testing-methods__value">
+												—
+											</div>
+										</li>
+										<li>
+											<div class="block-testing-methods__name">Ед. изм.</div>
+											<div class="block-testing-methods__value">ppm</div>
+										</li>
+									</ul>
+								</div>
+								<a href="./" data-popup="#testing-methods" class="link link2">
+									<span>Подробнее</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</main>
+
+			<footer class="footer">
+				<div class="container">
+					<div class="footer__content">
+						<div class="footer-top">
+							<a href="./" class="footer-top__logo">
+								<img loading="lazy" src="img/icons/logo1.svg" alt="">
+							</a>
+							<div class="footer-top__body">
+								<ul>
+									<li>
+										<a href="./">О компании</a>
+									</li>
+									<li>
+										<a href="./">Новости</a>
+									</li>
+									<li>
+										<a href="./">Статьи</a>
+									</li>
+									<li>
+										<a href="./">Контакты</a>
+									</li>
+								</ul>
+								<div class="socials">
+									<a href="./">
+										<span class="in">
+											<svg aria-hidden="true" width="10" height="10">
+												<use xlink:href="img/sprite.svg#in"></use>
+											</svg>
+										</span>
+									</a>
+									<a href="./">
+										<span>
+											<svg aria-hidden="true" width="19" height="14">
+												<use xlink:href="img/sprite.svg#youtube"></use>
+											</svg>
+										</span>
+									</a>
+									<a href="./">
+										<span>
+											<svg aria-hidden="true" width="18" height="15" style="margin-left:-2px;">
+												<use xlink:href="img/sprite.svg#telegram"></use>
+											</svg>
+										</span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="footer-center">
+							<div class="footer-center__left">
+								<div class="footer-center__title title-main">Адрес</div>
+								<div class="footer-center__body">
+									<div class="footer-center__items">
+										<div class="footer-center__item">
+											<p>
+												г. Алматы, Наурызбайский р-н, ул. Жандосова 32
+											</p>
+										</div>
+										<div class="footer-center__item">
+											<div class="footer-center__title">Часы работы</div>
+											<p>
+												Пн-Пт, с 9:00 до 18:00
+											</p>
+										</div>
+										<div class="footer-center__item">
+											<div class="footer-center__title">Контакты</div>
+											<p>
+												<a href="tel:77273902077">+7 (727) 390-20-77</a>
+												<a href="mailto:mail@talmay.kz">mail@talmay.kz</a>
+											</p>
+										</div>
+									</div>
+									<div class="footer-center-map">
+										<img loading="lazy" src="img/map.png" alt="" class="footer-center-map__pic1">
+										<div class="footer-center-map__item">
+											<div class="footer-center-map__title">Мы на карте:</div>
+											<ul>
+												<li>
+													<a href="./">Яндекс</a>
+												</li>
+												<li>
+													<a href="./">2 Гис</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="footer-center__right">
+								<div class="footer-center__title title-main">Напишите нам</div>
+								<form action="#" class="form">
+									<div class="form__body">
+										<div class="form__inputs">
+											<div class="form__input">
+												<div class="form__placeholder">Имя</div>
+												<input data-required autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Имя" class="input">
+											</div>
+											<div class="form__input">
+												<div class="form__placeholder">Телефон</div>
+												<input data-required autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Телефон" class="input">
+											</div>
+											<div class="form__input">
+												<div class="form__placeholder">E-mail</div>
+												<input data-required autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="E-mail" class="input">
+											</div>
+										</div>
+										<div class="form__inputs">
+											<div class="form__input">
+												<div class="form__placeholder">Сообщение</div>
+												<textarea data-required placeholder="Сообщение" data-error="Ошибка" class="input textarea"></textarea>
+											</div>
+										</div>
+									</div>
+									<div class="form__bottom">
+										<div class="form__text">
+											Отправляя форму, вы соглашаетесь с политикой обработки персональных данных
+										</div>
+										<button type="submit" class="btn btn-red btn-small">
+											<span>Отправить</span>
+										</button>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="footer-bottom">
+							<div class="footer-bottom__left">
+								<a href="./" class="footer-bottom__policy">Политика конфиденциальности</a>
+								<div class="footer-bottom__copy">
+									© 2026 ТОО «Talmay». Все права защищены
+								</div>
+							</div>
+							<form action="#" class="form">
+								<div class="form__top">
+									<div class="form__title">
+										Будьте в курсе всех событий
+									</div>
+									<p>
+										Отправляя форму, вы соглашаетесь с политикой обработки персональных данных
+									</p>
+								</div>
+								<div class="form__input">
+									<div class="form__placeholder">E-mail</div>
+									<input data-required autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="E-mail" class="input">
+									<button type="submit" class="form__icon">
+										<svg aria-hidden="true" width="20" height="20">
+											<use xlink:href="img/sprite.svg#arrow4"></use>
+										</svg>
+									</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<!--Подробнее Методы тестирования-->
+		<div id="testing-methods" aria-hidden="true" class="popup popup-testing-methods popup-nesting">
+			<div class="popup__wrapper">
+				<div data-close class="popup__close">
+					<svg aria-hidden="true" width="14" height="14">
+						<use xlink:href="img/sprite.svg#close"></use>
+					</svg>
+				</div>
+				<div class="popup__content">
+					<div class="popup-testing-methods__content">
+						<a href="./" data-popup="#video-methods" class="popup-video__body">
+							<img src="img/products/image13.png" alt="" class="popup-video__poster">
+							<div class="popup-video__play play">
+								<svg aria-hidden="true" width="26" height="27">
+									<use xlink:href="img/sprite.svg#play"></use>
+								</svg>
+							</div>
+						</a>
+						<div class="popup-testing-methods__body">
+							<div class="popup-testing-methods__column">
+								<div class="popup-testing-methods__item">
+									<div class="popup-testing-methods__name">Название метода</div>
+									<h2 class="title2">Элементный анализ</h2>
+								</div>
+								<div data-close class="popup__close">
+									<svg aria-hidden="true" width="14" height="14">
+										<use xlink:href="img/sprite.svg#close"></use>
+									</svg>
+								</div>
+							</div>
+							<div class="popup-testing-methods__column column-video">
+								<div class="popup-testing-methods__item">
+									<div class="popup-testing-methods__name">Описание</div>
+									<p>
+										Определение металлов износа и загрязнений в отработанных маслах и гидравлических
+										жидкостях методом атомно-эмиссионной спектрометрии с вращающимся дисковым
+										электродом.
+									</p>
+								</div>
+								<a href="./" data-popup="#video-methods" class="popup-video__body">
+									<img src="img/products/image13.png" alt="" class="popup-video__poster">
+									<div class="popup-video__play play">
+										<svg aria-hidden="true" width="26" height="27">
+											<use xlink:href="img/sprite.svg#play"></use>
+										</svg>
+									</div>
+								</a>
+							</div>
+							<div class="popup-testing-methods__column">
+								<div class="popup-testing-methods__item">
+									<div class="popup-testing-methods__name">Приборы, использующие метод</div>
+									<p>
+										DITEE ОА800М
+									</p>
+								</div>
+								<div class="popup-testing-methods__item">
+									<div class="popup-testing-methods__name">Единицы измерения</div>
+									<p>
+										ppm (мг/кг)
+									</p>
+								</div>
+							</div>
+							<div class="popup-testing-methods__column">
+								<div class="popup-testing-methods__item">
+									<div class="popup-testing-methods__name">Результат измерения</div>
+									<p>
+										Определение элементов - Алюминий (Al); Барий (Ba); Бор (B); Ванадий (V); Железо
+										(Fe); Кадмий (Cd); Калий (K); Кальций (Ca); Кремний (Si); Литий (Li); Магний (Mg);
+										Марганец (Mn); Медь (Cu); Молибден (Mo); Натрий (Na); Никель (Ni); Олово (Sn);
+										Свинец (Pb); Серебро (Ag); Сурьма (Sb); Титан (Ti); Фосфор (P); Хром (Cr); Цинк (Zn)
+									</p>
+								</div>
+							</div>
+							<div class="popup-testing-methods__column">
+								<div class="popup-testing-methods__item">
+									<div class="popup-testing-methods__name">Используется для анализа</div>
+									<p>
+										Моторных, трансмиссионных, гидравлических, редукторных и турбинных масел, пластичной
+										смазки
+									</p>
+								</div>
+							</div>
+							<div class="popup-testing-methods__column">
+								<div class="popup-testing-methods__item">
+									<div class="popup-testing-methods__name">Стандарт</div>
+									<p>
+										ASTM D6595
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Видео Методы тестирования-->
+		<div id="video-methods" aria-hidden="true" class="popup popup-video popup-nesting">
+			<div class="popup__wrapper">
+				<div data-close class="popup__close">
+					<svg aria-hidden="true" width="14" height="14">
+						<use xlink:href="img/sprite.svg#close"></use>
+					</svg>
+				</div>
+				<div class="popup__content">
+					<div class="popup-video__body">
+						<video src="files/videos/video.mp4" preload="none" playsinline class="popup-video__video video">
+							<source loading="lazy" src="files/videos/video.mp4" type="video/mp4">
+						</video>
+						<img src="img/products/image13.png" alt="" class="popup-video__poster">
+						<div class="popup-video__play play">
+							<svg aria-hidden="true" width="26" height="27">
+								<use xlink:href="img/sprite.svg#play"></use>
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Оставить заявку-->
+		<div id="contact-us" aria-hidden="true" class="popup popup-forms">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<div class="popup-forms__body">
+						<div class="popup-forms__top">
+							<div class="popup-forms__titles">
+								<div class="popup-forms__title">
+									Связаться с нами
+								</div>
+							</div>
+							<div data-close class="popup__close">
+								<svg aria-hidden="true" width="14" height="14">
+									<use xlink:href="img/sprite.svg#close"></use>
+								</svg>
+							</div>
+						</div>
+						<form action="#" class="form">
+							<div class="form__inputs">
+								<div class="form__input">
+									<div class="form__placeholder">Имя</div>
+									<input data-required autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Имя" class="input">
+								</div>
+								<div class="form__input">
+									<div class="form__placeholder">Телефон / E-mail</div>
+									<input data-required autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Телефон / E-mail" class="input">
+								</div>
+								<div class="form__input">
+									<div class="form__placeholder">Комментарий или задача</div>
+									<textarea data-required placeholder="Комментарий или задача" data-error="Ошибка" class="input textarea"></textarea>
+								</div>
+							</div>
+							<div class="form__bottom">
+								<div class="form__text">
+									Отправляя форму, вы соглашаетесь с политикой обработки персональных данных
+								</div>
+								<button type="submit" class="btn btn-red btn-small">
+									<span>Отправить заявку</span>
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--Оставить заявку на обучение
+<div id="contact-us" aria-hidden="true" class="popup popup-forms">
+    <div class="popup__wrapper">
+        <div class="popup__content">
+            <div class="popup-forms__body">
+                <div class="popup-forms__top">
+                    <div class="popup-forms__titles">
+                        <div class="popup-forms__title">
+                            Оставить заявку на обучение
+                        </div>
+                        <p>
+                            Подберём программу под вашу команду и задачи предприятия
+                        </p>
+                    </div>
+                    <div data-close class="popup__close">
+                        <svg aria-hidden="true" width="14" height="14">
+                            <use xlink:href="img/sprite.svg#close"></use>
+                        </svg>
+                    </div>
+                </div>
+                <form action="#" class="form">
+                    <div class="form__inputs">
+                        <div class="form__input">
+                            <div class="form__placeholder">Имя</div>
+                            <input data-required autocomplete="off" type="text" name="form[]" data-error="Ошибка"
+                                placeholder="Имя" class="input">
+                        </div>
+                        <div class="form__input">
+                            <div class="form__placeholder">Должность</div>
+                            <input data-required autocomplete="off" type="text" name="form[]" data-error="Ошибка"
+                                placeholder="Должность" class="input">
+                        </div>
+                        <div class="form__input">
+                            <div class="form__placeholder">Компания</div>
+                            <input data-required autocomplete="off" type="text" name="form[]" data-error="Ошибка"
+                                placeholder="Компания" class="input">
+                        </div>
+                        <div class="form__input">
+                            <div class="form__placeholder">Телефон / E-mail</div>
+                            <input data-required autocomplete="off" type="text" name="form[]" data-error="Ошибка"
+                                placeholder="Телефон / E-mail" class="input">
+                        </div>
+                        <div class="form__input">
+                            <div class="form__placeholder">Комментарий или задача</div>
+                            <textarea data-required placeholder="Комментарий или задача" data-error="Ошибка"
+                                class="input textarea"></textarea>
+                        </div>
+                    </div>
+                    <div class="form__bottom">
+                        <div class="form__text">
+                            Отправляя форму, вы соглашаетесь с политикой обработки персональных данных
+                        </div>
+                        <button type="submit" class="btn btn-red btn-small">
+                            <span>Отправить заявку</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>-->
+		<script src="js/swiper-10.2.0.min.js"></script>
+		<script src="js/dynamic_adapt.js"></script>
+		<script src="js/scripts.js"></script>
+	</body>
+
+</html>
