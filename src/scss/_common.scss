@@ -311,6 +311,10 @@ a {
   font-weight: 600;
   font-size: 24px;
   line-height: 133%;
+  @media (max-width: 767px) {
+    font-size: 18px;
+    line-height: 156%;
+  }
 }
 
 .block1 {
@@ -1063,6 +1067,9 @@ a {
       opacity: 0.7;
     }
   }
+  @media (max-width: 767px) {
+    display: none;
+  }
 }
 
 /*Пагинация*/
@@ -1171,5 +1178,39 @@ a {
         margin: 0px 0px 0px 10px;
       }
     }
+  }
+}
+
+/*видео*/
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.play {
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: var(--brand-primary-new);
+  transition: opacity 0.3s;
+  svg {
+    fill: none;
+    margin-left: 5px;
+    stroke: var(--icon-inverse);
+    color: var(--icon-inverse);
+  }
+  &._active {
+    opacity: 0;
   }
 }
