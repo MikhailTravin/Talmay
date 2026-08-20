@@ -1,0 +1,414 @@
+[
+    {
+        "id": "ditee-oa800p",
+        "name": "DITEE OA800P",
+        "image": "img/products/image11.png",
+        "description": "Прецизионный спектрометр OA800P предназначен для высокоточного анализа эксплуатационных жидкостей",
+        "url": "ditee-oa800p.html",
+        "manufacturer": [
+            "DITEE"
+        ],
+        "indicators": [
+            "Элементный состав"
+        ],
+        "tasks": [
+            "Масло / смазочные материалы",
+            "Нефть / нефтепродукты"
+        ],
+        "standards": [
+            "ASTM D",
+            "ISO"
+        ],
+        "type": [
+            "Спектрометр"
+        ]
+    },
+    {
+        "id": "ditee-oa800m",
+        "name": "DITEE OA800M",
+        "image": "img/products/image12.png",
+        "description": "Мобильный спектрометр OA800M разработан для быстрого и точного анализа рабочих жидкостей прямо на месте эксплуатации",
+        "url": "ditee-oa800m.html",
+        "manufacturer": [
+            "DITEE"
+        ],
+        "indicators": [
+            "Элементный состав"
+        ],
+        "tasks": [
+            "Масло / смазочные материалы",
+            "Топливо / дизель / бензин"
+        ],
+        "standards": [
+            "ASTM D",
+            "ISO"
+        ],
+        "type": [
+            "Спектрометр"
+        ]
+    },
+    {
+        "id": "ditee-oa800h",
+        "name": "DITEE OA800H",
+        "image": "img/products/image13.png",
+        "description": "Спектрометр OA800H анализирует эксплуатационные жидкости на содержание продуктов износа, присадок и загрязнений",
+        "url": "ditee-oa800h.html",
+        "manufacturer": [
+            "DITEE"
+        ],
+        "indicators": [
+            "Элементный состав"
+        ],
+        "tasks": [
+            "Масло / смазочные материалы"
+        ],
+        "standards": [
+            "ASTM D",
+            "ISO"
+        ],
+        "type": [
+            "Спектрометр"
+        ]
+    },
+    {
+        "id": "viscol-10j",
+        "name": "Viscol-10J",
+        "image": "img/products/image19.png",
+        "description": "Автоматический вискозиметр для определения кинематической вязкости нефтепродуктов",
+        "url": "viscol-10j.html",
+        "manufacturer": [
+            "ISL"
+        ],
+        "indicators": [
+            "Кинематическая вязкость"
+        ],
+        "tasks": [
+            "Нефть / нефтепродукты",
+            "Топливо / дизель / бензин"
+        ],
+        "standards": [
+            "ГОСТ",
+            "ASTM D445",
+            "ISO"
+        ],
+        "type": [
+            "Вискозиметр"
+        ]
+    },
+    {
+        "id": "viscol-10b",
+        "name": "Viscol-10B",
+        "image": "img/products/image17.png",
+        "description": "Вискозиметр для определения вязкости нефтепродуктов",
+        "url": "viscol-10b.html",
+        "manufacturer": [
+            "ISL"
+        ],
+        "indicators": [
+            "Кинематическая вязкость"
+        ],
+        "tasks": [
+            "Нефть / нефтепродукты"
+        ],
+        "standards": [
+            "ГОСТ",
+            "ASTM D",
+            "ISO"
+        ],
+        "type": [
+            "Вискозиметр"
+        ]
+    },
+    {
+        "id": "viscol-10p",
+        "name": "Viscol-10P",
+        "image": "img/products/image15.png",
+        "description": "Портативный вискозиметр для полевых условий",
+        "url": "viscol-10p.html",
+        "manufacturer": [
+            "ISL"
+        ],
+        "indicators": [
+            "Кинематическая вязкость"
+        ],
+        "tasks": [
+            "Масло / смазочные материалы",
+            "Нефть / нефтепродукты"
+        ],
+        "standards": [
+            "ГОСТ",
+            "ASTM D",
+            "ISO"
+        ],
+        "type": [
+            "Вискозиметр"
+        ]
+    },
+    {
+        "id": "viscol-10as",
+        "name": "Viscol-10AS",
+        "image": "img/products/image17.png",
+        "description": "Автоматический вискозиметр для лабораторий",
+        "url": "viscol-10as.html",
+        "manufacturer": [
+            "ISL"
+        ],
+        "indicators": [
+            "Кинематическая вязкость"
+        ],
+        "tasks": [
+            "Масло / смазочные материалы"
+        ],
+        "standards": [
+            "ГОСТ",
+            "ASTM D",
+            "ISO"
+        ],
+        "type": [
+            "Вискозиметр"
+        ]
+    },
+    {
+        "id": "viscol-20as",
+        "name": "Viscol-20AS",
+        "image": "img/products/image19.png",
+        "description": "Автоматический вискозиметр для широкого спектра задач",
+        "url": "viscol-20as.html",
+        "manufacturer": [
+            "ISL"
+        ],
+        "indicators": [
+            "Кинематическая вязкость"
+        ],
+        "tasks": [
+            "Масло / смазочные материалы",
+            "Нефть / нефтепродукты"
+        ],
+        "standards": [
+            "ГОСТ",
+            "ASTM D",
+            "ISO"
+        ],
+        "type": [
+            "Вискозиметр"
+        ]
+    },
+    {
+        "id": "ypa-ttl2",
+        "name": "YPA-TTL2",
+        "image": "img/products/image14.png",
+        "description": "Портативный анализатор ферромагнитных частиц в масле",
+        "url": "ypa-ttl2.html",
+        "manufacturer": [
+            "Yateks"
+        ],
+        "indicators": [
+            "Ферромагнитный износ"
+        ],
+        "tasks": [
+            "Масло / смазочные материалы"
+        ],
+        "standards": [
+            "ГОСТ",
+            "ASTM D"
+        ],
+        "type": [
+            "Анализатор"
+        ]
+    },
+    {
+        "id": "pamas-s40",
+        "name": "PAMAS S40",
+        "image": "img/products/image15.png",
+        "description": "Счетчик частиц для определения класса чистоты жидкостей",
+        "url": "pamas-s40.html",
+        "manufacturer": [
+            "PAMAS"
+        ],
+        "indicators": [
+            "Класс чистоты"
+        ],
+        "tasks": [
+            "Масло / смазочные материалы"
+        ],
+        "standards": [
+            "ГОСТ",
+            "ISO 4406",
+            "ASTM D"
+        ],
+        "type": [
+            "Счетчик частиц"
+        ]
+    },
+    {
+        "id": "pamas-s40-fuel",
+        "name": "PAMAS S40 Fuel",
+        "image": "img/products/image19.png",
+        "description": "Счетчик частиц для анализа топлива",
+        "url": "pamas-s40-fuel.html",
+        "manufacturer": [
+            "PAMAS"
+        ],
+        "indicators": [
+            "Класс чистоты"
+        ],
+        "tasks": [
+            "Топливо / дизель / бензин"
+        ],
+        "standards": [
+            "ГОСТ",
+            "ASTM D",
+            "ISO"
+        ],
+        "type": [
+            "Счетчик частиц"
+        ]
+    },
+    {
+        "id": "pamas-s40-go",
+        "name": "PAMAS S40 GO",
+        "image": "img/products/image18.png",
+        "description": "Портативный счетчик частиц для оперативного контроля",
+        "url": "pamas-s40-go.html",
+        "manufacturer": [
+            "PAMAS"
+        ],
+        "indicators": [
+            "Класс чистоты"
+        ],
+        "tasks": [
+            "Масло / смазочные материалы",
+            "Топливо / дизель / бензин"
+        ],
+        "standards": [
+            "ГОСТ",
+            "ISO 4406",
+            "ASTM D"
+        ],
+        "type": [
+            "Счетчик частиц"
+        ]
+    },
+    {
+        "id": "pamas-s40-go-lube",
+        "name": "PAMAS S40 GO Lube",
+        "image": "img/products/image19.png",
+        "description": "Портативный счетчик частиц для смазочных материалов",
+        "url": "pamas-s40-go-lube.html",
+        "manufacturer": [
+            "PAMAS"
+        ],
+        "indicators": [
+            "Класс чистоты"
+        ],
+        "tasks": [
+            "Масло / смазочные материалы"
+        ],
+        "standards": [
+            "ГОСТ",
+            "ISO 4406",
+            "ASTM D"
+        ],
+        "type": [
+            "Счетчик частиц"
+        ]
+    },
+    {
+        "id": "pamas-s40-lube-oil",
+        "name": "PAMAS S40 Lube Oil",
+        "image": "img/products/image17.png",
+        "description": "Счетчик частиц для анализа смазочных масел",
+        "url": "pamas-s40-lube-oil.html",
+        "manufacturer": [
+            "PAMAS"
+        ],
+        "indicators": [
+            "Класс чистоты"
+        ],
+        "tasks": [
+            "Масло / смазочные материалы"
+        ],
+        "standards": [
+            "ГОСТ",
+            "ISO 4406",
+            "ASTM D"
+        ],
+        "type": [
+            "Счетчик частиц"
+        ]
+    },
+    {
+        "id": "pamas-s50-fuel",
+        "name": "PAMAS S50 Fuel",
+        "image": "img/products/image16.png",
+        "description": "Счетчик частиц для анализа топлива с высокой точностью",
+        "url": "pamas-s50-fuel.html",
+        "manufacturer": [
+            "PAMAS"
+        ],
+        "indicators": [
+            "Класс чистоты"
+        ],
+        "tasks": [
+            "Топливо / дизель / бензин"
+        ],
+        "standards": [
+            "ГОСТ",
+            "ASTM D",
+            "ISO"
+        ],
+        "type": [
+            "Счетчик частиц"
+        ]
+    },
+    {
+        "id": "sl-sf03b",
+        "name": "SL-SF03B",
+        "image": "img/products/image18.png",
+        "description": "Спектрометр для анализа элементного состава масел",
+        "url": "sl-sf03b.html",
+        "manufacturer": [
+            "Sheli"
+        ],
+        "indicators": [
+            "Элементный состав"
+        ],
+        "tasks": [
+            "Масло / смазочные материалы"
+        ],
+        "standards": [
+            "ГОСТ",
+            "ASTM D",
+            "ISO"
+        ],
+        "type": [
+            "Спектрометр"
+        ]
+    },
+    {
+        "id": "pamas-s40-avtur",
+        "name": "PAMAS S40 AVTUR",
+        "image": "img/products/image15.png",
+        "description": "Портативный счетчик частиц для анализа турбинных топлив, бензина и дизельного топлива",
+        "url": "pamas-s40-avtur.html",
+        "manufacturer": [
+            "PAMAS"
+        ],
+        "indicators": [
+            "Класс чистоты"
+        ],
+        "tasks": [
+            "Топливо / дизель / бензин",
+            "Авиа / Авиакеросин"
+        ],
+        "standards": [
+            "ГОСТ",
+            "ASTM D",
+            "ISO",
+            "GJB"
+        ],
+        "type": [
+            "Счетчик частиц"
+        ]
+    }
+]

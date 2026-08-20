@@ -5483,6 +5483,24 @@ a {
     grid-template-columns: 1fr;
   }
 }
+.block-main-catalog__cards .empty-message {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 156%;
+  color: var(--color-grey-15);
+  padding: 0px 16px;
+}
+@media (max-width: 992px) {
+  .block-main-catalog__cards .empty-message {
+    padding: 0px 0px 0px 0px;
+  }
+}
+@media (max-width: 767px) {
+  .block-main-catalog__cards .empty-message {
+    font-size: 16px;
+    line-height: 150%;
+  }
+}
 
 /*Карточка прибора*/
 @media (max-width: 992px) {
