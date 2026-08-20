@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Каталог приборов / Производители</title>
+    {% include 'blocks/head.njk' %}
+</head>
+
+<body class="preload mp">
+    <div class="main-wrapper-outer">
+        {% include 'blocks/header.njk' %}
+        <main class="main">
+
+            <!--Хлебные крошки-->
+            <div class="breadcrumbs">
+                <div class="container">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div class="home-icon">
+                                    <svg aria-hidden="true" width="18" height="19">
+                                        <use xlink:href="img/sprite.svg#home"></use>
+                                    </svg>
+                                </div>
+                                <span>Главная</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Приборы
+                            </a>
+                        </li>
+                        <li><span>Спектрометры DITEE</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--Каталог приборов-->
+            <div class="block-main-catalog block3">
+                <div class="container">
+                    <div class="block-title">
+                        <div class="block-title__left">
+                            <h1 class="title1">Каталог приборов</h1>
+                        </div>
+                        <div class="block-title__filter">
+                            <button type="button" class="filter-icon" id="resetFilters">
+                                <svg aria-hidden="true" width="18" height="19">
+                                    <use xlink:href="img/sprite.svg#oil"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="block-main-catalog__content">
+                        <!-- Фильтры -->
+                        <ul data-da=".block-title__filter, 992, last" data-spollers data-one-spoller
+                            class="filter-spollers">
+                            <!-- Производители -->
+                            <li class="filter-spollers__item">
+                                <button type="button" data-spoller class="filter-spollers__button">
+                                    <span class="filter-spollers__title">Производители</span>
+                                    <span class="filter-spollers__arrow">
+                                        <svg aria-hidden="true" width="10" height="6">
+                                            <use xlink:href="img/sprite.svg#arrow1"></use>
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div class="filter-spollers__body">
+                                    <ul>
+                                        <li><a href="#" data-filter="manufacturer" data-value="PAMAS">PAMAS</a></li>
+                                        <li><a href="#" data-filter="manufacturer" data-value="Biolab">Biolab</a></li>
+                                        <li><a href="#" data-filter="manufacturer" data-value="DITEE">DITEE</a></li>
+                                        <li><a href="#" data-filter="manufacturer" data-value="Sheli">Sheli</a></li>
+                                        <li><a href="#" data-filter="manufacturer" data-value="Yateks">Yateks</a></li>
+                                        <li><a href="#" data-filter="manufacturer" data-value="ISL">ISL</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <!-- Показатели -->
+                            <li class="filter-spollers__item">
+                                <button type="button" data-spoller class="filter-spollers__button">
+                                    <span class="filter-spollers__title">Показатели</span>
+                                    <span class="filter-spollers__arrow">
+                                        <svg aria-hidden="true" width="10" height="6">
+                                            <use xlink:href="img/sprite.svg#arrow1"></use>
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div class="filter-spollers__body">
+                                    <ul>
+                                        <li><a href="#" data-filter="indicators"
+                                                data-value="Элементный состав">Элементный состав</a></li>
+                                        <li><a href="#" data-filter="indicators"
+                                                data-value="Кинематическая вязкость">Кинематическая вязкость</a></li>
+                                        <li><a href="#" data-filter="indicators"
+                                                data-value="Ферромагнитный износ">Ферромагнитный износ</a></li>
+                                        <li><a href="#" data-filter="indicators" data-value="Класс чистоты">Класс
+                                                чистоты</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <!-- Задача -->
+                            <li class="filter-spollers__item">
+                                <button type="button" data-spoller class="filter-spollers__button">
+                                    <span class="filter-spollers__title">Задача</span>
+                                    <span class="filter-spollers__arrow">
+                                        <svg aria-hidden="true" width="10" height="6">
+                                            <use xlink:href="img/sprite.svg#arrow1"></use>
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div class="filter-spollers__body">
+                                    <ul>
+                                        <li><a href="#" data-filter="tasks"
+                                                data-value="Масло / смазочные материалы">Масло / смазочные материалы</a>
+                                        </li>
+                                        <li><a href="#" data-filter="tasks" data-value="Нефть / нефтепродукты">Нефть /
+                                                нефтепродукты</a></li>
+                                        <li><a href="#" data-filter="tasks"
+                                                data-value="Топливо / дизель / бензин">Топливо / дизель / бензин</a>
+                                        </li>
+                                        <li><a href="#" data-filter="tasks" data-value="Авиа / Авиакеросин">Авиа /
+                                                Авиакеросин</a></li>
+                                        <li><a href="#" data-filter="tasks"
+                                                data-value="Пластмассы и полимеры">Пластмассы и полимеры</a></li>
+                                        <li><a href="#" data-filter="tasks" data-value="Битум">Битум</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <!-- Стандарты -->
+                            <li class="filter-spollers__item">
+                                <button type="button" data-spoller class="filter-spollers__button">
+                                    <span class="filter-spollers__title">Стандарты</span>
+                                    <span class="filter-spollers__arrow">
+                                        <svg aria-hidden="true" width="10" height="6">
+                                            <use xlink:href="img/sprite.svg#arrow1"></use>
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div class="filter-spollers__body">
+                                    <ul>
+                                        <li><a href="#" data-filter="standards" data-value="ГОСТ">ГОСТ</a></li>
+                                        <li><a href="#" data-filter="standards" data-value="ASTM D">ASTM D</a></li>
+                                        <li><a href="#" data-filter="standards" data-value="ASTM D445">ASTM D445</a>
+                                        </li>
+                                        <li><a href="#" data-filter="standards" data-value="ISO">ISO</a></li>
+                                        <li><a href="#" data-filter="standards" data-value="ISO 4406">ISO 4406</a></li>
+                                        <li><a href="#" data-filter="standards" data-value="IP">IP</a></li>
+                                        <li><a href="#" data-filter="standards" data-value="IEC">IEC</a></li>
+                                        <li><a href="#" data-filter="standards" data-value="SAE">SAE</a></li>
+                                        <li><a href="#" data-filter="standards" data-value="NAS">NAS</a></li>
+                                        <li><a href="#" data-filter="standards" data-value="GJB">GJB</a></li>
+                                        <li><a href="#" data-filter="standards" data-value="EN">EN</a></li>
+                                        <li><a href="#" data-filter="standards" data-value="USP">USP</a></li>
+                                        <li><a href="#" data-filter="standards" data-value="TAPPI">TAPPI</a></li>
+                                        <li><a href="#" data-filter="standards" data-value="NAVAIR">NAVAIR</a></li>
+                                        <li><a href="#" data-filter="standards" data-value="CHARN">CHARN</a></li>
+                                        <li><a href="#" data-filter="standards" data-value="DEF STAN">DEF STAN</a></li>
+                                        <li><a href="#" data-filter="standards" data-value="Ph. Eur">Ph. Eur</a></li>
+                                        <li><a href="#" data-filter="standards" data-value="BP">BP</a></li>
+                                        <li><a href="#" data-filter="standards" data-value="KP">KP</a></li>
+                                        <li><a href="#" data-filter="standards" data-value="JP">JP</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="block-main-catalog__body">
+                            <div class="block-descr">
+                                <h2 class="title2">
+                                    <span id="catalogTitle">Все приборы</span>
+                                    <div class="number" id="instrumentsCount">0</div>
+                                </h2>
+                                <div class="block-descr__text">
+                                    <p id="catalogDescription">
+                                        В каталоге представлены приборы для анализа масел и оборудование для
+                                        комплексного контроля состояния рабочих жидкостей
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="block-main-catalog__cards" id="instrumentsContainer">
+                                <!-- Карточки загрузятся сюда -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        {% include 'blocks/footer.njk' %}
+    </div>
+    {% include 'blocks/popups.njk' %}
+    <script src="js/instruments.js"></script>
+    <script src="js/instrument-loader.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            function updateCatalogMeta(filters, count) {
+                const descEl = document.getElementById('catalogDescription');
+                const countEl = document.getElementById('instrumentsCount');
+
+                let desc = 'В каталоге представлены приборы для анализа масел и оборудование для комплексного контроля состояния рабочих жидкостей, применяемое в промышленных, сервисных и исследовательских лабораториях. Компания поставляет лабораторные приборы и профессиональное испытательное оборудование ведущих мировых производителей: счетчики частиц, вискозиметры, спектрометры, анализаторы окислительной стабильности, приборы для определения ферромагнитного износа и другое лабораторное оборудование для решения широкого спектра аналитических задач. Все аналитические приборы поставляются с метрологическим сопровождением, сервисной поддержкой и возможностью интеграции в программы мониторинга технического состояния оборудования.';
+
+                if (filters.manufacturer) {
+                    desc = `${filters.manufacturer}`;
+                } else if (filters.indicators) {
+                    desc = `${filters.indicators}`;
+                } else if (filters.tasks) {
+                    desc = `${filters.tasks}`;
+                } else if (filters.standards) {
+                    desc = `${filters.standards}`;
+                }
+
+                if (descEl) {
+                    descEl.textContent = desc;
+                }
+
+                if (countEl) {
+                    countEl.textContent = count;
+                }
+            }
+
+            function loadInstruments(filters = {}) {
+                const oldPagination = document.querySelector('.pagging');
+                if (oldPagination) oldPagination.remove();
+
+                instrumentLoader.renderInstruments(
+                    '#instrumentsContainer',
+                    filters,
+                    {
+                        usePagination: true,
+                        perPage: 12,
+                        onAfterRender: function (filtered) {
+                            updateCatalogMeta(filters, filtered.length);
+                        }
+                    }
+                );
+            }
+
+            document.querySelectorAll('.filter-spollers__body a[data-filter]').forEach(function (link) {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const parentList = this.closest('ul');
+                    if (parentList) {
+                        parentList.querySelectorAll('a').forEach(function (a) {
+                            a.classList.remove('active');
+                        });
+                    }
+                    this.classList.add('active');
+
+                    let filters = {};
+                    document.querySelectorAll('.filter-spollers__body ul').forEach(function (ul) {
+                        const activeLink = ul.querySelector('a.active');
+                        if (activeLink) {
+                            const filterType = activeLink.dataset.filter;
+                            const filterValue = activeLink.dataset.value;
+                            filters[filterType] = filterValue;
+                        }
+                    });
+
+                    loadInstruments(filters);
+                });
+            });
+
+            document.getElementById('resetFilters').addEventListener('click', function () {
+                document.querySelectorAll('.filter-spollers__body a').forEach(function (a) {
+                    a.classList.remove('active');
+                });
+                loadInstruments({});
+            });
+
+            document.addEventListener('click', function (e) {
+                const pagLink = e.target.closest('.pagging a[data-page]');
+                if (pagLink) {
+                    e.preventDefault();
+                    const page = parseInt(pagLink.dataset.page);
+
+                    let filters = {};
+                    document.querySelectorAll('.filter-spollers__body ul').forEach(function (ul) {
+                        const activeLink = ul.querySelector('a.active');
+                        if (activeLink) {
+                            const filterType = activeLink.dataset.filter;
+                            const filterValue = activeLink.dataset.value;
+                            filters[filterType] = filterValue;
+                        }
+                    });
+
+                    const oldPagination = document.querySelector('.pagging');
+                    if (oldPagination) oldPagination.remove();
+
+                    instrumentLoader.renderInstruments(
+                        '#instrumentsContainer',
+                        filters,
+                        {
+                            usePagination: true,
+                            page: page,
+                            perPage: 12,
+                            onAfterRender: function (filtered) {
+                                updateCatalogMeta(filters, filtered.length);
+                            }
+                        }
+                    );
+                }
+            });
+
+            loadInstruments({});
+        });
+    </script>
+    {% include 'blocks/scripts.njk' %}
+</body>
+
+</html>
