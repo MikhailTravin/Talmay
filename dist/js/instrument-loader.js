@@ -10,7 +10,7 @@ class InstrumentLoader {
 
     async loadDescriptions() {
         try {
-            const response = await fetch('/data/descriptions.json');
+            const response = await fetch('data/descriptions.json');
             if (response.ok) {
                 this.descriptions = await response.json();
             }
@@ -27,7 +27,7 @@ class InstrumentLoader {
         try {
             await this.loadDescriptions();
 
-            const response = await fetch('/data/instruments.json');
+            const response = await fetch('data/instruments.json');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
