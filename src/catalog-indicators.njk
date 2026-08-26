@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-    <title>Каталог приборов</title>
+    <title>Каталог приборов / Показатели</title>
     {% include 'blocks/head.njk' %}
 </head>
 
@@ -25,7 +25,10 @@
                                 <span>Главная</span>
                             </a>
                         </li>
-                        <li><span>Приборы</span></li>
+                        <li>
+                            <a href="catalog.html">Приборы</a>
+                        </li>
+                        <li><span>Показатели</span></li>
                     </ul>
                 </div>
             </div>
@@ -35,7 +38,7 @@
                 <div class="container">
                     <div class="block-title">
                         <div class="block-title__left">
-                            <h1 class="title1">Каталог приборов</h1>
+                            <h1 class="title1">Каталог приборов / Показатели</h1>
                         </div>
                         <div class="block-title__filter">
                             <button type="button" class="filter-icon" id="resetFilters">
@@ -52,7 +55,8 @@
                             <!-- Производители -->
                             <li class="filter-spollers__item">
                                 <button type="button" data-spoller class="filter-spollers__button">
-                                    <a href="catalog-manufacturers.html" class="filter-spollers__title">Производители</a>
+                                    <a href="catalog-manufacturers.html"
+                                        class="filter-spollers__title">Производители</a>
                                     <span class="filter-spollers__arrow">
                                         <svg aria-hidden="true" width="10" height="6">
                                             <use xlink:href="img/sprite.svg#arrow1"></use>
@@ -73,8 +77,8 @@
 
                             <!-- Показатели -->
                             <li class="filter-spollers__item">
-                                <button type="button" data-spoller class="filter-spollers__button">
-                                    <a href="catalog-indicators.html" class="filter-spollers__title">Показатели</a>
+                                <button type="button" data-spoller class="filter-spollers__button _spoller-active">
+                                    <span class="filter-spollers__title">Показатели</span>
                                     <span class="filter-spollers__arrow">
                                         <svg aria-hidden="true" width="10" height="6">
                                             <use xlink:href="img/sprite.svg#arrow1"></use>
