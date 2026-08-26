@@ -307,6 +307,12 @@ class InstrumentLoader {
     }
 
     async loadPage(page, container, filters) {
+
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' 
+        });
+
         const oldPagination = container.parentElement.querySelector('.pagging');
         if (oldPagination) {
             oldPagination.remove();
