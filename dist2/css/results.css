@@ -1,0 +1,131 @@
+/*Результаты для клиентов*/
+.block-results .block-title__col {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 1008px;
+          flex: 0 1 1008px;
+}
+.block-results .block-title__col p {
+  color: var(--typography-primary);
+}
+@media (max-width: 767px) {
+  .block-results .block-title {
+    margin-bottom: 24px;
+  }
+}
+.block-results__body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media (max-width: 992px) {
+  .block-results__body {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 767px) {
+  .block-results__body {
+    gap: 16px;
+  }
+}
+.block-results__column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 4px;
+  border-radius: 32px;
+  padding: 24px;
+  background: var(--bg-tetriary);
+  min-height: 228px;
+}
+@media (max-width: 767px) {
+  .block-results__column {
+    padding: 16px;
+    min-height: -webkit-fit-content;
+    min-height: -moz-fit-content;
+    min-height: fit-content;
+    gap: 0px;
+  }
+}
+.block-results__icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 16px;
+  width: 64px;
+  height: 64px;
+  -webkit-box-shadow: 0 4px 24px 0 var(--bg-secondary);
+          box-shadow: 0 4px 24px 0 var(--bg-secondary);
+  background: var(--bg-primary);
+  margin-left: auto;
+}
+@media (max-width: 767px) {
+  .block-results__icon {
+    width: 48px;
+    height: 48px;
+  }
+}
+.block-results__icon svg {
+  stroke: var(--brand-primary-new);
+  color: var(--brand-primary-new);
+  fill: none;
+}
+@media (max-width: 767px) {
+  .block-results__icon svg {
+    width: 24px;
+    height: auto;
+  }
+}
+.block-results__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 16px;
+  padding: 8px;
+}
+@media (max-width: 767px) {
+  .block-results__item {
+    padding: 0px 0px 0px 0px;
+    gap: 8px;
+    margin-top: -9px;
+  }
+}
+.block-results__item p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--typography-secondary);
+}
+@media (max-width: 767px) {
+  .block-results__item p {
+    font-size: 14px;
+    line-height: 143%;
+  }
+}
+.block-results__title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+}
+@media (max-width: 767px) {
+  .block-results__title {
+    font-size: 18px;
+    line-height: 156%;
+  }
+}

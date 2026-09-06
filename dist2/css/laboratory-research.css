@@ -1,0 +1,187 @@
+/*Лаборатория / Исследования*/
+.block-laboratory-research {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 56px;
+}
+.block-laboratory-research__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 40px;
+}
+.block-laboratory-research__column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 40px;
+  background: var(--bg-tetriary);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 40px;
+}
+@media (max-width: 767px) {
+  .block-laboratory-research__column {
+    padding: 24px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    gap: 24px;
+  }
+}
+.block-laboratory-research__body {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 432px;
+          flex: 0 1 432px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 34px;
+}
+@media (max-width: 767px) {
+  .block-laboratory-research__body {
+    width: 100%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+    gap: 32px;
+  }
+}
+.block-laboratory-research__titles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 12px;
+}
+.block-laboratory-research__titles p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--typography-secondary);
+}
+@media (max-width: 550px) {
+  .block-laboratory-research__titles p {
+    font-size: 14px;
+    line-height: 143%;
+  }
+}
+.block-laboratory-research__title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+}
+@media (max-width: 550px) {
+  .block-laboratory-research__title {
+    font-size: 18px;
+    line-height: 156%;
+  }
+}
+.block-laboratory-research__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 10px 24px;
+}
+@media (max-width: 550px) {
+  .block-laboratory-research__buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 16px;
+  }
+}
+.block-laboratory-research__buttons .btn {
+  padding: 5px 24px;
+}
+@media (max-width: 767px) {
+  .block-laboratory-research__buttons .btn {
+    min-height: 48px;
+  }
+}
+@media (max-width: 550px) {
+  .block-laboratory-research__buttons .btn {
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+.block-laboratory-research__buttons .btn.btn-red svg {
+  stroke: var(--icon-inverse);
+  color: var(--icon-inverse);
+  fill: none;
+}
+@media (max-width: 767px) {
+  .block-laboratory-research__buttons .btn.btn-grey {
+    min-height: 40px;
+  }
+}
+.block-laboratory-research__buttons .btn.btn-grey svg {
+  stroke: var(--icon-primary);
+  color: var(--icon-primary);
+  fill: none;
+}
+.block-laboratory-research__image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 166px;
+          flex: 0 0 166px;
+  border: 4px solid var(--bg-primary);
+  border-radius: 4px;
+  overflow: hidden;
+  margin: -4px 0px -4px 0px;
+}
+@media (max-width: 767px) {
+  .block-laboratory-research__image {
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+    width: auto;
+    height: 230px;
+  }
+}
+.block-laboratory-research__image img {
+  width: 100%;
+  height: auto;
+}

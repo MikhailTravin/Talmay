@@ -1,0 +1,106 @@
+.popup-video {
+  padding: 0px 96px;
+}
+@media (max-width: 767px) {
+  .popup-video {
+    padding: 0px 0px 0px 0px;
+  }
+}
+.popup-video::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-black-solid);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.popup-video.popup_show::before {
+  content: "";
+  opacity: 1;
+}
+.popup-video .popup__wrapper {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.popup-video .popup__content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  background: transparent;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  max-width: 768px;
+  width: 100%;
+}
+@media (max-width: 767px) {
+  .popup-video .popup__content {
+    max-width: 100%;
+  }
+}
+.popup-video .popup__close {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  border: 1px solid var(--border);
+  z-index: 30;
+}
+@media (max-width: 1200px) {
+  .popup-video .popup__close {
+    top: 24px;
+    right: 24px;
+  }
+}
+@media (max-width: 767px) {
+  .popup-video .popup__close {
+    top: 16px;
+    right: 16px;
+  }
+}
+.popup-video .popup__close svg {
+  stroke: var(--icon-inverse);
+  color: var(--icon-inverse);
+}
+.popup-video__body {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+.popup-video__video {
+  left: 50%;
+  -webkit-transform: translate(-50%, 0px);
+          transform: translate(-50%, 0px);
+}
+.popup-video__poster {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.popup-video__poster._active {
+  opacity: 0;
+}

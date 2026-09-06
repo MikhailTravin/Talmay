@@ -1,0 +1,118 @@
+.fraction-slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  backdrop-filter: blur(16px);
+  -webkit-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.05);
+          box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.2);
+  z-index: 20;
+  border-radius: 30px;
+  padding: 4px 16px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 160%;
+  color: var(--color-white-solid);
+}
+@media (max-width: 992px) {
+  .fraction-slider {
+    font-size: 18px;
+    line-height: 156%;
+  }
+}
+@media (max-width: 767px) {
+  .fraction-slider {
+    right: 24px;
+    top: 24px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 550px) {
+  .fraction-slider {
+    top: 16px;
+    right: 16px;
+  }
+}
+
+.nav-slider {
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 20;
+}
+@media (max-width: 767px) {
+  .nav-slider {
+    bottom: 24px;
+    right: 24px;
+  }
+}
+@media (max-width: 550px) {
+  .nav-slider {
+    bottom: 16px;
+    right: 16px;
+  }
+}
+
+.nav-slider-arrow {
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid var(--color-white--400);
+  border-radius: 50%;
+  backdrop-filter: blur(16px);
+  -webkit-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.05);
+          box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.05);
+  background: var(--color-white--700);
+}
+.nav-slider-arrow svg {
+  position: relative;
+  z-index: 15;
+  stroke: var(--icon-primary);
+  fill: none;
+}
+@media (max-width: 767px) {
+  .nav-slider-arrow svg {
+    width: 15px;
+    height: auto;
+  }
+}
+.nav-slider-arrow.arrow-prev svg {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+.swiper-pagination-lock {
+  display: none;
+}
+
+.swiper-button-lock {
+  display: none;
+}
+
+.swiper-button-disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}

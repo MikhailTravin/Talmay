@@ -1,0 +1,181 @@
+/*Фильтр*/
+.filter-icon {
+  display: none;
+}
+@media (max-width: 992px) {
+  .filter-icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-radius: 24px;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 56px;
+            flex: 0 0 56px;
+    width: 56px;
+    height: 48px;
+    background: var(--bg-secondary);
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+  }
+  .filter-icon svg {
+    stroke: var(--icon-primary);
+    color: var(--icon-primary);
+    fill: none;
+  }
+}
+@media (max-width: 992px) and (any-hover: hover) {
+  .filter-icon:hover {
+    opacity: 0.7;
+  }
+}
+@media (max-width: 767px) {
+  .filter-icon {
+    height: 40px;
+  }
+}
+
+.filter-spollers {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 320px;
+          flex: 0 0 320px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: var(--bg-primary);
+  overflow: hidden;
+}
+@media (max-width: 992px) {
+  .filter-spollers {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 320px;
+    z-index: 102;
+    max-height: calc(100dvh - 183px);
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+  }
+  .filter-spollers::-webkit-scrollbar {
+    display: none;
+  }
+  .filter-open .filter-spollers {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+@media (max-width: 400px) {
+  .filter-spollers {
+    width: 290px;
+  }
+}
+.filter-spollers__item {
+  padding: 3.5px 0px;
+  border-bottom: 1px solid var(--border);
+}
+.filter-spollers__item:last-child {
+  padding: 3.5px 0px 0px 0px;
+}
+.filter-spollers__button {
+  width: 100%;
+  min-height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-right: 16px;
+  padding-left: 16px;
+  -webkit-transition: padding-right 0.3s, padding-left 0.3s;
+  transition: padding-right 0.3s, padding-left 0.3s;
+}
+.filter-spollers__button._spoller-active {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.filter-spollers__button._spoller-active .filter-spollers__arrow svg {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+.filter-spollers__title {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  text-align: left;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 156%;
+}
+.filter-spollers__arrow {
+  width: 24px;
+  height: 24px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 24px;
+          flex: 0 0 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.filter-spollers__arrow svg {
+  stroke: var(--typography-primary);
+  fill: none;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+.filter-spollers__body {
+  padding: 8px 20px 20px 20px;
+}
+.filter-spollers__body ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 4px;
+}
+.filter-spollers__body ul li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding: 12px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  background-color: var(--bg-tetriary);
+  -webkit-transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
+}
+@media (any-hover: hover) {
+  .filter-spollers__body ul li a:hover {
+    color: var(--brand-primary-new);
+  }
+}
+.filter-spollers__body ul li a.active {
+  pointer-events: none;
+  background-color: var(--brand-primary-10);
+  color: var(--brand-primary-new);
+}

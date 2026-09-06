@@ -1,0 +1,30 @@
+/*Оборудование лаборатории*/
+.block-laboratory-equipment .title2 {
+  margin-bottom: 24px;
+  text-align: left;
+}
+@media (max-width: 767px) {
+  .block-laboratory-equipment .title2 {
+    margin-bottom: 16px;
+  }
+}
+.block-laboratory-equipment__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px 26px;
+}
+@media (max-width: 992px) {
+  .block-laboratory-equipment__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 767px) {
+  .block-laboratory-equipment__cards {
+    gap: 16px;
+  }
+}
+@media (max-width: 550px) {
+  .block-laboratory-equipment__cards {
+    grid-template-columns: 1fr;
+  }
+}

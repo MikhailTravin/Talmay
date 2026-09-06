@@ -1,0 +1,173 @@
+/*Каталог приборов*/
+@media (max-width: 992px) {
+  .block-main-catalog {
+    padding: 40px 0px 80px 0px;
+  }
+}
+@media (max-width: 767px) {
+  .block-main-catalog {
+    padding: 24px 0px 40px 0px;
+  }
+}
+.block-main-catalog .block-descr {
+  padding: 0px 16px;
+  gap: 24px;
+}
+@media (max-width: 992px) {
+  .block-main-catalog .block-descr {
+    padding: 0px 0px 0px 0px;
+  }
+}
+.block-main-catalog .block-descr .title2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 16px;
+}
+.block-main-catalog .block-descr .title2 .number {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+}
+.block-main-catalog .block-descr__text p {
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--typography-secondary);
+}
+.block-main-catalog .block-title {
+  margin-bottom: 24px;
+}
+@media (max-width: 992px) {
+  .block-main-catalog .block-title {
+    margin-bottom: 40px;
+  }
+}
+@media (min-width: 993px) {
+  .block-main-catalog .filter-spollers {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 312px;
+            flex: 0 0 312px;
+  }
+}
+.block-main-catalog .filter-spollers__item {
+  padding: 3.5px;
+  border-bottom: 1px solid transparent;
+}
+.block-main-catalog .filter-spollers__button._spoller-active {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+.block-main-catalog .filter-spollers__body {
+  padding: 8px 16px 16px 16px;
+}
+.block-main-catalog .filter-spollers__body ul li a {
+  padding: 12px 8px;
+}
+@media (max-width: 992px) {
+  .block-main-catalog .filter-sorting {
+    padding: 0px 32px 0px 48px;
+  }
+}
+.block-main-catalog__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  gap: 24px;
+}
+.block-main-catalog__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 24px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+.block-main-catalog__body.catalog-other {
+  width: 100%;
+  max-width: 839px;
+  margin: 0 auto;
+  min-width: 0;
+}
+@media (max-width: 992px) {
+  .block-main-catalog__body.catalog-other {
+    max-width: 100%;
+  }
+}
+@media (min-width: 993px) {
+  .block-main-catalog__body.catalog-other .card-product2 {
+    padding: 16px;
+  }
+  .block-main-catalog__body.catalog-other .card-product2__pic1 {
+    height: 154px;
+  }
+  .block-main-catalog__body.catalog-other .card-product2__top {
+    min-height: 145px;
+  }
+  .block-main-catalog__body.catalog-other .card-product2__top p {
+    font-size: 14px;
+    line-height: 143%;
+  }
+  .block-main-catalog__body.catalog-other .card-product2__title {
+    font-size: 16px;
+    line-height: 150%;
+  }
+}
+.block-main-catalog__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px 23px;
+}
+@media (max-width: 1300px) {
+  .block-main-catalog__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 767px) {
+  .block-main-catalog__cards {
+    gap: 16px;
+    grid-template-columns: 1fr;
+  }
+}
+.block-main-catalog__cards .empty-message {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 156%;
+  color: var(--color-grey-15);
+  padding: 0px 16px;
+}
+@media (max-width: 992px) {
+  .block-main-catalog__cards .empty-message {
+    padding: 0px 0px 0px 0px;
+  }
+}
+@media (max-width: 767px) {
+  .block-main-catalog__cards .empty-message {
+    font-size: 16px;
+    line-height: 150%;
+  }
+}

@@ -1,0 +1,102 @@
+/*Статьи*/
+@media (max-width: 767px) {
+  .block-article {
+    padding: 24px 0px;
+  }
+}
+.block-article .block-title {
+  margin-bottom: 32px;
+}
+@media (max-width: 767px) {
+  .block-article .block-title {
+    margin-bottom: 24px;
+  }
+}
+.block-article .filter-sorting {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 16px;
+}
+.block-article .block-news__content {
+  gap: 40px;
+}
+@media (max-width: 767px) {
+  .block-article .block-news__content {
+    gap: 24px;
+  }
+}
+.block-article .block-descr {
+  margin-bottom: 0px;
+}
+@media (max-width: 767px) {
+  .block-article .block-descr {
+    border-radius: 40px;
+    padding: 16px;
+  }
+}
+.block-article .block-descr__image {
+  border-radius: 8px;
+}
+@media (max-width: 767px) {
+  .block-article .block-descr__image {
+    border-radius: 20px;
+  }
+}
+.block-article .block-descr__text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 143%;
+  color: var(--typography-secondary);
+}
+@media (max-width: 767px) {
+  .block-article .block-descr__text {
+    font-size: 16px;
+  }
+}
+.block-article .block-descr__body {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 516px;
+          flex: 0 1 516px;
+}
+@media (max-width: 992px) {
+  .block-article .block-descr__body {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+  }
+}
+.block-article .block-descr__body p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 170%;
+}
+@media (max-width: 767px) {
+  .block-article .block-descr__body p {
+    line-height: 150%;
+  }
+}
+@media (max-width: 767px) {
+  .block-article .block-descr__body .title2 {
+    font-size: 22px;
+    line-height: 127%;
+  }
+}
+@media (max-width: 767px) {
+  .block-article .block-descr__body .btn {
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+@media (max-width: 767px) {
+  .block-article .block-descr__content {
+    gap: 40px;
+  }
+}
+.block-article__body {
+  margin-bottom: 24px;
+}
