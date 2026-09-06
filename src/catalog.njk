@@ -52,7 +52,8 @@
                             <!-- Производители -->
                             <li class="filter-spollers__item">
                                 <button type="button" data-spoller class="filter-spollers__button">
-                                    <a href="catalog-manufacturers.html" class="filter-spollers__title">Производители</a>
+                                    <a href="catalog-manufacturers.html"
+                                        class="filter-spollers__title">Производители</a>
                                     <span class="filter-spollers__arrow">
                                         <svg aria-hidden="true" width="10" height="6">
                                             <use xlink:href="img/sprite.svg#arrow1"></use>
@@ -186,9 +187,12 @@
         {% include 'blocks/footer.njk' %}
     </div>
     {% include 'blocks/popups.njk' %}
+    {% include 'blocks/scripts.njk' %}
     <script src="js/instruments.js"></script>
     <script src="js/instrument-loader.js"></script>
-    {% include 'blocks/scripts.njk' %}
+    <script src="js/spollers.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/filter-catalog.js"></script>
 </body>
 
 </html>

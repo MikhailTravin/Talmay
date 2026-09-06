@@ -4,9 +4,10 @@
     left: 0;
     bottom: 0;
     right: 0;
-    transition: visibility 0.8s ease 0s;
-    visibility: hidden;
+    transition: opacity 0.3s ease 0s;
+    opacity: 0;
     pointer-events: none;
+    z-index: -1;
     overflow: auto;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -16,7 +17,7 @@
 }
 .popup_show {
     z-index: 150;
-    visibility: visible;
+    opacity: 1;
     overflow: auto;
     pointer-events: auto;
 }
@@ -93,20 +94,23 @@
     &.popup_show {
         .popup__content {
             right: 0 !important;
+            @media (max-width: 1200px) {
+                bottom: 0 !important;
+            }
         }
     }
     .popup__content {
         right: -100%;
         opacity: 1;
         pointer-events: auto;
-        transition: right 0.4s;
+        transition: right 0.3s;
         @media (max-width: 1200px) {
             width: 100%;
             max-width: 864px;
             right: auto;
             top: auto;
             bottom: -100%;
-            transition: bottom 0.4s;
+            transition: bottom 0.3s;
         }
     }
     // .popup-forms__body
@@ -382,6 +386,7 @@
         top: 32px;
         right: 32px;
         border: 1px solid var(--border);
+        z-index: 30;
         @media (max-width: 1200px) {
             top: 24px;
             right: 24px;
