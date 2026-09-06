@@ -14089,10 +14089,11 @@ a {
   left: 0;
   bottom: 0;
   right: 0;
-  -webkit-transition: visibility 0.8s ease 0s;
-  transition: visibility 0.8s ease 0s;
-  visibility: hidden;
+  -webkit-transition: opacity 0.3s ease 0s;
+  transition: opacity 0.3s ease 0s;
+  opacity: 0;
   pointer-events: none;
+  z-index: -1;
   overflow: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -14103,7 +14104,7 @@ a {
 
 .popup_show {
   z-index: 150;
-  visibility: visible;
+  opacity: 1;
   overflow: auto;
   pointer-events: auto;
 }
@@ -14231,12 +14232,17 @@ a {
 .popup-forms.popup_show .popup__content {
   right: 0 !important;
 }
+@media (max-width: 1200px) {
+  .popup-forms.popup_show .popup__content {
+    bottom: 0 !important;
+  }
+}
 .popup-forms .popup__content {
   right: -100%;
   opacity: 1;
   pointer-events: auto;
-  -webkit-transition: right 0.4s;
-  transition: right 0.4s;
+  -webkit-transition: right 0.3s;
+  transition: right 0.3s;
 }
 @media (max-width: 1200px) {
   .popup-forms .popup__content {
@@ -14245,8 +14251,8 @@ a {
     right: auto;
     top: auto;
     bottom: -100%;
-    -webkit-transition: bottom 0.4s;
-    transition: bottom 0.4s;
+    -webkit-transition: bottom 0.3s;
+    transition: bottom 0.3s;
   }
 }
 .popup-forms__body {
@@ -14618,6 +14624,7 @@ a {
   top: 32px;
   right: 32px;
   border: 1px solid var(--border);
+  z-index: 30;
 }
 @media (max-width: 1200px) {
   .popup-video .popup__close {
