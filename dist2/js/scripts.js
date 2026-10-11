@@ -174,7 +174,7 @@ langButtons.forEach(button => {
 
 //========================================================================================================================================================
 
-//меню
+//Меню
 const iconMenu = document.querySelectorAll('.header__burger');
 const headerBody = document.querySelector('.menu');
 
@@ -232,6 +232,118 @@ if (menuItems) {
     }
   });
 }
+
+function menuClick() {
+  const breakpoint = 1300;
+  const openDelay = 500;
+  const removeActiveDelay = 500;
+  const closeDelay = 500;
+
+  const items = document.querySelectorAll('.menu__item');
+
+  if (!items.length) return;
+
+  const timers = new WeakMap();
+
+  function getTimers(item) {
+    if (!timers.has(item)) {
+      timers.set(item, { open: null, close: null, unactive: null });
+    }
+    return timers.get(item);
+  }
+
+  function clearOpen(item) {
+    const t = getTimers(item);
+    if (t.open) {
+      clearTimeout(t.open);
+      t.open = null;
+    }
+  }
+
+  function clearClose(item) {
+    const t = getTimers(item);
+    if (t.close) {
+      clearTimeout(t.close);
+      t.close = null;
+    }
+  }
+
+  function clearUnactive(item) {
+    const t = getTimers(item);
+    if (t.unactive) {
+      clearTimeout(t.unactive);
+      t.unactive = null;
+    }
+  }
+
+  function closeAll() {
+    items.forEach(it => {
+      clearOpen(it);
+      clearClose(it);
+      clearUnactive(it);
+      it.classList.remove('active');
+    });
+  }
+
+  function isDesktop() {
+    return window.innerWidth > breakpoint;
+  }
+
+  items.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      if (!isDesktop()) return;
+
+      items.forEach(it => clearClose(it));
+      clearUnactive(item);
+
+      if (item.classList.contains('active')) {
+        return;
+      }
+
+      const t = getTimers(item);
+      clearOpen(item);
+      t.open = setTimeout(() => {
+        item.classList.add('active');
+        t.open = null;
+
+        items.forEach(other => {
+          if (other === item) return;
+          if (!other.classList.contains('active')) return;
+
+          const ot = getTimers(other);
+          clearUnactive(other);
+          ot.unactive = setTimeout(() => {
+            other.classList.remove('active');
+            ot.unactive = null;
+          }, removeActiveDelay);
+        });
+      }, openDelay);
+    });
+
+    item.addEventListener('mouseleave', () => {
+      if (!isDesktop()) return;
+
+      clearOpen(item);
+
+      if (item.classList.contains('active')) {
+        const t = getTimers(item);
+        clearClose(item);
+        t.close = setTimeout(() => {
+          item.classList.remove('active');
+          t.close = null;
+        }, closeDelay);
+      }
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    if (!isDesktop()) {
+      closeAll();
+    }
+  });
+}
+
+menuClick();
 
 //========================================================================================================================================================
 
