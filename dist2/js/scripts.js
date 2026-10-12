@@ -235,53 +235,74 @@ if (menuItems) {
 
 function menuClick() {
   const breakpoint = 1300;
-  const openDelay = 500;
-  const removeActiveDelay = 500;
-  const closeDelay = 500;
+  const delay = 600;
 
   const items = document.querySelectorAll('.menu__item');
 
-  if (!items.length) return;
+  if (!items.length) {
+    return;
+  }
 
   const timers = new WeakMap();
 
   function getTimers(item) {
     if (!timers.has(item)) {
-      timers.set(item, { open: null, close: null, unactive: null });
+      timers.set(item, {
+        open: null,
+        close: null,
+      });
     }
+
     return timers.get(item);
   }
 
-  function clearOpen(item) {
-    const t = getTimers(item);
-    if (t.open) {
-      clearTimeout(t.open);
-      t.open = null;
+  function clearTimer(item, type) {
+    const timer = getTimers(item);
+
+    if (timer[type]) {
+      clearTimeout(timer[type]);
+      timer[type] = null;
     }
   }
 
-  function clearClose(item) {
-    const t = getTimers(item);
-    if (t.close) {
-      clearTimeout(t.close);
-      t.close = null;
-    }
+  function clearAllTimers(item) {
+    clearTimer(item, 'open');
+    clearTimer(item, 'close');
   }
 
-  function clearUnactive(item) {
-    const t = getTimers(item);
-    if (t.unactive) {
-      clearTimeout(t.unactive);
-      t.unactive = null;
-    }
+  function scheduleClose(item) {
+    const timer = getTimers(item);
+
+    if (timer.close) return;
+
+    timer.close = setTimeout(() => {
+      item.classList.remove('active');
+      timer.close = null;
+    }, delay);
+  }
+
+  function scheduleOpen(item) {
+    const timer = getTimers(item);
+
+    if (timer.open) return;
+
+    timer.open = setTimeout(() => {
+      items.forEach(other => {
+        if (other !== item) {
+          clearAllTimers(other);
+          other.classList.remove('active');
+        }
+      });
+
+      item.classList.add('active');
+      timer.open = null;
+    }, delay);
   }
 
   function closeAll() {
-    items.forEach(it => {
-      clearOpen(it);
-      clearClose(it);
-      clearUnactive(it);
-      it.classList.remove('active');
+    items.forEach(item => {
+      clearAllTimers(item);
+      item.classList.remove('active');
     });
   }
 
@@ -293,45 +314,34 @@ function menuClick() {
     item.addEventListener('mouseenter', () => {
       if (!isDesktop()) return;
 
-      items.forEach(it => clearClose(it));
-      clearUnactive(item);
+      const timer = getTimers(item);
+
+      clearTimer(item, 'close');
 
       if (item.classList.contains('active')) {
         return;
       }
 
-      const t = getTimers(item);
-      clearOpen(item);
-      t.open = setTimeout(() => {
-        item.classList.add('active');
-        t.open = null;
+      items.forEach(other => {
+        if (other === item) return;
 
-        items.forEach(other => {
-          if (other === item) return;
-          if (!other.classList.contains('active')) return;
+        clearTimer(other, 'open');
 
-          const ot = getTimers(other);
-          clearUnactive(other);
-          ot.unactive = setTimeout(() => {
-            other.classList.remove('active');
-            ot.unactive = null;
-          }, removeActiveDelay);
-        });
-      }, openDelay);
+        if (other.classList.contains('active')) {
+          scheduleClose(other);
+        }
+      });
+
+      scheduleOpen(item);
     });
 
     item.addEventListener('mouseleave', () => {
       if (!isDesktop()) return;
 
-      clearOpen(item);
+      clearTimer(item, 'open');
 
       if (item.classList.contains('active')) {
-        const t = getTimers(item);
-        clearClose(item);
-        t.close = setTimeout(() => {
-          item.classList.remove('active');
-          t.close = null;
-        }, closeDelay);
+        scheduleClose(item);
       }
     });
   });
