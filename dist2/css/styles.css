@@ -2556,7 +2556,7 @@ a {
   top: auto;
   bottom: 100%;
   margin: 0px 0px 6px 0px;
-  z-index: 55;
+  z-index: 56;
 }
 @media (max-width: 767px) {
   .menu__bottom .contacts {
@@ -2674,6 +2674,7 @@ a {
   pointer-events: auto;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
+  display: none;
 }
 .header-lang__dropdown ul {
   backdrop-filter: blur(16px);
