@@ -641,7 +641,7 @@
             top: auto;
             bottom: 100%;
             margin: 0px 0px 6px 0px;
-            z-index: 55;
+            z-index: 56;
         }
         .contacts {
             @media (max-width: 767px) {
@@ -748,6 +748,7 @@
         opacity: 0;
         pointer-events: auto;
         transition: opacity 0.3s;
+        display: none;
         ul {
             backdrop-filter: blur(16px);
             box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.05);
